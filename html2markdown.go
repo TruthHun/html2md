@@ -1,55 +1,15 @@
 //Author:TruthHun
 //Email: TruthHun@QQ.COM
 //Date:  2018-02-03
-package converter
+package html2md
 
 import (
 	"strings"
 
 	"fmt"
 
-	"io/ioutil"
-
 	"github.com/PuerkitoBio/goquery"
 )
-
-var tags = map[string]string{
-	//"hr":    "- - -\n\n",
-	//"br":    "\n",
-	//"title": "# ",
-	//"h1":    "# ",
-	//"h2":    "## ",
-	//"h3":    "### ",
-	//"h4":    "#### ",
-	//"h5":    "##### ",
-	//"h6":    "###### ",
-	//
-	//"del":        "~~",
-	//"b":          "**",
-	//"strong":     "**",
-	//"i":          "_",
-	//"em":         "_",
-	//"dfn":        "_",
-	//"var":        "_",
-	//"cite":       "_",
-	//"figure": "\n",
-
-	"ul":         "* ",
-	"ol":         "1. ",
-	"li":         "1. ",
-	"dl":         "- ",
-	"dd":         "- ",
-	"pre":        "```",
-	"blockquote": "> ", //最后要加个换行
-	"code":       "",
-	"span":       "",
-	"table":      "",
-	"thead":      "",
-	"tbody":      "",
-	"th":         "",
-	"td":         "",
-	"tr":         "",
-}
 
 var closeTag = map[string]string{
 	"del":     "~~",
@@ -74,19 +34,18 @@ var nextLineTag = []string{
 	"pre", "blockquote", "table",
 }
 
-func Convert(htmlstr string) {
-	//htmlstr = htmltil.Compress(htmlstr)
+func Convert(htmlstr string) (html string) {
 	doc, _ := goquery.NewDocumentFromReader(strings.NewReader(htmlstr))
-	doc = handleA(doc)
-	doc = handleImg(doc)
-	doc = handleHead(doc)
-	doc = handleClosedTag(doc)
-	doc = handleHr(doc)
-	doc = handleNextLineTag(doc)
-	doc = handleLi(doc)
-	doc = handleTable(doc)
-	h, _ := doc.Find("body").Html()
-	ioutil.WriteFile("test.md", []byte(h), 0777)
+	doc = handleA(doc)           //<a>
+	doc = handleImg(doc)         //<img>
+	doc = handleHead(doc)        //h1~h6
+	doc = handleClosedTag(doc)   //<strong>、<i>、eg..
+	doc = handleHr(doc)          //<hr>
+	doc = handleNextLineTag(doc) //<table>
+	doc = handleLi(doc)          //<ul>、<li>
+	doc = handleTable(doc)       //<table>
+	html, _ = doc.Find("body").Html()
+	return
 }
 
 //[ok]handle tag <a>
@@ -175,7 +134,6 @@ func handleHead(doc *goquery.Document) *goquery.Document {
 	return doc
 }
 
-//[ok]
 func handleClosedTag(doc *goquery.Document) *goquery.Document {
 	for tag, close := range closeTag {
 		doc.Find(tag).Each(func(i int, selection *goquery.Selection) {
