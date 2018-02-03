@@ -20,15 +20,25 @@ var closeTag = map[string]string{
 	"dfn":     "_",
 	"var":     "_",
 	"cite":    "_",
+	"br":      "\n",
+	"span":    "",
+	"div":     "\n",
 	"figure":  "\n",
 	"p":       "\n",
-	"div":     "\n",
 	"article": "\n",
 	"nav":     "\n",
 	"footer":  "\n",
 	"header":  "\n",
-	"br":      "\n",
-	"span":    "",
+}
+
+var blockTag = []string{
+	"div",
+	"figure",
+	"p",
+	"article",
+	"nav",
+	"footer",
+	"header",
 }
 var nextLineTag = []string{
 	"pre", "blockquote", "table",
@@ -36,6 +46,7 @@ var nextLineTag = []string{
 
 func Convert(htmlstr string) (html string) {
 	doc, _ := goquery.NewDocumentFromReader(strings.NewReader(htmlstr))
+	doc = handleBlockTag(doc)    //<div>...
 	doc = handleA(doc)           //<a>
 	doc = handleImg(doc)         //<img>
 	doc = handleHead(doc)        //h1~h6
@@ -46,6 +57,16 @@ func Convert(htmlstr string) (html string) {
 	doc = handleTable(doc)       //<table>
 	html, _ = doc.Find("body").Html()
 	return
+}
+
+func handleBlockTag(doc *goquery.Document) *goquery.Document {
+	for _, tag := range blockTag {
+		doc.Find(tag).Each(func(i int, selection *goquery.Selection) {
+			selection.BeforeHtml("\n" + getInnerHtml(selection) + "\n")
+			selection.Remove()
+		})
+	}
+	return doc
 }
 
 //[ok]handle tag <a>
@@ -80,7 +101,7 @@ func handleLi(doc *goquery.Document) *goquery.Document {
 	doc.Find("li").Each(func(i int, selection *goquery.Selection) {
 		if cont, err := selection.Html(); err == nil {
 			if cont = strings.TrimSpace(cont); len(cont) > 0 {
-				selection.BeforeHtml("- " + cont)
+				selection.BeforeHtml("- " + cont + "\n")
 			}
 			selection.Remove()
 		}
@@ -126,7 +147,7 @@ func handleHead(doc *goquery.Document) *goquery.Document {
 	}
 	for tag, replace := range heads {
 		doc.Find(tag).Each(func(i int, selection *goquery.Selection) {
-			text, _ := selection.Html()
+			text := selection.Text()
 			selection.BeforeHtml("\n" + replace + text + "\n")
 			selection.Remove()
 		})
@@ -193,6 +214,10 @@ func doesHasTagPreOrBlockQuote(selection *goquery.Selection) bool {
 }
 
 func getInnerHtml(selection *goquery.Selection) (html string) {
+	var err error
 	html, _ = selection.Html()
+	if err != nil {
+		fmt.Println(err)
+	}
 	return
 }
