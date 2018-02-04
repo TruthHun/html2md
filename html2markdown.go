@@ -202,14 +202,14 @@ func handleTable(doc *goquery.Document) *goquery.Document {
 }
 
 func doesHasTagPreOrBlockQuote(selection *goquery.Selection) bool {
-	sele := selection.Parent()
-	if !sele.Is("body") { //非body标签
-		if sele.Is("pre") || sele.Is("blockquote") {
-			return true
-		} else {
-			return doesHasTagPreOrBlockQuote(sele)
-		}
-	}
+	//sele := selection.Parent()
+	//if !sele.Is("body") { //非body标签
+	//	if sele.Is("pre") || sele.Is("blockquote") {
+	//		return true
+	//	} else {
+	//		return doesHasTagPreOrBlockQuote(sele)
+	//	}
+	//}
 	return false
 }
 
