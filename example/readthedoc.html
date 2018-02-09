@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+    <div itemprop="articleBody">
+
+        <div class="section" id="front-end-development">
+            <h1>Front End Development<a class="headerlink" href="#front-end-development" title="Permalink to this headline">¶</a></h1>
+            <div class="section" id="background">
+                <h2>Background<a class="headerlink" href="#background" title="Permalink to this headline">¶</a></h2>
+                <div class="admonition note">
+                    <p class="first admonition-title">Note</p>
+                    <p class="last">Consider this the canonical resource for contributing Javascript and CSS. We
+                        are currently in the process of modernizing our front end development
+                        procedures. You will see a lot of different styles around the code base for
+                        front end JavaScript and CSS.</p>
+                </div>
+                <p>Our modern front end development stack includes the following tools:</p>
+                <ul class="simple">
+                    <li><a class="reference external" href="http://gulpjs.com">Gulp</a></li>
+                    <li><a class="reference external" href="http://bower.io">Bower</a></li>
+                    <li><a class="reference external" href="http://browserify.org">Browserify</a></li>
+                    <li><a class="reference external" href="https://github.com/eugeneware/debowerify">Debowerify</a></li>
+                    <li>And soon, <a class="reference external" href="http://lesscss.org">LESS</a></li>
+                </ul>
+                <p>We use the following libraries:</p>
+                <ul class="simple">
+                    <li><a class="reference external" href="http://knockoutjs.com">Knockout</a></li>
+                    <li><a class="reference external" href="http://jquery.com">jQuery</a></li>
+                    <li>Several jQuery plugins</li>
+                </ul>
+                <p>Previously, JavaScript development has been done in monolithic files or inside
+                    templates. jQuery was added as a global object via an include in the base
+                    template to an external source. There are no standards currently to JavaScript
+                    libraries, this aims to solve that.</p>
+                <p>The requirements for modernizing our front end code are:</p>
+                <ul class="simple">
+                    <li>Code should be modular and testable. One-off chunks of JavaScript in templates
+                        or in large monolithic files are not easily testable. We currently have no
+                        JavaScript tests.</li>
+                    <li>Reduce code duplication.</li>
+                    <li>Easy JavaScript dependency management.</li>
+                </ul>
+                <p>Modularizing code with <a class="reference external" href="http://browserify.org">Browserify</a> is a good first step. In this development
+                    workflow, major dependencies commonly used across JavaScript includes are
+                    installed with <a class="reference external" href="http://bower.io">Bower</a> for testing, and vendorized as standalone libraries via
+                    <a class="reference external" href="http://gulpjs.com">Gulp</a> and <a class="reference external" href="http://browserify.org">Browserify</a>. This way, we can easily test our JavaScript libraries
+                    against jQuery/etc, and have the flexibility of modularizing our code. See
+                    <a class="reference internal" href="#javascript-bundles">JavaScript Bundles</a> for more information on what and how we are bundling.</p>
+                <p>To ease deployment and contributions, bundled JavaScript is checked into the
+                    repository for now. This ensures new contributors don’t need an additional front
+                    end stack just for making changes to our Python code base. In the future, this
+                    may change, so that assets are compiled before deployment, however as our front
+                    end assets are in a state of flux, it’s easier to keep absolute sources checked
+                    in.</p>
+            </div>
+            <div class="section" id="getting-started">
+                <h2>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h2>
+                <p>You will need a working version of Node and NPM to get started. We won’t cover
+                    that here, as it varies from platform to platform.</p>
+                <p>To install these tools and dependencies:</p>
+                <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">npm</span> <span class="n">install</span>
+</pre></div>
+                </div>
+                <p>This will install locally to the project, not globally. You can install globally
+                    if you wish, otherwise make sure <code class="docutils literal"><span class="pre">node_modules/.bin</span></code> is in your PATH.</p>
+                <p>Next, install front end dependencies:</p>
+                <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">bower</span> <span class="n">install</span>
+</pre></div>
+                </div>
+                <p>The sources for our bundles are found in the per-application path
+                    <code class="docutils literal"><span class="pre">static-src</span></code>, which has the same directory structure as <code class="docutils literal"><span class="pre">static</span></code>. Files in
+                    <code class="docutils literal"><span class="pre">static-src</span></code> are compiled to <code class="docutils literal"><span class="pre">static</span></code> for static file collection in Django.
+                    Don’t edit files in <code class="docutils literal"><span class="pre">static</span></code> directly, unless you are sure there isn’t a
+                    source file that will compile over your changes.</p>
+                <p>To test changes while developing, which will watch source files for changes and
+                    compile as necessary, you can run <a class="reference external" href="http://gulpjs.com">Gulp</a> with our development target:</p>
+                <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">gulp</span> <span class="n">dev</span>
+</pre></div>
+                </div>
+                <p>Once you are satisfied with your changes, finalize the bundles (this will
+                    minify library sources):</p>
+                <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">gulp</span> <span class="n">build</span>
+</pre></div>
+                </div>
+                <p>If you updated any of our vendor libraries, compile those:</p>
+                <div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">gulp</span> <span class="n">vendor</span>
+</pre></div>
+                </div>
+                <p>Make sure to check in both files under <code class="docutils literal"><span class="pre">static</span></code> and <code class="docutils literal"><span class="pre">static-src</span></code>.</p>
+            </div>
+            <div class="section" id="making-changes">
+                <h2>Making Changes<a class="headerlink" href="#making-changes" title="Permalink to this headline">¶</a></h2>
+                <p>If you are creating a new library, or a new library entry point, make sure to
+                    define the application source file in <code class="docutils literal"><span class="pre">gulpfile.js</span></code>, this is not handled
+                    automatically right now.</p>
+                <p>If you are bringing in a new vendor library, make sure to define the bundles you
+                    are going to create in <code class="docutils literal"><span class="pre">gulpfile.js</span></code> as well.</p>
+                <p>Tests should be included per-application, in a path called <code class="docutils literal"><span class="pre">tests</span></code>, under the
+                    <code class="docutils literal"><span class="pre">static-src/js</span></code> path you are working in. Currently, we still need a test
+                    runner that accumulates these files.</p>
+            </div>
+            <div class="section" id="deployment">
+                <h2>Deployment<a class="headerlink" href="#deployment" title="Permalink to this headline">¶</a></h2>
+                <p>If merging several branches with JavaScript changes, it’s important to do a
+                    final post-merge bundle. Follow the steps above to rebundle the libraries, and
+                    check in any changed libraries.</p>
+            </div>
+            <div class="section" id="javascript-bundles">
+                <h2>JavaScript Bundles<a class="headerlink" href="#javascript-bundles" title="Permalink to this headline">¶</a></h2>
+                <p>There are several components to our bundling scheme:</p>
+                <blockquote>
+                    <div><dl class="docutils">
+                        <dt>Vendor library</dt>
+                        <dd><p class="first">We repackage these using <a class="reference external" href="http://browserify.org">Browserify</a>, <a class="reference external" href="http://bower.io">Bower</a>, and <a class="reference external" href="https://github.com/eugeneware/debowerify">Debowerify</a> to
+                            make these libraries available by a <code class="docutils literal"><span class="pre">require</span></code> statement.  Vendor
+                            libraries are packaged separately from our JavaScript libraries, because
+                            we use the vendor libraries in multiple locations. Libraries bundled
+                            this way with <a class="reference external" href="http://browserify.org">Browserify</a> are available to our libraries via
+                            <code class="docutils literal"><span class="pre">require</span></code> and will back down to finding the object on the global
+                            <code class="docutils literal"><span class="pre">window</span></code> scope.</p>
+                            <p class="last">Vendor libraries should only include libraries we are commonly reusing.
+                                This currently includes <code class="xref py py-obj docutils literal"><span class="pre">jQuery</span></code> and <code class="xref py py-obj docutils literal"><span class="pre">Knockout</span></code>. These modules will be
+                                excluded from libraries by special includes in our <code class="docutils literal"><span class="pre">gulpfile.js</span></code>.</p>
+                        </dd>
+                        <dt>Minor third party libraries</dt>
+                        <dd>These libraries are maybe used in one or two locations. They are
+                            installed via <a class="reference external" href="http://bower.io">Bower</a> and included in the output library file. Because
+                            we aren’t reusing them commonly, they don’t require a separate bundle or
+                            separate include. Examples here would include jQuery plugins used on one
+                            off forms, such as jQuery Payments.</dd>
+                        <dt>Our libraries</dt>
+                        <dd><p class="first">These libraries are bundled up excluding vendor libraries ignored by
+                            rules in our <code class="docutils literal"><span class="pre">gulpfile.js</span></code>. These files should be organized by
+                            function and can be split up into multiple files per application.</p>
+                            <p class="last">Entry points to libraries must be defined in <code class="docutils literal"><span class="pre">gulpfile.js</span></code> for now. We
+                                don’t have a defined directory structure that would make it easy to
+                                imply the entry point to an application library.</p>
+                        </dd>
+                    </dl>
+                    </div></blockquote>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="articleComments">
+
+    </div>
+</div>
+</body>
+</html>
