@@ -12,23 +12,16 @@ import (
 )
 
 var closeTag = map[string]string{
-	"del":     "~~",
-	"b":       "**",
-	"strong":  "**",
-	"i":       "_",
-	"em":      "_",
-	"dfn":     "_",
-	"var":     "_",
-	"cite":    "_",
-	"br":      "\n",
-	"span":    "",
-	"div":     "\n",
-	"figure":  "\n",
-	"p":       "\n",
-	"article": "\n",
-	"nav":     "\n",
-	"footer":  "\n",
-	"header":  "\n",
+	"del":    "~~",
+	"b":      "**",
+	"strong": "**",
+	"i":      "_",
+	"em":     "_",
+	"dfn":    "_",
+	"var":    "_",
+	"cite":   "_",
+	"br":     "\n",
+	"span":   "",
 }
 
 var blockTag = []string{
@@ -39,12 +32,13 @@ var blockTag = []string{
 	"nav",
 	"footer",
 	"header",
+	"section",
 }
 var nextLineTag = []string{
 	"pre", "blockquote", "table",
 }
 
-func Convert(htmlstr string) (html string) {
+func Convert(htmlstr string) (md string) {
 	doc, _ := goquery.NewDocumentFromReader(strings.NewReader(htmlstr))
 	doc = handleBlockTag(doc)    //<div>...
 	doc = handleA(doc)           //<a>
@@ -55,16 +49,23 @@ func Convert(htmlstr string) (html string) {
 	doc = handleNextLineTag(doc) //<table>
 	doc = handleLi(doc)          //<ul>、<li>
 	doc = handleTable(doc)       //<table>
-	html, _ = doc.Find("body").Html()
+	md, _ = doc.Find("body").Html()
 	return
 }
 
 func handleBlockTag(doc *goquery.Document) *goquery.Document {
 	for _, tag := range blockTag {
-		doc.Find(tag).Each(func(i int, selection *goquery.Selection) {
-			selection.BeforeHtml("\n" + getInnerHtml(selection) + "\n")
-			selection.Remove()
-		})
+		hasTag := true
+		for hasTag {
+			if tagEle := doc.Find(tag); len(tagEle.Nodes) > 0 {
+				tagEle.Each(func(i int, selection *goquery.Selection) {
+					selection.BeforeHtml("\n" + getInnerHtml(selection) + "\n")
+					selection.Remove()
+				})
+			} else {
+				hasTag = false
+			}
+		}
 	}
 	return doc
 }
@@ -88,20 +89,18 @@ func handleLi(doc *goquery.Document) *goquery.Document {
 	var tags = []string{"ul", "ol"}
 	for _, tag := range tags {
 		doc.Find(tag).Each(func(i int, selection *goquery.Selection) {
-			if !doesHasTagPreOrBlockQuote(selection) {
-				if cont, err := selection.Html(); err == nil {
-					cont = strings.Replace(cont, "\t", "", -1)
-					cont = strings.Replace(cont, " ", "", -1)
-					selection.BeforeHtml(cont)
-					selection.Remove()
-				}
+			if cont, err := selection.Html(); err == nil {
+				cont = strings.Replace(cont, "\t", "", -1)
+				cont = strings.Replace(cont, " ", "", -1)
+				selection.BeforeHtml(cont)
+				selection.Remove()
 			}
 		})
 	}
 	doc.Find("li").Each(func(i int, selection *goquery.Selection) {
 		if cont, err := selection.Html(); err == nil {
 			if cont = strings.TrimSpace(cont); len(cont) > 0 {
-				selection.BeforeHtml("- " + cont + "\n")
+				selection.BeforeHtml("- " + cont)
 			}
 			selection.Remove()
 		}
@@ -157,11 +156,19 @@ func handleHead(doc *goquery.Document) *goquery.Document {
 
 func handleClosedTag(doc *goquery.Document) *goquery.Document {
 	for tag, close := range closeTag {
-		doc.Find(tag).Each(func(i int, selection *goquery.Selection) {
-			text, _ := selection.Html()
-			selection.BeforeHtml(close + text + close)
-			selection.Remove()
-		})
+		tagEle := doc.Find(tag)
+		hasTag := true
+		for hasTag {
+			if len(tagEle.Nodes) > 0 {
+				tagEle.Each(func(i int, selection *goquery.Selection) {
+					text, _ := selection.Html()
+					selection.BeforeHtml(close + text + close)
+					selection.Remove()
+				})
+			} else {
+				hasTag = false
+			}
+		}
 	}
 	return doc
 }
@@ -199,18 +206,6 @@ func handleTable(doc *goquery.Document) *goquery.Document {
 		table.Remove()
 	})
 	return doc
-}
-
-func doesHasTagPreOrBlockQuote(selection *goquery.Selection) bool {
-	//sele := selection.Parent()
-	//if !sele.Is("body") { //非body标签
-	//	if sele.Is("pre") || sele.Is("blockquote") {
-	//		return true
-	//	} else {
-	//		return doesHasTagPreOrBlockQuote(sele)
-	//	}
-	//}
-	return false
 }
 
 func getInnerHtml(selection *goquery.Selection) (html string) {
