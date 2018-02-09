@@ -9,6 +9,7 @@ import (
 	"fmt"
 
 	"github.com/PuerkitoBio/goquery"
+	"github.com/astaxie/beego/logs"
 )
 
 var closeTag = map[string]string{
@@ -34,21 +35,23 @@ var blockTag = []string{
 	"header",
 	"section",
 }
-var nextLineTag = []string{
+var nextlineTag = []string{
 	"pre", "blockquote", "table",
 }
 
+//convert html to markdown
+//将html转成markdown
 func Convert(htmlstr string) (md string) {
 	doc, _ := goquery.NewDocumentFromReader(strings.NewReader(htmlstr))
-	doc = handleBlockTag(doc)    //<div>...
-	doc = handleA(doc)           //<a>
-	doc = handleImg(doc)         //<img>
-	doc = handleHead(doc)        //h1~h6
-	doc = handleClosedTag(doc)   //<strong>、<i>、eg..
-	doc = handleHr(doc)          //<hr>
-	doc = handleNextLineTag(doc) //<table>
-	doc = handleLi(doc)          //<ul>、<li>
-	doc = handleTable(doc)       //<table>
+	doc = handleNextLine(doc)  //<div>...
+	doc = handleBlockTag(doc)  //<div>...
+	doc = handleA(doc)         //<a>
+	doc = handleImg(doc)       //<img>
+	doc = handleHead(doc)      //h1~h6
+	doc = handleClosedTag(doc) //<strong>、<i>、eg..
+	doc = handleHr(doc)        //<hr>
+	doc = handleLi(doc)        //<ul>、<li>
+	doc = handleTable(doc)     //<table>
 	md, _ = doc.Find("body").Html()
 	return
 }
@@ -156,25 +159,17 @@ func handleHead(doc *goquery.Document) *goquery.Document {
 
 func handleClosedTag(doc *goquery.Document) *goquery.Document {
 	for tag, close := range closeTag {
-		tagEle := doc.Find(tag)
-		hasTag := true
-		for hasTag {
-			if len(tagEle.Nodes) > 0 {
-				tagEle.Each(func(i int, selection *goquery.Selection) {
-					text, _ := selection.Html()
-					selection.BeforeHtml(close + text + close)
-					selection.Remove()
-				})
-			} else {
-				hasTag = false
-			}
-		}
+		doc.Find(tag).Each(func(i int, selection *goquery.Selection) {
+			text, _ := selection.Html()
+			selection.BeforeHtml(close + text + close)
+			selection.Remove()
+		})
 	}
 	return doc
 }
 
-func handleNextLineTag(doc *goquery.Document) *goquery.Document {
-	for _, tag := range nextLineTag {
+func handleNextLine(doc *goquery.Document) *goquery.Document {
+	for _, tag := range nextlineTag {
 		doc.Find(tag).Each(func(i int, selection *goquery.Selection) {
 			selection.BeforeHtml("\n")
 			selection.AfterHtml("\n")
@@ -212,7 +207,7 @@ func getInnerHtml(selection *goquery.Selection) (html string) {
 	var err error
 	html, _ = selection.Html()
 	if err != nil {
-		fmt.Println(err)
+		logs.Error(err)
 	}
 	return
 }
