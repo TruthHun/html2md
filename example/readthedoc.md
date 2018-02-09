@@ -1,266 +1,298 @@
 
 
 
+
     
 
+        
+# [1. 程序构建](#id11)[¶](#program-build)
 
         
 
             
-# Front End Development[¶](#front-end-development)
+目录
+
+            
+## 程序构建
+<ul>
+<li>[配置](#id3)</li>
+<li>[编译](#id4)<ul>
+<li>[makefile编写的要点](#makefile)</li>
+<li>[makefile中的全局自变量](#id5)</li>
+<li>[更多选择CMake](#cmake)</li>
+<li>[编译依赖的库](#id7)</li>
+<li>[g++编译](#g)</li>
+</ul>
+</li>
+<li>[安装](#id8)</li>
+<li>[总结](#id9)</li>
+</ul>
+
+        
+
+        
+一般源代码提供的程序安装需要通过配置、编译、安装三个步骤；
+
+        
+- 配置做的工作主要是检查当前环境是否满足要安装软件的依赖关系，以及设置程序安装所需要的初始化信息，比如安装路径，需要安装哪些组件；配置完成，会生成makefile文件供第二步make使用；
+- 编译是对源文件进行编译链接生成可执行程序；
+- 安装做的工作就简单多了，就是将生成的可执行文件拷贝到配置时设置的初始路径下；
+
+        
+
+            
+## [1.1. 配置](#id12)[¶](#id3)
+
+            
+查询可用的配置选项:
+
+            
+
+
+<pre>./configure --help
+</pre>
+
+
+            
+
+            
+配置路径:
+
+            
+
+
+<pre>./configure --prefix=/usr/local/snmp
+</pre>
+
+
+            
+
+            
+–prefix是配置使用的最常用选项，设置程序安装的路径；
+
+        
+
+        
+
+            
+## [1.2. 编译](#id13)[¶](#id4)
+
+            
+编译使用make编译:
+
+            
+
+
+<pre>make -f myMakefile
+</pre>
+
+
+            
+
+            
+通过-f选项显示指定需要编译的makefile；如果待使用makefile文件在当前路径，且文件名为以下几个，则不用显示指定：
+
+            
+makefile Makefile
 
             
 
                 
-## Background[¶](#background)
+### [makefile编写的要点](#id14)[¶](#makefile)
+
+                
+- 必须满足第一条规则，满足后停止
+- 除第一条规则，其他无顺序
+
+            
+
+            
+
+                
+### [makefile中的全局自变量](#id15)[¶](#id5)
+
+                
+- $@目标文件名
+- @^所有前提名，除副本
+- @＋所有前提名，含副本
+- @＜一个前提名
+- @？所有新于目标文件的前提名
+- @*目标文件的基名称
 
                 
 
                     
-Note
+注解
 
                     
-Consider this the canonical resource for contributing Javascript and CSS. We
-                        are currently in the process of modernizing our front end development
-                        procedures. You will see a lot of different styles around the code base for
-                        front end JavaScript and CSS.
+系统学习makefile的书写规则，请参考 跟我一起学makefile [[1]](#id10)
 
                 
-
-                
-Our modern front end development stack includes the following tools:
-
-                
-- [Gulp](http://gulpjs.com)
-- [Bower](http://bower.io)
-- [Browserify](http://browserify.org)
-- [Debowerify](https://github.com/eugeneware/debowerify)
-- Andsoon,[LESS](http://lesscss.org)
-
-                
-We use the following libraries:
-
-                
-- [Knockout](http://knockoutjs.com)
-- [jQuery](http://jquery.com)
-- SeveraljQueryplugins
-
-                
-Previously, JavaScript development has been done in monolithic files or inside
-                    templates. jQuery was added as a global object via an include in the base
-                    template to an external source. There are no standards currently to JavaScript
-                    libraries, this aims to solve that.
-
-                
-The requirements for modernizing our front end code are:
-
-                
-- Codeshouldbemodularandtestable.One-offchunksofJavaScriptintemplates
-orinlargemonolithicfilesarenoteasilytestable.Wecurrentlyhaveno
-JavaScripttests.
-- Reducecodeduplication.
-- EasyJavaScriptdependencymanagement.
-
-                
-Modularizing code with [Browserify](http://browserify.org) is a good first step. In this development
-                    workflow, major dependencies commonly used across JavaScript includes are
-                    installed with [Bower](http://bower.io) for testing, and vendorized as standalone libraries via
-                    [Gulp](http://gulpjs.com) and [Browserify](http://browserify.org). This way, we can easily test our JavaScript libraries
-                    against jQuery/etc, and have the flexibility of modularizing our code. See
-                    [JavaScript Bundles](#javascript-bundles) for more information on what and how we are bundling.
-
-                
-To ease deployment and contributions, bundled JavaScript is checked into the
-                    repository for now. This ensures new contributors don’t need an additional front
-                    end stack just for making changes to our Python code base. In the future, this
-                    may change, so that assets are compiled before deployment, however as our front
-                    end assets are in a state of flux, it’s easier to keep absolute sources checked
-                    in.
 
             
 
             
 
                 
-## Getting Started[¶](#getting-started)
+### [更多选择 CMake](#id16)[¶](#cmake)
 
                 
-You will need a working version of Node and NPM to get started. We won’t cover
-                    that here, as it varies from platform to platform.
+CMake是一个跨平台的安装（编译）工具，可以用简单的语句来描述所有平台的安装(编译过程)。他能够输出各种各样的makefile或者project文件。使用CMake，能够使程序员从复杂的编译连接过程中解脱出来。它使用一个名为 CMakeLists.txt 的文件来描述构建过程,可以生成标准的构建文件,如 Unix/Linux 的 Makefile 或Windows Visual C++ 的 projects/workspaces 。
+
+            
+
+            
 
                 
-To install these tools and dependencies:
+### [编译依赖的库](#id17)[¶](#id7)
+
+                
+makefile编译过程中所依赖的非标准库和头文件路径需要显示指明:
 
                 
 
 
-<pre>npm install
+<pre>CPPFLAGS -I标记非标准头文件存放路径
+LDFLAGS  -L标记非标准库存放路径
 </pre>
 
 
                 
 
                 
-This will install locally to the project, not globally. You can install globally
-                    if you wish, otherwise make sure <code class="docutils literal">node_modules/.bin</code> is in your PATH.
-
-                
-Next, install front end dependencies:
+如果CPPFLAGS和LDFLAGS已在用户环境变量中设置并且导出（使用export关键字），就不用再显示指定；
 
                 
 
 
-<pre>bower install
+<pre>make -f myMakefile LDFLAGS=&#39;-L/var/xxx/lib -L/opt/mysql/lib&#39;
+    CPPFLAGS=&#39;-I/usr/local/libcom/include -I/usr/local/libpng/include&#39;
 </pre>
 
 
                 
 
                 
-The sources for our bundles are found in the per-application path
-                    <code class="docutils literal">static-src</code>, which has the same directory structure as <code class="docutils literal">static</code>. Files in
-                    <code class="docutils literal">static-src</code> are compiled to <code class="docutils literal">static</code> for static file collection in Django.
-                    Don’t edit files in <code class="docutils literal">static</code> directly, unless you are sure there isn’t a
-                    source file that will compile over your changes.
 
-                
-To test changes while developing, which will watch source files for changes and
-                    compile as necessary, you can run [Gulp](http://gulpjs.com) with our development target:
-
-                
-
-
-<pre>gulp dev
-</pre>
-
-
-                
-
-                
-Once you are satisfied with your changes, finalize the bundles (this will
-                    minify library sources):
-
-                
-
-
-<pre>gulp build
-</pre>
-
-
-                
-
-                
-If you updated any of our vendor libraries, compile those:
-
-                
-
-
-<pre>gulp vendor
-</pre>
-
-
-                
-
-                
-Make sure to check in both files under <code class="docutils literal">static</code> and <code class="docutils literal">static-src</code>.
-
-            
-
-            
-
-                
-## Making Changes[¶](#making-changes)
-
-                
-If you are creating a new library, or a new library entry point, make sure to
-                    define the application source file in <code class="docutils literal">gulpfile.js</code>, this is not handled
-                    automatically right now.
-
-                
-If you are bringing in a new vendor library, make sure to define the bundles you
-                    are going to create in <code class="docutils literal">gulpfile.js</code> as well.
-
-                
-Tests should be included per-application, in a path called <code class="docutils literal">tests</code>, under the
-                    <code class="docutils literal">static-src/js</code> path you are working in. Currently, we still need a test
-                    runner that accumulates these files.
-
-            
-
-            
-
-                
-## Deployment[¶](#deployment)
-
-                
-If merging several branches with JavaScript changes, it’s important to do a
-                    final post-merge bundle. Follow the steps above to rebundle the libraries, and
-                    check in any changed libraries.
-
-            
-
-            
-
-                
-## JavaScript Bundles[¶](#javascript-bundles)
-
-                
-There are several components to our bundling scheme:
-
-                
-<blockquote>
                     
-<dl class="docutils">
-                        <dt>Vendor library</dt>
-                        <dd>
-We repackage these using [Browserify](http://browserify.org), [Bower](http://bower.io), and [Debowerify](https://github.com/eugeneware/debowerify) to
-                            make these libraries available by a <code class="docutils literal">require</code> statement.  Vendor
-                            libraries are packaged separately from our JavaScript libraries, because
-                            we use the vendor libraries in multiple locations. Libraries bundled
-                            this way with [Browserify](http://browserify.org) are available to our libraries via
-                            <code class="docutils literal">require</code> and will back down to finding the object on the global
-                            <code class="docutils literal">window</code> scope.
+警告
 
-                            
-Vendor libraries should only include libraries we are commonly reusing.
-                                This currently includes <code class="xref py py-obj docutils literal">jQuery</code> and <code class="xref py py-obj docutils literal">Knockout</code>. These modules will be
-                                excluded from libraries by special includes in our <code class="docutils literal">gulpfile.js</code>.
-
-                        </dd>
-                        <dt>Minor third party libraries</dt>
-                        <dd>These libraries are maybe used in one or two locations. They are
-                            installed via [Bower](http://bower.io) and included in the output library file. Because
-                            we aren’t reusing them commonly, they don’t require a separate bundle or
-                            separate include. Examples here would include jQuery plugins used on one
-                            off forms, such as jQuery Payments.</dd>
-                        <dt>Our libraries</dt>
-                        <dd>
-These libraries are bundled up excluding vendor libraries ignored by
-                            rules in our <code class="docutils literal">gulpfile.js</code>. These files should be organized by
-                            function and can be split up into multiple files per application.
-
-                            
-Entry points to libraries must be defined in <code class="docutils literal">gulpfile.js</code> for now. We
-                                don’t have a defined directory structure that would make it easy to
-                                imply the entry point to an application library.
-
-                        </dd>
-                    </dl>
                     
-</blockquote>
+链接多库时，多个库之间如果有依赖，需要注意书写的顺序，右边是左边的前提；
+
+                
+
+            
+
+            
+
+                
+### [g++编译](#id18)[¶](#g)
+
+                
+
+
+<pre>g++ -o unixApp unixApp.o a.o b.o
+</pre>
+
+
+                
+
+                
+选项说明：
+
+                
+- -o:指明生成的目标文件
+- -g：添加调试信息
+- -E:查看中间文件
+
+                
+应用：查询宏展开的中间文件：
+
+                
+在g++的编译选项中，添加 -E选项，然后去掉-o选项 ，重定向到一个文件中即可:
+
+                
+
+
+<pre>g++ -g -E unixApp.cpp  -I/opt/app/source &gt; midfile
+</pre>
+
+
+                
+
+                
+查询应用程序需要链接的库:
+
+                
+
+
+<pre>$ldd myprogrammer
+    libstdc++.so.6 =&gt; /usr/lib64/libstdc++.so.6 (0x00000039a7e00000)
+    libm.so.6 =&gt; /lib64/libm.so.6 (0x0000003996400000)
+    libgcc_s.so.1 =&gt; /lib64/libgcc_s.so.1 (0x00000039a5600000)
+    libc.so.6 =&gt; /lib64/libc.so.6 (0x0000003995800000)
+    /lib64/ld-linux-x86-64.so.2 (0x0000003995400000)
+</pre>
+
+
+                
+
+                
+
+                    
+注解
+
+                    
+关于ldd的使用细节，参见 [ldd 查看程序依赖库](../tool/ldd.html#ldd)
+
+                
 
             
 
         
 
+        
 
+            
+## [1.3. 安装](#id19)[¶](#id8)
+
+            
+安装做的工作就简单多了，就是将生成的可执行文件拷贝到配置时设置的初始路径下:
+
+            
+
+
+<pre>$make install
+</pre>
+
+
+            
+
+            
+其实 **install** 就是makefile中的一个规则，打开makefile文件后可以查看程序安装的所做的工作；
+
+        
+
+        
+
+            
+## [1.4. 总结](#id20)[¶](#id9)
+
+            
+configure make install g++
+
+            
+
+|[[1]](#id6)|陈皓 跟我一起写Makefile [http://scc.qibebt.cas.cn/docs/linux/base/%B8%FA%CE%D2%D2%BB%C6%F0%D0%B4Makefile-%B3%C2%F0%A9.pdf](http://scc.qibebt.cas.cn/docs/linux/base/%B8%FA%CE%D2%D2%BB%C6%F0%D0%B4Makefile-%B3%C2%F0%A9.pdf)
+
+
+
+        
 
     
 
-    
 
-
-    
 
 
 
