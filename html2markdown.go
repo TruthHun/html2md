@@ -43,16 +43,17 @@ var nextlineTag = []string{
 //将html转成markdown
 func Convert(htmlstr string) (md string) {
 	doc, _ := goquery.NewDocumentFromReader(strings.NewReader(htmlstr))
-	doc = handleNextLine(doc)  //<div>...
-	doc = handleBlockTag(doc)  //<div>...
-	doc = handleA(doc)         //<a>
-	doc = handleImg(doc)       //<img>
-	doc = handleHead(doc)      //h1~h6
-	doc = handleClosedTag(doc) //<strong>、<i>、eg..
-	doc = handleHr(doc)        //<hr>
-	doc = handleLi(doc)        //<ul>、<li>
-	doc = handleTable(doc)     //<table>
+	handleNextLine(doc)  //<div>...
+	handleBlockTag(doc)  //<div>...
+	handleA(doc)         //<a>
+	handleImg(doc)       //<img>
+	handleHead(doc)      //h1~h6
+	handleClosedTag(doc) //<strong>、<i>、eg..
+	handleHr(doc)        //<hr>
+	handleLi(doc)        //<ul>、<li>
+	handleTable(doc)     //<table>
 	md, _ = doc.Find("body").Html()
+	md = strings.Replace(md, "</blockquote>", "\n</blockquote>", -1)
 	return
 }
 
