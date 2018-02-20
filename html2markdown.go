@@ -150,7 +150,7 @@ func handleHead(doc *goquery.Document) *goquery.Document {
 	}
 	for tag, replace := range heads {
 		doc.Find(tag).Each(func(i int, selection *goquery.Selection) {
-			text := selection.Text()
+			text,_ := selection.Html()
 			selection.BeforeHtml("\n" + replace + text + "\n")
 			selection.Remove()
 		})
