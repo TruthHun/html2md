@@ -54,6 +54,7 @@ func Convert(htmlstr string) (md string) {
 	handleTable(doc)     //<table>
 	md, _ = doc.Find("body").Html()
 	md = strings.Replace(md, "</blockquote>", "\n</blockquote>", -1)
+	md = strings.Replace(md, "<pre>", "<pre>\n", -1)
 	return
 }
 
