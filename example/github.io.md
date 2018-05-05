@@ -894,7 +894,7 @@ In a common application, you would use some Gettext functions while writing stat
 - [<code>gettext()</code>](http://php.net/manual/en/function.gettext.php)simplytranslatesa<code>msgid</code>intoitscorresponding<code>msgstr</code>foragivenlanguage.There’salsotheshorthandfunction<code>_()</code>thatworksthesameway;
 - [<code>ngettext()</code>](http://php.net/manual/en/function.ngettext.php)doesthesamebutwithpluralrules;
 - there’salso[<code>dgettext()</code>](http://php.net/manual/en/function.dgettext.php)and[<code>dngettext()</code>](http://php.net/manual/en/function.dngettext.php),thatallowsyoutooverridethedomainforasinglecall.Moreondomainconfigurationinthenextexample.
-#### 2. A sample setup file (i18n_setup.php as used above), selecting the correct locale and configuring Gettext
+#### 2. A sample setup file (<code>i18n_setup.php</code> as used above), selecting the correct locale and configuring Gettext
 
 
 <pre><code class="language-php" data-lang="php">&lt;?php
