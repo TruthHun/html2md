@@ -8,6 +8,11 @@ import (
 
 	"fmt"
 
+	"io/ioutil"
+	"os"
+
+	"regexp"
+
 	"github.com/PuerkitoBio/goquery"
 	"github.com/astaxie/beego/logs"
 )
@@ -23,6 +28,7 @@ var closeTag = map[string]string{
 	"cite":   "_",
 	"br":     "\n",
 	"span":   "",
+	"small":  "",
 }
 
 var blockTag = []string{
@@ -43,19 +49,66 @@ var nextlineTag = []string{
 //将html转成markdown
 func Convert(htmlstr string) (md string) {
 	doc, _ := goquery.NewDocumentFromReader(strings.NewReader(htmlstr))
-	handleNextLine(doc)  //<div>...
-	handleBlockTag(doc)  //<div>...
-	handleA(doc)         //<a>
-	handleImg(doc)       //<img>
-	handleHead(doc)      //h1~h6
-	handleClosedTag(doc) //<strong>、<i>、eg..
-	handleHr(doc)        //<hr>
-	handleLi(doc)        //<ul>、<li>
-	handleTable(doc)     //<table>
+	doc = compressHtml(doc)
+	doc = handleNextLine(doc)   //<div>...
+	doc = handleBlockTag(doc)   //<div>...
+	doc = handleA(doc)          //<a>
+	doc = handleImg(doc)        //<img>
+	doc = handleHead(doc)       //h1~h6
+	doc = handleClosedTag(doc)  //<strong>、<i>、eg..
+	doc = handleHr(doc)         //<hr>
+	doc = handleLi(doc)         //<ul>、<li>
+	doc = handleTable(doc)      //<table>
+	doc = handleBlockquote(doc) //<table>
 	md, _ = doc.Find("body").Html()
-	md = strings.Replace(md, "</blockquote>", "\n</blockquote>", -1)
-	md = strings.Replace(md, "<pre>", "<pre>\n", -1)
 	return
+}
+
+//压缩html
+func compressHtml(doc *goquery.Document) *goquery.Document {
+	//blockquote、pre、code
+	var maps = make(map[string]string)
+	if ele := doc.Find("blockquote"); len(ele.Nodes) > 0 {
+		ele.Each(func(i int, selection *goquery.Selection) {
+			key := fmt.Sprintf("{$blockquote%v}", i)
+			cont := "<blockquote>" + getInnerHtml(selection) + "</blockquote>"
+			selection.BeforeHtml(key)
+			selection.Remove()
+			maps[key] = cont
+		})
+	}
+	if ele := doc.Find("pre"); len(ele.Nodes) > 0 {
+		ele.Each(func(i int, selection *goquery.Selection) {
+			key := fmt.Sprintf("{$pre%v}", i)
+			cont := "<pre>" + getInnerHtml(selection) + "</pre>"
+			selection.BeforeHtml(key)
+			selection.Remove()
+			maps[key] = cont
+		})
+	}
+	if ele := doc.Find("code"); len(ele.Nodes) > 0 {
+		ele.Each(func(i int, selection *goquery.Selection) {
+			key := fmt.Sprintf("{$code%v}", i)
+			cont := "<code>" + getInnerHtml(selection) + "</code>"
+			selection.BeforeHtml(key)
+			selection.Remove()
+			maps[key] = cont
+		})
+	}
+	htmlstr, _ := doc.Html()
+	htmlstr = strings.Replace(htmlstr, "\n", "", -1)
+	htmlstr = strings.Replace(htmlstr, "\r", "", -1)
+	htmlstr = strings.Replace(htmlstr, "\t", "", -1)
+	//正则匹配，把“>”和“<”直接的空格全部去掉
+	//去除标签之间的空格，如果是存在代码预览的页面，不要替换空格，否则预览的代码会错乱
+	r, _ := regexp.Compile(">\\s{1,}<")
+	htmlstr = r.ReplaceAllString(htmlstr, "><")
+	for key, val := range maps {
+		htmlstr = strings.Replace(htmlstr, key, val, -1)
+	}
+	ioutil.WriteFile("compress.html", []byte(htmlstr), os.ModePerm)
+	doc, _ = goquery.NewDocumentFromReader(strings.NewReader(htmlstr))
+	return doc
 }
 
 func handleBlockTag(doc *goquery.Document) *goquery.Document {
@@ -71,6 +124,19 @@ func handleBlockTag(doc *goquery.Document) *goquery.Document {
 				hasTag = false
 			}
 		}
+	}
+	return doc
+}
+
+func handleBlockquote(doc *goquery.Document) *goquery.Document {
+	if tagEle := doc.Find("blockquote"); len(tagEle.Nodes) > 0 {
+		tagEle.Each(func(i int, selection *goquery.Selection) {
+			cont := getInnerHtml(selection)
+			cont = strings.Replace(cont, "\r", "", -1)
+			cont = strings.Replace(cont, "\n", "", -1)
+			selection.BeforeHtml("\n\r> " + cont + "\n")
+			selection.Remove()
+		})
 	}
 	return doc
 }
@@ -105,7 +171,7 @@ func handleLi(doc *goquery.Document) *goquery.Document {
 	doc.Find("li").Each(func(i int, selection *goquery.Selection) {
 		if cont, err := selection.Html(); err == nil {
 			if cont = strings.TrimSpace(cont); len(cont) > 0 {
-				selection.BeforeHtml("- " + cont)
+				selection.BeforeHtml("\r- " + cont)
 			}
 			selection.Remove()
 		}
@@ -151,7 +217,7 @@ func handleHead(doc *goquery.Document) *goquery.Document {
 	}
 	for tag, replace := range heads {
 		doc.Find(tag).Each(func(i int, selection *goquery.Selection) {
-			text,_ := selection.Html()
+			text, _ := selection.Html()
 			selection.BeforeHtml("\n" + replace + text + "\n")
 			selection.Remove()
 		})
