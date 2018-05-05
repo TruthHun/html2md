@@ -103,6 +103,9 @@ func compressHtml(doc *goquery.Document) *goquery.Document {
 	//去除标签之间的空格，如果是存在代码预览的页面，不要替换空格，否则预览的代码会错乱
 	r, _ := regexp.Compile(">\\s{1,}<")
 	htmlstr = r.ReplaceAllString(htmlstr, "><")
+	//多个空格替换成一个空格
+	r2, _ := regexp.Compile("\\s{1,}")
+	htmlstr = r2.ReplaceAllString(htmlstr, " ")
 	for key, val := range maps {
 		htmlstr = strings.Replace(htmlstr, key, val, -1)
 	}
