@@ -18,4 +18,12 @@ func main() {
 	b, _ = ioutil.ReadFile("readthedoc.html")
 	md = html2md.Convert(string(b))
 	ioutil.WriteFile("readthedoc.md", []byte(md), 0777)
+
+	b, _ = ioutil.ReadFile("gitee.html")
+	md = html2md.Convert(string(b))
+	ioutil.WriteFile("gitee.md", []byte(md), 0777)
+
+	b, _ = ioutil.ReadFile("gitbook1.html")
+	md = html2md.Convert(string(b))
+	ioutil.WriteFile("gitbook1.md", []byte(md), 0777)
 }

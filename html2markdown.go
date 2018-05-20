@@ -8,9 +8,6 @@ import (
 
 	"fmt"
 
-	"io/ioutil"
-	"os"
-
 	"regexp"
 
 	"github.com/PuerkitoBio/goquery"
@@ -57,7 +54,7 @@ func Convert(htmlstr string) (md string) {
 	doc = handleHead(doc)       //h1~h6
 	doc = handleClosedTag(doc)  //<strong>、<i>、eg..
 	doc = handleHr(doc)         //<hr>
-	doc = handleLi(doc)         //<ul>、<li>
+	doc = handleLi(doc)         //<li>
 	doc = handleTable(doc)      //<table>
 	doc = handleBlockquote(doc) //<table>
 	md, _ = doc.Find("body").Html()
@@ -109,7 +106,6 @@ func compressHtml(doc *goquery.Document) *goquery.Document {
 	for key, val := range maps {
 		htmlstr = strings.Replace(htmlstr, key, val, -1)
 	}
-	ioutil.WriteFile("compress.html", []byte(htmlstr), os.ModePerm)
 	doc, _ = goquery.NewDocumentFromReader(strings.NewReader(htmlstr))
 	return doc
 }
@@ -137,7 +133,7 @@ func handleBlockquote(doc *goquery.Document) *goquery.Document {
 			cont := getInnerHtml(selection)
 			cont = strings.Replace(cont, "\r", "", -1)
 			cont = strings.Replace(cont, "\n", "", -1)
-			selection.BeforeHtml("\n\r> " + cont + "\n")
+			selection.BeforeHtml("\r\n<blockquote>" + cont + "\n</blockquote>\n")
 			selection.Remove()
 		})
 	}
@@ -159,26 +155,29 @@ func handleA(doc *goquery.Document) *goquery.Document {
 }
 
 //[ok]handle tag ul、ol、li
+//处理步骤：
+//1、先给每个li标签里面的内容加上"- "或者"\t- "
+//2、提取li内容
 func handleLi(doc *goquery.Document) *goquery.Document {
-	var tags = []string{"ul", "ol"}
+	var tags = []string{"ul", "li"}
+	doc.Find("li").Each(func(i int, selection *goquery.Selection) {
+		l := len(selection.ParentsFiltered("li").Nodes)
+		tab := strings.Join(make([]string, l+2), "{$space}")
+		selection.PrependHtml("\r$" + tab)
+	})
 	for _, tag := range tags {
 		doc.Find(tag).Each(func(i int, selection *goquery.Selection) {
-			if cont, err := selection.Html(); err == nil {
-				cont = strings.Replace(cont, "\t", "", -1)
-				cont = strings.Replace(cont, " ", "", -1)
-				selection.BeforeHtml(cont)
-				selection.Remove()
-			}
+			selection.BeforeHtml(selection.Text())
+			selection.Remove()
 		})
 	}
-	doc.Find("li").Each(func(i int, selection *goquery.Selection) {
-		if cont, err := selection.Html(); err == nil {
-			if cont = strings.TrimSpace(cont); len(cont) > 0 {
-				selection.BeforeHtml("\r- " + cont)
-			}
-			selection.Remove()
-		}
-	})
+	htmlstr, _ := doc.Find("body").Html()
+	for i := 10; i > 0; i-- {
+		oldTab := "$" + strings.Join(make([]string, i), "{$space}")
+		newTab := strings.Join(make([]string, i-1), "  ") + "- "
+		htmlstr = strings.Replace(htmlstr, oldTab, newTab, -1)
+	}
+	doc, _ = goquery.NewDocumentFromReader(strings.NewReader(htmlstr))
 	return doc
 }
 
@@ -231,8 +230,9 @@ func handleHead(doc *goquery.Document) *goquery.Document {
 func handleClosedTag(doc *goquery.Document) *goquery.Document {
 	for tag, close := range closeTag {
 		doc.Find(tag).Each(func(i int, selection *goquery.Selection) {
-			text, _ := selection.Html()
-			selection.BeforeHtml(close + text + close)
+			if text, _ := selection.Html(); strings.TrimSpace(text) != "" {
+				selection.BeforeHtml(close + text + close)
+			}
 			selection.Remove()
 		})
 	}
