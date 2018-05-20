@@ -1,6 +1,3 @@
-
-
-
 # 欢迎
 
 目前网络上充斥着大量的过时资讯，让 PHP 新手误入歧途，并且传播着错误的实践以及不安全的代码。_PHP 之道_ 收集了现有的 PHP 最佳实践、编码规范和权威学习指南，方便 PHP 开发者阅读和查找。
@@ -20,13 +17,13 @@ _PHP: The Right Way_ 被翻译为以下版本：
 - [Indonesia](http://id.phptherightway.com)
 - [Italiano](http://it.phptherightway.com)
 - [Polski](http://pl.phptherightway.com)
-- [PortuguêsdoBrasil](http://br.phptherightway.com)
+- [Português do Brasil](http://br.phptherightway.com)
 - [Română](https://bgui.github.io/php-the-right-way/)
 - [Slovenščina](http://sl.phptherightway.com)
 - [Srpski](http://phpsrbija.github.io/php-the-right-way/)
 - [Türkçe](http://hkulekci.github.io/php-the-right-way/)
 - [български](http://bg.phptherightway.com)
-- [Русскийязык](http://getjump.github.io/ru-php-the-right-way)
+- [Русский язык](http://getjump.github.io/ru-php-the-right-way)
 - [Українська](http://iflista.github.com/php-the-right-way)
 - [العربية](https://adaroobi.github.io/php-the-right-way/)
 - [فارسى](http://novid.github.io/php-the-right-way/)
@@ -37,7 +34,7 @@ _PHP: The Right Way_ 被翻译为以下版本：
 - [繁體中文](http://laravel-taiwan.github.io/php-the-right-way)
 ## 书本
 
-最新版本的 _PHP 之道_ 包含  PDF, EPUB 和 MOBI 版本，可以在 [Leanpub](https://leanpub.com/phptherightway) 上购买。
+最新版本的 _PHP 之道_ 包含 PDF, EPUB 和 MOBI 版本，可以在 [Leanpub](https://leanpub.com/phptherightway) 上购买。
 
 ## 如何参与
 
@@ -69,7 +66,7 @@ _PHP: 您可以在网站上放置 PHP之道 的横幅来支持我们，让 PHP �
 
 ## 内置的 web 服务器
 
-PHP 5.4 之后, 你可以不用安装和配置功能齐全的 Web 服务器，就可以开始学习 PHP。            要启动内置的 Web 服务器，需要从你的命令行终端进入项目的 Web 根目录，执行下面的命令:
+PHP 5.4 之后, 你可以不用安装和配置功能齐全的 Web 服务器，就可以开始学习 PHP。 要启动内置的 Web 服务器，需要从你的命令行终端进入项目的 Web 根目录，执行下面的命令:
 
 
 <pre><code class="language-console" data-lang="console">&gt; php -S localhost:8000</code></pre>
@@ -80,13 +77,13 @@ PHP 5.4 之后, 你可以不用安装和配置功能齐全的 Web 服务器，�
 
 ## Mac 安装
 
-OS X 系统会预装 PHP， 只是一般情况下版本会比最新稳定版低一些。目前            Mavericks 是 5.4.17、Yosemite 则是 5.5.9，El Capitan 是 5.5.29、Sierra 是 5.6.24， 但在 PHP 7.1 出来之后， 这些往往是不够的。
+OS X 系统会预装 PHP， 只是一般情况下版本会比最新稳定版低一些。目前 Mavericks 是 5.4.17、Yosemite 则是 5.5.9，El Capitan 是 5.5.29、Sierra 是 5.6.24， 但在 PHP 7.1 出来之后， 这些往往是不够的。
 
 以下介绍几种在 OS X 上安装 PHP 的方法。
 
 ### 通过 Homebrew 安装 PHP
 
-[Homebrew](http://brew.sh/) 是一个强大的 OS X 专用包管理器， 它可以帮助你轻松的安装 PHP 和各种扩展。            [Homebrew PHP](https://github.com/Homebrew/homebrew-php#installation) 是一个包含与 PHP 相关的 Formulae，能让你通过 homebrew 安装 PHP 的仓库。
+[Homebrew](http://brew.sh/) 是一个强大的 OS X 专用包管理器， 它可以帮助你轻松的安装 PHP 和各种扩展。 [Homebrew PHP](https://github.com/Homebrew/homebrew-php#installation) 是一个包含与 PHP 相关的 Formulae，能让你通过 homebrew 安装 PHP 的仓库。
 
 也就是说, 你可以通过 <code>brew install</code> 命令安装 <code>php53</code>、<code>php54</code>、<code>php55</code>、<code>php56</code>、<code>php70</code>或者 <code>php71</code>，并且通过修改 <code>PATH</code> 变量来切换各个版本。或者你也可以使用 [brew-php-switcher](https://github.com/philcook/brew-php-switcher) 来自动切换。
 
@@ -104,14 +101,14 @@ MacPorts 支持预编译的二进制文件，因此你不必每次都重新从�
 <pre><code>sudo port install php56
 sudo port install php71
 </code></pre>
-        
+ 
 
 你也可以执行 <code>select</code> 命令来切换当前的 php 版本：
 
 
 <pre><code>sudo port select --set php php71
 </code></pre>
-        
+ 
 
 ### 通过 phpbrew 安装 PHP
 
@@ -119,15 +116,15 @@ sudo port install php71
 
 ### 通过 Liip’s binary installer 安装 PHP
 
-[php-osx.liip.ch](http://php-osx.liip.ch/) 是另一种流行的选择，它提供了从 5.3 到 7.1 版本的单行安装功能。            它并不会覆盖Apple集成的PHP文件，而是将其安装在了一个独立的目录中(/usr/local/php5)。
+[php-osx.liip.ch](http://php-osx.liip.ch/) 是另一种流行的选择，它提供了从 5.3 到 7.1 版本的单行安装功能。 它并不会覆盖Apple集成的PHP文件，而是将其安装在了一个独立的目录中(/usr/local/php5)。
 
 ### 源码编译
 
-另一个让你控制安装 PHP 版本的选择就是 [自行编译](http://php.net/install.macosx.compile)。            如果使用这种方法， 你必须先确认是否已经通过 「Apple’s Mac Developer Center」 下载、安装 [Xcode](https://github.com/kennethreitz/osx-gcc-installer) 或者 [“Command Line Tools for XCode”](https://developer.apple.com/downloads)。
+另一个让你控制安装 PHP 版本的选择就是 [自行编译](http://php.net/install.macosx.compile)。 如果使用这种方法， 你必须先确认是否已经通过 「Apple’s Mac Developer Center」 下载、安装 [Xcode](https://github.com/kennethreitz/osx-gcc-installer) 或者 [“Command Line Tools for XCode”](https://developer.apple.com/downloads)。
 
 ### 集成包 (All-in-One Installers)
 
-上面列出的解决方案主要是针对 PHP 本身， 并不包含：比如 Apache，Nginx 或者 SQL 服务器。            集成包比如 [MAMP](http://www.mamp.info/en/downloads/) 和 [XAMPP](http://www.apachefriends.org/en/xampp.html) 会安装这些软件并且将他们绑在一起，不过易于安装的背后也牺牲了一定的弹性。
+上面列出的解决方案主要是针对 PHP 本身， 并不包含：比如 Apache，Nginx 或者 SQL 服务器。 集成包比如 [MAMP](http://www.mamp.info/en/downloads/) 和 [XAMPP](http://www.apachefriends.org/en/xampp.html) 会安装这些软件并且将他们绑在一起，不过易于安装的背后也牺牲了一定的弹性。
 
 
 
@@ -157,40 +154,40 @@ PHP 社区百花齐放，拥有大量的函数库、框架和组件。PHP 开发
 
 通常情况下，你应该遵循一个已知的标准来编写 PHP 代码。可能是 PSR 的组合或者是 PEAR 或 Zend 编码准则中的一个。这代表其他开发者能够方便的阅读和使用你的代码，并且使用这些组件的应用程序可以和其他第三方的组件保持一致。
 
-- [阅读PSR-0](http://www.php-fig.org/psr/psr-0/)
-- [阅读PSR-1](https://laravel-china.org/topics/2078)
-- [阅读PSR-2](https://laravel-china.org/topics/2079)
-- [阅读PSR-4](https://laravel-china.org/topics/2081)
-- [阅读PEAR编码准则](http://pear.php.net/manual/en/standards.php)
-- [阅读Symfony编码准则](http://symfony.com/doc/current/contributing/code/standards.html)
+- [阅读 PSR-0](http://www.php-fig.org/psr/psr-0/)
+- [阅读 PSR-1](https://laravel-china.org/topics/2078)
+- [阅读 PSR-2](https://laravel-china.org/topics/2079)
+- [阅读 PSR-4](https://laravel-china.org/topics/2081)
+- [阅读 PEAR 编码准则](http://pear.php.net/manual/en/standards.php)
+- [阅读 Symfony 编码准则](http://symfony.com/doc/current/contributing/code/standards.html)
 你可以使用 [PHP_CodeSniffer](http://pear.php.net/package/PHP_CodeSniffer/) 来检查代码是否符合这些准则，文本编辑器 [Sublime Text](https://github.com/benmatselby/sublime-phpcs) 的插件也可以提供实时检查。
 
 你可以通过任意以下两个工具来自动修正你的程序语法，让它符合标准：
 
-- 一个是[PHPCodingStandardsFixer](http://cs.sensiolabs.org/)，它具有良好的测试。
-- 另一个是随PHP_CodeSniffer安装的[PHPCode美化修整器](https://github.com/squizlabs/PHP_CodeSniffer/wiki/Fixing-Errors-Automatically)。
+- 一个是 [PHP Coding Standards Fixer](http://cs.sensiolabs.org/)，它具有良好的测试。
+- 另一个是随 PHP_CodeSniffer 安装的 [PHP Code 美化修整器](https://github.com/squizlabs/PHP_CodeSniffer/wiki/Fixing-Errors-Automatically)。
 你也可以手动运行 phpcs 命令：
 
 
 <pre><code>phpcs -sw --standard=PSR2 file.php
 </code></pre>
-        
+ 
 
 它会显示出相应的错误以及如何修正的方法。同时，这条命令你也可以用在 git hook 中，如果你的分支代码不符合选择的代码标准则无法提交。
 
-如果你已经安装了 PHP_CodeSniffer，你将可以使用            [PHP Code 美化修整器](https://github.com/squizlabs/PHP_CodeSniffer/wiki/Fixing-Errors-Automatically) 来格式化代码：
+如果你已经安装了 PHP_CodeSniffer，你将可以使用 [PHP Code 美化修整器](https://github.com/squizlabs/PHP_CodeSniffer/wiki/Fixing-Errors-Automatically) 来格式化代码：
 
 
 <pre><code>phpcbf -w --standard=PSR2 file.php
 </code></pre>
-        
+ 
 
 另一个选项是使用 [PHP 编码标准修复器](http://cs.sensiolabs.org/)，他可以让你预览编码不合格的部分：
 
 
 <pre><code>php-cs-fixer fix -v --level=psr2 file.php
 </code></pre>
-        
+ 
 
 所有的变量名称以及代码结构建议用英文编写。注释可以使用任何语言，只要让现在以及未来的小伙伴能够容易阅读理解即可。
 
@@ -212,8 +209,8 @@ PHP 是一个灵活的动态语言，支持多种编程技巧。这几年一直�
 
 PHP 拥有完整的面向对象编程的特性，包括类，抽象类，接口，继承，构造函数，克隆和异常等。
 
-- [阅读PHP面向对象编程](http://php.net/language.oop5)
-- [阅读Traits](http://php.net/language.oop5.traits)
+- [阅读 PHP 面向对象编程](http://php.net/language.oop5)
+- [阅读 Traits](http://php.net/language.oop5.traits)
 ### 函数式编程 Functional Programming
 
 PHP 支持函数是「第一等公民」，即函数可以被赋值给一个变量，包括用户自定义的或者是内置函数，然后动态调用它。函数可以作为参数传递给其他函数（称为_高阶函数_），也可以作为函数返回值返回。
@@ -224,12 +221,12 @@ PHP 支持递归，也就是函数自己调用自己，但多数 PHP 代码使�
 
 PHP 5.4 增加了将闭包绑定到对象作用域中的特性，并改善其可调用性，如此即可在大部分情况下使用匿名函数取代一般的函数。
 
-- 学习更多[PHP函数式编程](/php-the-right-way/pages/Functional-Programming.html)
+- 学习更多 [PHP 函数式编程](/php-the-right-way/pages/Functional-Programming.html)
 - [阅读匿名函数](http://php.net/functions.anonymous)
 - [阅读闭包类](http://php.net/class.closure)
-- [更多关于ClosuresRFC](https://wiki.php.net/rfc/closures)
-- [阅读Callables](http://php.net/language.types.callable)
-- [阅读动态调用函数<code>call_user_func_array()</code>](http://php.net/function.call-user-func-array)
+- [更多关于 Closures RFC](https://wiki.php.net/rfc/closures)
+- [阅读 Callables](http://php.net/language.types.callable)
+- [阅读动态调用函数 call_user_func_array()](http://php.net/function.call-user-func-array)
 ### 元编程
 
 PHP 通过反射 API 和魔术方法，可以实现多种方式的元编程。开发者通过魔术方法，如 <code>__get()</code>, <code>__set()</code>, <code>__clone()</code>, <code>__toString()</code>, <code>__invoke()</code>，等等，可以改变类的行为。Ruby 开发者常说 PHP 没有 <code>method_missing</code> 方法，实际上通过 <code>__call()</code> 和 <code>__callStatic()</code> 就可以完成相同的功能。
@@ -254,16 +251,16 @@ _命名空间_ 解决了这个问题。如 PHP 手册里所描述，命名空间
 如果你在新应用或扩展包中使用自动加载标准，应优先考虑使用 PSR-4。
 
 - [阅读命名空间](http://php.net/language.namespaces)
-- [阅读PSR-0](http://www.php-fig.org/psr/psr-0/)
-- [阅读PSR-4](http://www.php-fig.org/psr/psr-4/)
+- [阅读 PSR-0](http://www.php-fig.org/psr/psr-0/)
+- [阅读 PSR-4](http://www.php-fig.org/psr/psr-4/)
 
 
 ## PHP 标准库
 
 PHP 标准库 (Standard PHP Library 简写为 SPL) 随着 PHP 一起发布，提供了一组类和接口。包含了常用的数据结构类 (堆栈，队列，堆等等)，以及遍历这些数据结构的迭代器，或者你可以自己实现 SPL 接口。
 
-- [阅读SPL](http://php.net/book.spl)
-- [Lynda.com上的SPL视频教程(付费)](http://www.lynda.com/PHP-tutorials/Up-Running-Standard-PHP-Library/175038-2.html)
+- [阅读 SPL](http://php.net/book.spl)
+- [Lynda.com 上的 SPL 视频教程(付费)](http://www.lynda.com/PHP-tutorials/Up-Running-Standard-PHP-Library/175038-2.html)
 
 
 ## 命令行接口
@@ -282,19 +279,19 @@ CLI PHP 编程非常强大，可以直接调用你自己的程序代码而无需
 
 选项 <code>-a</code> 提供交互式 shell，和 Ruby 的 IRB 或 python 的交互式 shell 相似，此外还有很多其他有用的[命令行选项](http://php.net/features.commandline.options)。
 
-接下来写一个简单的 “Hello, $name” CLI 程序，先创建名为 <code>hello.php</code> 的脚本：
+接下来写一个简单的 “Hello, - name” CLI 程序，先创建名为 <code>hello.php</code> 的脚本：
 
 
 <pre><code class="language-php" data-lang="php">&lt;?php
-if($argc != 2) {
+if(- argc != 2) {
     echo &#34;Usage: php hello.php [name].\n&#34;;
     exit(1);
 }
-$name = $argv[1];
-echo &#34;Hello, $name\n&#34;;</code></pre>
+- name = - argv[1];
+echo &#34;Hello, - name\n&#34;;</code></pre>
 
 
-PHP 会在脚本运行时根据参数设置两个特殊的变量，[<code>$argc</code>](http://php.net/reserved.variables.argc) 是一个整数，表示参数_个数_，[<code>$argv</code>](http://php.net/reserved.variables.argv) 是一个数组变量，包含每个参数的_值_，            它的第一个元素一直是 PHP 脚本的名称，如本例中为 <code>hello.php</code>。
+PHP 会在脚本运行时根据参数设置两个特殊的变量，[<code>- argc</code>](http://php.net/reserved.variables.argc) 是一个整数，表示参数_个数_，[<code>- argv</code>](http://php.net/reserved.variables.argv) 是一个数组变量，包含每个参数的_值_， 它的第一个元素一直是 PHP 脚本的名称，如本例中为 <code>hello.php</code>。
 
 命令运行失败时，可以通过 <code>exit()</code> 表达式返回一个非 0 整数来通知 shell，常用的 exit 返回码可以查看[列表](http://www.gsp.com/cgi-bin/man.cgi?section=3&amp;topic=sysexits).
 
@@ -307,8 +304,8 @@ Usage: php hello.php [name]
 Hello, world</code></pre>
 
 
-- [学习如何在命令行运行PHP](http://php.net/features.commandline)
-- [学习如何在Windows环境下运行PHP命令行程序](http://php.net/install.windows.commandline)
+- [学习如何在命令行运行 PHP](http://php.net/features.commandline)
+- [学习如何在 Windows 环境下运行 PHP 命令行程序](http://php.net/install.windows.commandline)
 
 
 ## Xdebug
@@ -331,14 +328,14 @@ php_value xdebug.remote_port=9000</code></pre>
 
 <pre><code>http://your-website.example.com/index.php?XDEBUG_SESSION_START=1
 </code></pre>
-        
+ 
 
 你的 IDE 将会拦截当前执行的脚本状态，运行你设置的断点并查看内存中的值。
 
 图形化的调试器可以让你非常容易的逐步的查看代码、变量，以及运行时的 evel 代码。许多 IDE 已经内置或提供了插件支持 XDebug 图形化调试器。比如 MacGDBp 是 Mac 上的一个免费，开源的单机调试器。
 
-- [学习更多Xdebug](http://xdebug.org/docs/)
-- [学习更多MacGDBp](http://www.bluestatic.org/software/macgdbp/)
+- [学习更多 Xdebug](http://xdebug.org/docs/)
+- [学习更多 MacGDBp](http://www.bluestatic.org/software/macgdbp/)
 
 
 [回到顶部](#top)
@@ -358,15 +355,15 @@ PHP 有很多可供使用的库、框架和组件。通常你的项目都会使�
 Composer 是一个 **杰出** 的依赖管理器。在 <code>composer.json</code> 文件中列出你项目所需的依赖包，加上一点简单的命令，Composer 将会自动帮你下载并设置你的项目依赖。Composer 有点类似于 Node.js 世界里的 NPM，或者 Ruby 世界里的 Bundler。
 
 现在已经有许多 PHP 第三方包已兼容 Composer，随时可以在你的项目中使用。这些「packages(包)」都已列在 [Packagist](http://packagist.org/)，这是一个官方的 Composer 兼容包仓库。
-        
+ 
 
+<blockquote>            为了提高国内 Composer 的使用体验，Laravel China 社区维护了 [Composer 中文镜像 /Packagist 中国全量镜像](https://laravel-china.org/composer) ，此镜像使用了又拍云的 CDN 加速，将会极大加速 Composer 依赖的下载速度。        
+</blockquote>
 
-&gt;             为了提高国内 Composer 的使用体验，Laravel China 社区维护了 [Composer 中文镜像 /Packagist 中国全量镜像](https://laravel-china.org/composer) ，此镜像使用了又拍云的 CDN 加速，将会极大加速 Composer 依赖的下载速度。        
-
-        
+ 
 ### 如何安装 Composer
 
-最安全的下载方法就是使用 [官方的教程](https://getcomposer.org/download/)。            此方法会验证安装器是否安全，是否被修改。
+最安全的下载方法就是使用 [官方的教程](https://getcomposer.org/download/)。 此方法会验证安装器是否安全，是否被修改。
 
 安装器安装 Composer 的应用范围为 _本地_，也就是在你当前项目文件夹。
 
@@ -382,25 +379,25 @@ _本地_ 使用 Composer 的话，你可以运行 <code>php composer.phar</code>
 
 #### Windows环境下安装
 
-对于Windows 的用户而言最简单的获取及执行方法就是使用 [ComposerSetup](https://getcomposer.org/Composer-Setup.exe) 安装程序，它会执行一个全局安装并设置你的 <code>$PATH</code>，所以你在任意目录下在命令行中使用 <code>composer</code>。
+对于Windows 的用户而言最简单的获取及执行方法就是使用 [ComposerSetup](https://getcomposer.org/Composer-Setup.exe) 安装程序，它会执行一个全局安装并设置你的 <code>- PATH</code>，所以你在任意目录下在命令行中使用 <code>composer</code>。
 
 ### 如何手动安装 Composer
 
 手动安装 Composer 是一个高端的技术。仅管如此还是有许多开发者有各种原因喜欢使用这种交互式的应用程序安装 Composer。在安装前请先确认你的 PHP 安装项目如下：
 
-- 正在使用一个满足条件的PHP版本
-- <code>.phar</code>文件可以正确的被执行
+- 正在使用一个满足条件的 PHP 版本
+- .phar 文件可以正确的被执行
 - 相关的目录有足够的权限
 - 相关有问题的扩展没有被载入
-- 相关的<code>php.ini</code>设置已完成
+- 相关的 php.ini 设置已完成
 由于手动安装没有执行这些检查，你必须自已衡量决定是否值得做这些事，以下是如何手动安装 Composer ：
 
 
-<pre><code class="language-console" data-lang="console">curl -s https://getcomposer.org/composer.phar -o $HOME/local/bin/composer
-chmod +x $HOME/local/bin/composer</code></pre>
+<pre><code class="language-console" data-lang="console">curl -s https://getcomposer.org/composer.phar -o - HOME/local/bin/composer
+chmod +x - HOME/local/bin/composer</code></pre>
 
 
-路径 <code>$HOME/local/bin</code> (或是你选择的路径) 应该在你的 <code>$PATH</code> 环境变量中。这将会影响 <code>composer</code> 这个命令是否可用.
+路径 <code>- HOME/local/bin</code> (或是你选择的路径) 应该在你的 <code>- PATH</code> 环境变量中。这将会影响 <code>composer</code> 这个命令是否可用.
 
 当你遇到文档指出执行 Composer 的命令是 <code>php composer.phar install</code>时，你可以使用下面命令替代:
 
@@ -455,9 +452,9 @@ Composer 也可以处理全局依赖和他们的二进制文件。用法很直�
 <pre><code class="language-console" data-lang="console">composer global require phpunit/phpunit</code></pre>
 
 
-这将会创建一个 <code>~/.composer</code> 目录存放全局依赖，要让已安装依赖的二进制命令随处可用，你需要添加 <code>~/.composer/vendor/bin</code> 目录到你的 <code>$PATH</code> 变量。
+这将会创建一个 <code>~/.composer</code> 目录存放全局依赖，要让已安装依赖的二进制命令随处可用，你需要添加 <code>~/.composer/vendor/bin</code> 目录到你的 <code>- PATH</code> 变量。
 
-- [其他学习Composer相关资源](http://getcomposer.org/doc/00-intro.md)
+- [其他学习 Composer 相关资源](http://getcomposer.org/doc/00-intro.md)
 
 
 ## PEAR 介绍
@@ -484,7 +481,7 @@ PEAR 安装扩展包的时候, 是全局安装的, 意味着一旦安装了某�
 
 如果扩展包是托管到别的渠道上, 你需要 <code>发现 (discover)</code> 渠道先, 请见文档 [使用渠道](http://pear.php.net/manual/en/guide.users.commandline.channels.php).
 
-- [关于PEAR的学习](http://pear.php.net/)
+- [关于 PEAR 的学习](http://pear.php.net/)
 ### 使用 Composer 来安装 PEAR 扩展包
 
 如果你正在使用 [Composer](/#composer_and_packagist), 并且你想使用一些 PEAR 的代码, 你可以通过 Composer 来安装 PEAR 扩展包.
@@ -492,44 +489,33 @@ PEAR 安装扩展包的时候, 是全局安装的, 意味着一旦安装了某�
 下面是从 <code>pear2.php.net</code> 安装代码依赖的示例:
 
 
-<pre><code class="language-json" data-lang="json">{
-    &#34;repositories&#34;: [
-        {
-            &#34;type&#34;: &#34;pear&#34;,
-            &#34;url&#34;: &#34;http://pear2.php.net&#34;
-        }
-    ],
-    &#34;require&#34;: {
-        &#34;pear-pear2/PEAR2_Text_Markdown&#34;: &#34;*&#34;,
-        &#34;pear-pear2/PEAR2_HTTP_Request&#34;: &#34;*&#34;
-    }
-}</code></pre>
+<pre><code class="language-json" data-lang="json">{&#34;repositories&#34;:[{&#34;type&#34;:&#34;pear&#34;,&#34;url&#34;:&#34;http://pear2.php.net&#34;}],&#34;require&#34;:{&#34;pear-pear2/PEAR2_Text_Markdown&#34;:&#34;*&#34;,&#34;pear-pear2/PEAR2_HTTP_Request&#34;:&#34;*&#34;}}</code></pre>
 
 
 第一部分 <code>&#34;repositories&#34;</code> 是让 Composer 从哪个渠道去获取扩展包, 然后, <code>&#34;require&#34;</code> 部分使用下面的命名规范:
-        
+ 
 
+<blockquote>            pear-channel/Package        
+</blockquote>
 
-&gt;             pear-channel/Package        
-
-        
+ 
 前缀 “pear” 是为了避免冲突写死的，因为 <code>pear-channel</code> 有可能是任意扩展包名称，所以 <code>channel</code> 的简称（或者是完整 URL）可以用来指引扩展包在哪个 <code>channel</code> 里。
 
 成功安装扩展包以后, 代码会放到项目的 <code>vendor</code> 文件夹中, 并且可以通过加载 Composer 的自动加载器进行加载:
-        
+ 
 
+<blockquote>            vendor/pear-pear2.php.net/PEAR2_HTTP_Request/pear2/HTTP/Request.php        
+</blockquote>
 
-&gt;             vendor/pear-pear2.php.net/PEAR2_HTTP_Request/pear2/HTTP/Request.php        
-
-        
+ 
 在代码里面可以这样使用:
 
 
 <pre><code class="language-php" data-lang="php">&lt;?php
-$request = new pear2\HTTP\Request();</code></pre>
+- request = new pear2\HTTP\Request();</code></pre>
 
 
-- [学习更多PEAR和Composer的使用](http://getcomposer.org/doc/05-repositories.md#pear)
+- [学习更多 PEAR 和 Composer 的使用](http://getcomposer.org/doc/05-repositories.md#pear)
 
 
 [回到顶部](#top)
@@ -555,22 +541,22 @@ PHP 中 DateTime 类的作用是在你读、写、比较或者计算日期和时
 
 
 <pre><code class="language-php" data-lang="php">&lt;?php
-$raw = &#39;22. 11. 1968&#39;;
-$start = DateTime::createFromFormat(&#39;d. m. Y&#39;, $raw);
+- raw = &#39;22. 11. 1968&#39;;
+- start = DateTime::createFromFormat(&#39;d. m. Y&#39;, - raw);
 
-echo &#39;Start date: &#39; . $start-&gt;format(&#39;Y-m-d&#39;) . &#34;\n&#34;;</code></pre>
+echo &#39;Start date: &#39; . - start-&gt;format(&#39;Y-m-d&#39;) . &#34;\n&#34;;</code></pre>
 
 
 对 DateTime 进行计算时可以使用 DateInterval 类。DateTime 类具有例如 <code>add()</code> 和 <code>sub()</code> 等将 DateInterval 当作参数的方法。编写代码时注意不要认为每一天都是由相同的秒数构成的，不论是夏令时（DST）还是时区转换，使用时间戳计算都会遇到问题，应当选择日期间隔。使用 <code>diff()</code> 方法来计算日期之间的间隔，它会返回新的 DateInterval，非常容易进行展示。
 
 
 <pre><code class="language-php" data-lang="php">&lt;?php
-// create a copy of $start and add one month and 6 days
-$end = clone $start;
-$end-&gt;add(new DateInterval(&#39;P1M6D&#39;));
+// create a copy of - start and add one month and 6 days
+- end = clone - start;
+- end-&gt;add(new DateInterval(&#39;P1M6D&#39;));
 
-$diff = $end-&gt;diff($start);
-echo &#39;Difference: &#39; . $diff-&gt;format(&#39;%m month, %d days (total: %a days)&#39;) . &#34;\n&#34;;
+- diff = - end-&gt;diff(- start);
+echo &#39;Difference: &#39; . - diff-&gt;format(&#39;%m month, %d days (total: %a days)&#39;) . &#34;\n&#34;;
 // Difference: 1 month, 6 days (total: 37 days)</code></pre>
 
 
@@ -578,7 +564,7 @@ DateTime 对象之间可以直接进行比较：
 
 
 <pre><code class="language-php" data-lang="php">&lt;?php
-if ($start &lt; $end) {
+if (- start &lt; - end) {
     echo &#34;Start is before end!\n&#34;;
 }</code></pre>
 
@@ -587,19 +573,19 @@ if ($start &lt; $end) {
 
 
 <pre><code class="language-php" data-lang="php">&lt;?php
-// output all thursdays between $start and $end
-$periodInterval = DateInterval::createFromDateString(&#39;first thursday&#39;);
-$periodIterator = new DatePeriod($start, $periodInterval, $end, DatePeriod::EXCLUDE_START_DATE);
-foreach ($periodIterator as $date) {
+// output all thursdays between - start and - end
+- periodInterval = DateInterval::createFromDateString(&#39;first thursday&#39;);
+- periodIterator = new DatePeriod(- start, - periodInterval, - end, DatePeriod::EXCLUDE_START_DATE);
+foreach (- periodIterator as - date) {
     // output each date in the period
-    echo $date-&gt;format(&#39;Y-m-d&#39;) . &#39; &#39;;
+    echo - date-&gt;format(&#39;Y-m-d&#39;) . &#39; &#39;;
 }</code></pre>
 
 
 一个有名的 API 扩展是 [Carbon](http://carbon.nesbot.com)。Carbon 不仅继承了所有 DateTime 类提供的功能，还提供了更多的人性化功能，例如自然语言时间处理、国际化支持、对象之间执行增减算术。
 
-- [阅读DateTime](http://php.net/book.datetime)
-- [阅读日期格式](http://php.net/function.date)(支持的日期字符串格式)
+- [阅读 DateTime](http://php.net/book.datetime)
+- [阅读日期格式](http://php.net/function.date) (支持的日期字符串格式)
 
 
 ## 设计模式
@@ -641,7 +627,7 @@ _本章是由 [Alex Cabal](https://alexcabal.com/) 最初撰写在 [PHP Best Pra
 
 为了确保你的字符串从 PHP 到 MySQL都使用 UTF-8，请检查确认你的数据库和数据表都设定为 <code>utf8mb4</code> 字符集和整理，并且确保你的 PDO 连接请求也使用了 <code>utf8mb4</code> 字符集。请看下方的示例代码，这是 _非常重要_ 的。
 
-请注意为了完整的 UTF-8 支持，你必须使用 <code>utf8mb4</code> 而不是  <code>utf8</code>！你会在进一步阅读中找到原因。
+请注意为了完整的 UTF-8 支持，你必须使用 <code>utf8mb4</code> 而不是 <code>utf8</code>！你会在进一步阅读中找到原因。
 
 ### 浏览器层面的 UTF-8
 
@@ -658,16 +644,16 @@ mb_internal_encoding(&#39;UTF-8&#39;);
 mb_http_output(&#39;UTF-8&#39;);
 
 // Our UTF-8 test string
-$string = &#39;Êl síla erin lû e-govaned vîn.&#39;;
+- string = &#39;Êl síla erin lû e-govaned vîn.&#39;;
 
 // Transform the string in some way with a multibyte function
 // Note how we cut the string at a non-Ascii character for demonstration purposes
-$string = mb_substr($string, 0, 15);
+- string = mb_substr(- string, 0, 15);
 
 // Connect to a database to store the transformed string
 // See the PDO example in this document for more information
 // Note the `charset=utf8mb4` in the Data Source Name (DSN)
-$link = new PDO(
+- link = new PDO(
     &#39;mysql:host=your-hostname;dbname=your-db;charset=utf8mb4&#39;,
     &#39;your-username&#39;,
     &#39;your-password&#39;,
@@ -679,18 +665,18 @@ $link = new PDO(
 
 // Store our transformed string as UTF-8 in our database
 // Your DB and tables are in the utf8mb4 character set and collation, right?
-$handle = $link-&gt;prepare(&#39;insert into ElvishSentences (Id, Body) values (?, ?)&#39;);
-$handle-&gt;bindValue(1, 1, PDO::PARAM_INT);
-$handle-&gt;bindValue(2, $string);
-$handle-&gt;execute();
+- handle = - link-&gt;prepare(&#39;insert into ElvishSentences (Id, Body) values (?, ?)&#39;);
+- handle-&gt;bindValue(1, 1, PDO::PARAM_INT);
+- handle-&gt;bindValue(2, - string);
+- handle-&gt;execute();
 
 // Retrieve the string we just stored to prove it was stored correctly
-$handle = $link-&gt;prepare(&#39;select * from ElvishSentences where Id = ?&#39;);
-$handle-&gt;bindValue(1, 1, PDO::PARAM_INT);
-$handle-&gt;execute();
+- handle = - link-&gt;prepare(&#39;select * from ElvishSentences where Id = ?&#39;);
+- handle-&gt;bindValue(1, 1, PDO::PARAM_INT);
+- handle-&gt;execute();
 
 // Store the result into an object that we&#39;ll output later in our HTML
-$result = $handle-&gt;fetchAll(\PDO::FETCH_OBJ);
+- result = - handle-&gt;fetchAll(\PDO::FETCH_OBJ);
 
 header(&#39;Content-Type: text/html; charset=UTF-8&#39;);
 ?&gt;&lt;!doctype html&gt;
@@ -701,8 +687,8 @@ header(&#39;Content-Type: text/html; charset=UTF-8&#39;);
     &lt;/head&gt;
     &lt;body&gt;
         &lt;?php
-        foreach($result as $row){
-            print($row-&gt;Body);  // This should correctly output our transformed UTF-8 string to the browser
+        foreach(- result as - row){
+            print(- row-&gt;Body);  // This should correctly output our transformed UTF-8 string to the browser
         }
         ?&gt;
     &lt;/body&gt;
@@ -711,16 +697,26 @@ header(&#39;Content-Type: text/html; charset=UTF-8&#39;);
 
 ### Further reading
 
-- [PHP手册：字符串运算符](http://php.net/language.operators.string)
-- [PHP手册：字符串函数](http://php.net/ref.strings)<ul><li>[<code>strpos()</code>](http://php.net/function.strpos)</li><li>[<code>strlen()</code>](http://php.net/function.strlen)</li><li>[<code>substr()</code>](http://php.net/function.substr)</li></ul>
-- [PHP手册：多字节字符串函数](http://php.net/ref.mbstring)<ul><li>[<code>mb_strpos()</code>](http://php.net/function.mb-strpos)</li><li>[<code>mb_strlen()</code>](http://php.net/function.mb-strlen)</li><li>[<code>mb_substr()</code>](http://php.net/function.mb-substr)</li><li>[<code>mb_internal_encoding()</code>](http://php.net/function.mb-internal-encoding)</li><li>[<code>mb_http_output()</code>](http://php.net/function.mb-http-output)</li><li>[<code>htmlentities()</code>](http://php.net/function.htmlentities)</li><li>[<code>htmlspecialchars()</code>](http://php.net/function.htmlspecialchars)</li></ul>
-- [PHPUTF-8Cheatsheet](http://blog.loftdigital.com/blog/php-utf-8-cheatsheet)
-- [HandlingUTF-8withPHP](http://www.phpwact.org/php/i18n/utf-8)
-- [StackOverflow:WhatfactorsmakePHPUnicode-incompatible?](http://stackoverflow.com/questions/571694/what-factors-make-php-unicode-incompatible)
-- [StackOverflow:BestpracticesinPHPandMySQLwithinternationalstrings](http://stackoverflow.com/questions/140728/best-practices-in-php-and-mysql-with-international-strings)
-- [HowtosupportfullUnicodeinMySQLdatabases](http://mathiasbynens.be/notes/mysql-utf8mb4)
-- [BringingUnicodetoPHPwithPortableUTF-8](http://www.sitepoint.com/bringing-unicode-to-php-with-portable-utf8/)
-- [StackOverflow:DOMDocumentloadHTMLdoesnotencodeUTF-8correctly](http://stackoverflow.com/questions/8218230/php-domdocument-loadhtml-not-encoding-utf-8-correctly)
+- [PHP 手册：字符串运算符](http://php.net/language.operators.string)
+- [PHP 手册：字符串函数](http://php.net/ref.strings)
+  - [strpos()](http://php.net/function.strpos)
+  - [strlen()](http://php.net/function.strlen)
+  - [substr()](http://php.net/function.substr)
+- [PHP 手册：多字节字符串函数](http://php.net/ref.mbstring)
+  - [mb_strpos()](http://php.net/function.mb-strpos)
+  - [mb_strlen()](http://php.net/function.mb-strlen)
+  - [mb_substr()](http://php.net/function.mb-substr)
+  - [mb_internal_encoding()](http://php.net/function.mb-internal-encoding)
+  - [mb_http_output()](http://php.net/function.mb-http-output)
+  - [htmlentities()](http://php.net/function.htmlentities)
+  - [htmlspecialchars()](http://php.net/function.htmlspecialchars)
+- [PHP UTF-8 Cheatsheet](http://blog.loftdigital.com/blog/php-utf-8-cheatsheet)
+- [Handling UTF-8 with PHP](http://www.phpwact.org/php/i18n/utf-8)
+- [Stack Overflow: What factors make PHP Unicode-incompatible?](http://stackoverflow.com/questions/571694/what-factors-make-php-unicode-incompatible)
+- [Stack Overflow: Best practices in PHP and MySQL with international strings](http://stackoverflow.com/questions/140728/best-practices-in-php-and-mysql-with-international-strings)
+- [How to support full Unicode in MySQL databases](http://mathiasbynens.be/notes/mysql-utf8mb4)
+- [Bringing Unicode to PHP with Portable UTF-8](http://www.sitepoint.com/bringing-unicode-to-php-with-portable-utf8/)
+- [Stack Overflow: DOMDocument loadHTML does not encode UTF-8 correctly](http://stackoverflow.com/questions/8218230/php-domdocument-loadhtml-not-encoding-utf-8-correctly)
 
 
 ## 国际化（i18n）和本地化（l10n）
@@ -729,57 +725,55 @@ _前置声明：i18n 和 l10n 是使用数字简略拼写方式来实现缩写�
 
 首先，我们需要定义这两个相似的概念，还有相关的概念：
 
-- **Internationalization**国际化：指的是一开始设计一个支持多语言的架构。很多时候这个事情只需要做一次，并且是在项目初始时，不然的话，你可能面临一个项目的重大修改。
-- **Localization**本地化：指的是新语言的添加。基于i18n的架构设计，在每一次新支持一门语言时，我们都需要一点点的去增加翻译的语言。
-- **Pluralization**复数形式：不同语言复数规则不一样，即使是相同语言里也会出现不同复数规则，例如大部分英文名词后面加<code>s为复数，有一些单词如</code>knowledge`就没有复数形式。俄语和塞尔威亚语有两种复数的形式，甚至有一些语言，如斯洛维尼亚语、爱尔兰语和阿拉伯语会存在4、5或者是6种复数形式。
+- **Internationalization** 国际化：指的是一开始设计一个支持多语言的架构。很多时候这个事情只需要做一次，并且是在项目初始时，不然的话，你可能面临一个项目的重大修改。
+- **Localization** 本地化：指的是新语言的添加。基于 i18n 的架构设计，在每一次新支持一门语言时，我们都需要一点点的去增加翻译的语言。
+- **Pluralization** 复数形式：不同语言复数规则不一样，即使是相同语言里也会出现不同复数规则，例如大部分英文名词后面加 s 为复数，有一些单词如 knowledge` 就没有复数形式。俄语和塞尔威亚语有两种复数的形式，甚至有一些语言，如斯洛维尼亚语、爱尔兰语和阿拉伯语会存在 4、5 或者是 6 种复数形式。
 ## 一般实现的方法
 
-最简便的方式是使用数组键值对应的方式如 <code>&lt;h1&gt;&lt;?=$TRANS[&#39;title_about_page&#39;]?&gt;&lt;/h1&gt;</code>，不过在比较正经的项目中，不建议这么做。因为会随着项目代码慢慢变多，维护的难度将会增加，尤其会阻碍后续本地化实施。
+最简便的方式是使用数组键值对应的方式如 <code>&lt;h1&gt;&lt;?=- TRANS[&#39;title_about_page&#39;]?&gt;&lt;/h1&gt;</code>，不过在比较正经的项目中，不建议这么做。因为会随着项目代码慢慢变多，维护的难度将会增加，尤其会阻碍后续本地化实施。
 
-The most classic way and often taken as reference for i18n and l10n is a [Unix tool called <code>gettext</code>](https://en.wikipedia.org/wiki/Gettext). It dates            back to 1995 and is still a complete implementation for translating software. It is pretty easy to get running, while            it still sports powerful supporting tools. It’s about Gettext we will be talking here. Also, to help you not get messy            over the command-line, we will be presenting a great GUI application that can be used to easily update your l10n source            files.
+The most classic way and often taken as reference for i18n and l10n is a [Unix tool called <code>gettext</code>](https://en.wikipedia.org/wiki/Gettext). It dates back to 1995 and is still a complete implementation for translating software. It is pretty easy to get running, while it still sports powerful supporting tools. It’s about Gettext we will be talking here. Also, to help you not get messy over the command-line, we will be presenting a great GUI application that can be used to easily update your l10n source files.
 
 ### Other tools
 
-There are common libraries used that support Gettext and other implementations of i18n. Some of them may seem easier to            install or sport additional features or i18n file formats. In this document, we focus on the tools provided with the            PHP core, but here we list others for completion:
+There are common libraries used that support Gettext and other implementations of i18n. Some of them may seem easier to install or sport additional features or i18n file formats. In this document, we focus on the tools provided with the PHP core, but here we list others for completion:
 
-- [oscarotero/Gettext](https://github.com/oscarotero/Gettext):GettextsupportwithanOOinterface;includesimprovedhelperfunctions,powerfulextractorsforseveralfileformats(someofthemnotsupportednativelybythe<code>gettext</code>command),andcanalsoexporttootherformatsbesides<code>.mo/.po</code>files.Canbeusefulifyouneedtointegrateyourtranslationfilesintootherpartsofthesystem,likeaJavaScriptinterface.
-- [symfony/translation](https://symfony.com/doc/current/components/translation.html):supportsalotofdifferentformats,butrecommendsusingverboseXLIFF’s.Doesn’tincludehelperfunctionsnorabuilt-inextractor,butsupportsplaceholdersusing<code>strtr()</code>internally.
-- [zend/i18n](https://docs.zendframework.com/zend-i18n/translation):supportsarrayandINIfiles,orGettextformats.Implementsacachinglayertosaveyoufromreadingthefilesystemeverytime.Italsoincludesviewhelpers,andlocale-awareinputfiltersandvalidators.However,ithasnomessageextractor.
+- [oscarotero/Gettext](https://github.com/oscarotero/Gettext): Gettext support with an OO interface; includes improved helper functions, powerful extractors for several file formats (some of them not supported natively by the gettext command), and can also export to other formats besides .mo/.po files. Can be useful if you need to integrate your translation files into other parts of the system, like a JavaScript interface.
+- [symfony/translation](https://symfony.com/doc/current/components/translation.html): supports a lot of different formats, but recommends using verbose XLIFF’s. Doesn’t include helper functions nor a built-in extractor, but supports placeholders using strtr() internally.
+- [zend/i18n](https://docs.zendframework.com/zend-i18n/translation): supports array and INI files, or Gettext formats. Implements a caching layer to save you from reading the filesystem every time. It also includes view helpers, and locale-aware input filters and validators. However, it has no message extractor.
 Other frameworks also include i18n modules, but those are not available outside of their codebases:
 
-- [Laravel](https://laravel.com/docs/master/localization)supportsbasicarrayfiles,hasnoautomaticextractorbutincludesa<code>@lang</code>helperfortemplatefiles.
-- [Yii](http://www.yiiframework.com/doc-2.0/guide-tutorial-i18n.html)supportsarray,Gettext,anddatabase-basedtranslation,andincludesamessagesextractor.Itisbackedbythe[<code>Intl</code>](http://br2.php.net/manual/en/intro.intl.php)extension,availablesincePHP5.3,andbasedonthe[ICUproject](http://www.icu-project.org);thisenablesYiitorunpowerfulreplacements,likespellingoutnumbers,formattingdates,times,intervals,currency,andordinals.
-If you decide to go for one of the libraries that provide no extractors, you may want to use the gettext formats, so            you can use the original gettext toolchain (including Poedit) as described in the rest of the chapter.
+- [Laravel](https://laravel.com/docs/master/localization) supports basic array files, has no automatic extractor but includes a @lang helper for template files.
+- [Yii](http://www.yiiframework.com/doc-2.0/guide-tutorial-i18n.html) supports array, Gettext, and database-based translation, and includes a messages extractor. It is backed by the [Intl](http://br2.php.net/manual/en/intro.intl.php) extension, available since PHP 5.3, and based on the [ICU project](http://www.icu-project.org); this enables Yii to run powerful replacements, like spelling out numbers, formatting dates, times, intervals, currency, and ordinals.
+If you decide to go for one of the libraries that provide no extractors, you may want to use the gettext formats, so you can use the original gettext toolchain (including Poedit) as described in the rest of the chapter.
 
 ## Gettext
 
 ### Installation
 
-You might need to install Gettext and the related PHP library by using your package manager, like <code>apt-get</code> or <code>yum</code>.            After installed, enable it by adding <code>extension=gettext.so</code> (Linux/Unix) or <code>extension=php_gettext.dll</code> (Windows) to            your <code>php.ini</code>.
+You might need to install Gettext and the related PHP library by using your package manager, like <code>apt-get</code> or <code>yum</code>. After installed, enable it by adding <code>extension=gettext.so</code> (Linux/Unix) or <code>extension=php_gettext.dll</code> (Windows) to your <code>php.ini</code>.
 
-Here we will also be using [Poedit](https://poedit.net) to create translation files. You will probably find it in your system’s package            manager; it’s available for Unix, Mac, and Windows, and can be [downloaded for free on their website](https://poedit.net/download)            as well.
+Here we will also be using [Poedit](https://poedit.net) to create translation files. You will probably find it in your system’s package manager; it’s available for Unix, Mac, and Windows, and can be [downloaded for free on their website](https://poedit.net/download) as well.
 
 ### Structure
 
 #### Types of files
 
-There are three files you usually deal with while working with gettext. The main ones are PO (Portable Object) and            MO (Machine Object) files, the first being a list of readable “translated objects” and the second, the corresponding            binary to be interpreted by gettext when doing localization. There’s also a POT (Template) file, that simply contains            all existing keys from your source files, and can be used as a guide to generate and update all PO files. Those template            files are not mandatory: depending on the tool you’re using to do l10n, you can go just fine with only PO/MO files.            You’ll always have one pair of PO/MO files per language and region, but only one POT per domain.
+There are three files you usually deal with while working with gettext. The main ones are PO (Portable Object) and MO (Machine Object) files, the first being a list of readable “translated objects” and the second, the corresponding binary to be interpreted by gettext when doing localization. There’s also a POT (Template) file, that simply contains all existing keys from your source files, and can be used as a guide to generate and update all PO files. Those template files are not mandatory: depending on the tool you’re using to do l10n, you can go just fine with only PO/MO files. You’ll always have one pair of PO/MO files per language and region, but only one POT per domain.
 
 ### Domains
 
-There are some cases, in big projects, where you might need to separate translations when the same words convey            different meaning given a context. In those cases, you split them into different _domains_. They’re basically named            groups of POT/PO/MO files, where the filename is the said _translation domain_. Small and medium-sized projects usually,            for simplicity, use only one domain; its name is arbitrary, but we will be using “main” for our code samples.
-
-            In [Symfony](https://symfony.com/doc/current/components/translation.html) projects, for example, domains are used to separate the translation for validation messages.
+There are some cases, in big projects, where you might need to separate translations when the same words convey different meaning given a context. In those cases, you split them into different _domains_. They’re basically named groups of POT/PO/MO files, where the filename is the said _translation domain_. Small and medium-sized projects usually, for simplicity, use only one domain; its name is arbitrary, but we will be using “main” for our code samples. In [Symfony](https://symfony.com/doc/current/components/translation.html) projects, for example, domains are used to separate the translation for validation messages.
 
 #### Locale code
 
-A locale is simply a code that identifies one version of a language. It’s defined following the [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) and            [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) specs: two lower-case letters for the language, optionally followed by an underline and two            upper-case letters identifying the country or regional code. For [rare languages](http://www.gnu.org/software/gettext/manual/gettext.html#Rare-Language-Codes), three letters are used.
+A locale is simply a code that identifies one version of a language. It’s defined following the [ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes) and [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) specs: two lower-case letters for the language, optionally followed by an underline and two upper-case letters identifying the country or regional code. For [rare languages](http://www.gnu.org/software/gettext/manual/gettext.html#Rare-Language-Codes), three letters are used.
 
-For some speakers, the country part may seem redundant. In fact, some languages have dialects in different            countries, such as Austrian German (<code>de_AT</code>) or Brazilian Portuguese (<code>pt_BR</code>). The second part is used to distinguish            between those dialects - when it’s not present, it’s taken as a “generic” or “hybrid” version of the language.
+For some speakers, the country part may seem redundant. In fact, some languages have dialects in different countries, such as Austrian German (<code>de_AT</code>) or Brazilian Portuguese (<code>pt_BR</code>). The second part is used to distinguish between those dialects - when it’s not present, it’s taken as a “generic” or “hybrid” version of the language.
 
 ### Directory structure
 
-To use Gettext, we will need to adhere to a specific structure of folders. First, you’ll need to select an arbitrary            root for your l10n files in your source repository. Inside it, you’ll have a folder for each needed locale, and a fixed            <code>LC_MESSAGES</code> folder that will contain all your PO/MO pairs. Example:
+To use Gettext, we will need to adhere to a specific structure of folders. First, you’ll need to select an arbitrary root for your l10n files in your source repository. Inside it, you’ll have a folder for each needed locale, and a fixed <code>LC_MESSAGES</code> folder that will contain all your PO/MO pairs. Example:
 
 
 <pre><code class="language-console" data-lang="console">&lt;project root&gt;
@@ -807,20 +801,20 @@ To use Gettext, we will need to adhere to a specific structure of folders. First
 
 ### Plural forms
 
-As we said in the introduction, different languages might sport different plural rules. However, gettext saves us from            this trouble once again. When creating a new <code>.po</code> file, you’ll have to declare the [plural rules](http://docs.translatehouse.org/projects/localization-guide/en/latest/l10n/pluralforms.html) for that            language, and translated pieces that are plural-sensitive will have a different form for each of those rules. When            calling Gettext in code, you’ll have to specify the number related to the sentence, and it will work out the correct            form to use - even using string substitution if needed.
+As we said in the introduction, different languages might sport different plural rules. However, gettext saves us from this trouble once again. When creating a new <code>.po</code> file, you’ll have to declare the [plural rules](http://docs.translatehouse.org/projects/localization-guide/en/latest/l10n/pluralforms.html) for that language, and translated pieces that are plural-sensitive will have a different form for each of those rules. When calling Gettext in code, you’ll have to specify the number related to the sentence, and it will work out the correct form to use - even using string substitution if needed.
 
-Plural rules include the number of plurals available and a boolean test with <code>n</code> that would define in which rule the            given number falls (starting the count with 0). For example:
+Plural rules include the number of plurals available and a boolean test with <code>n</code> that would define in which rule the given number falls (starting the count with 0). For example:
 
-- Japanese:<code>nplurals=1;plural=0</code>-onlyonerule
-- English:<code>nplurals=2;plural=(n!=1);</code>-tworules,firstifNisone,secondruleotherwise
-- BrazilianPortuguese:<code>nplurals=2;plural=(n&gt;1);</code>-tworules,secondifNisbiggerthanone,firstotherwise
-Now that you understood the basis of how plural rules works - and if you didn’t, please look at a deeper explanation            on the [LingoHub tutorial](https://lingohub.com/blog/2013/07/php-internationalization-with-gettext-tutorial/#Plurals) -, you might want to copy the ones you need from a [list](http://docs.translatehouse.org/projects/localization-guide/en/latest/l10n/pluralforms.html) instead            of writing them by hand.
+- Japanese: nplurals=1; plural=0 - only one rule
+- English: nplurals=2; plural=(n != 1); - two rules, first if N is one, second rule otherwise
+- Brazilian Portuguese: nplurals=2; plural=(n &gt; 1); - two rules, second if N is bigger than one, first otherwise
+Now that you understood the basis of how plural rules works - and if you didn’t, please look at a deeper explanation on the [LingoHub tutorial](https://lingohub.com/blog/2013/07/php-internationalization-with-gettext-tutorial/#Plurals) -, you might want to copy the ones you need from a [list](http://docs.translatehouse.org/projects/localization-guide/en/latest/l10n/pluralforms.html) instead of writing them by hand.
 
-When calling out Gettext to do localization on sentences with counters, you’ll have to give him the            related number as well. Gettext will work out what rule should be in effect and use the correct localized version.            You will need to include in the <code>.po</code> file a different sentence for each plural rule defined.
+When calling out Gettext to do localization on sentences with counters, you’ll have to give him the related number as well. Gettext will work out what rule should be in effect and use the correct localized version. You will need to include in the <code>.po</code> file a different sentence for each plural rule defined.
 
 ### Sample implementation
 
-After all that theory, let’s get a little practical. Here’s an excerpt of a <code>.po</code> file - don’t mind with its format,            but instead the overall content, you’ll learn how to edit it easily later:
+After all that theory, let’s get a little practical. Here’s an excerpt of a <code>.po</code> file - don’t mind with its format, but instead the overall content, you’ll learn how to edit it easily later:
 
 
 <pre><code class="language-po" data-lang="po">msgid &#34;&#34;
@@ -832,8 +826,8 @@ msgstr &#34;&#34;
 msgid &#34;We&#39;re now translating some strings&#34;
 msgstr &#34;Nós estamos traduzindo algumas strings agora&#34;
 
-msgid &#34;Hello %1$s! Your last visit was on %2$s&#34;
-msgstr &#34;Olá %1$s! Sua última visita foi em %2$s&#34;
+msgid &#34;Hello %1- s! Your last visit was on %2- s&#34;
+msgstr &#34;Olá %1- s! Sua última visita foi em %2- s&#34;
 
 msgid &#34;Only one unread message&#34;
 msgid_plural &#34;%d unread messages&#34;
@@ -841,48 +835,42 @@ msgstr[0] &#34;Só uma mensagem não lida&#34;
 msgstr[1] &#34;%d mensagens não lidas&#34;</code></pre>
 
 
-The first section works like a header, having the <code>msgid</code> and <code>msgstr</code> especially empty. It describes the file encoding,            plural forms and other things that are less relevant.            The second section translates a simple string from English to            Brazilian Portuguese, and the third does the same, but leveraging string replacement from [<code>sprintf</code>](http://php.net/manual/en/function.sprintf.php) so the            translation may contain the user name and visit date.
-
-            The last section is a sample of pluralization forms, displaying            the singular and plural version as <code>msgid</code> in English and their corresponding translations as <code>msgstr</code> 0 and 1            (following the number given by the plural rule). There, string replacement is used as well so the number can be seen            directly in the sentence, by using <code>%d</code>. The plural forms always have two <code>msgid</code> (singular and plural), so it’s            advised to not use a complex language as the source of translation.
+The first section works like a header, having the <code>msgid</code> and <code>msgstr</code> especially empty. It describes the file encoding, plural forms and other things that are less relevant. The second section translates a simple string from English to Brazilian Portuguese, and the third does the same, but leveraging string replacement from [<code>sprintf</code>](http://php.net/manual/en/function.sprintf.php) so the translation may contain the user name and visit date. The last section is a sample of pluralization forms, displaying the singular and plural version as <code>msgid</code> in English and their corresponding translations as <code>msgstr</code> 0 and 1 (following the number given by the plural rule). There, string replacement is used as well so the number can be seen directly in the sentence, by using <code>%d</code>. The plural forms always have two <code>msgid</code> (singular and plural), so it’s advised to not use a complex language as the source of translation.
 
 ### Discussion on l10n keys
 
-As you might have noticed, we’re using as source ID the actual sentence in English. That <code>msgid</code> is the same used            throughout all your <code>.po</code> files, meaning other languages will have the same format and the same <code>msgid</code> fields but            translated <code>msgstr</code> lines.
+As you might have noticed, we’re using as source ID the actual sentence in English. That <code>msgid</code> is the same used throughout all your <code>.po</code> files, meaning other languages will have the same format and the same <code>msgid</code> fields but translated <code>msgstr</code> lines.
 
 Talking about translation keys, there are two main “schools” here:
-
-- _<code>msgid</code>asarealsentence_.
-
-Themainadvantagesare:
-- iftherearepiecesofthesoftwareuntranslatedinanygivenlanguage,thekeydisplayedwillstillmaintainsomemeaning.Example:ifyouhappentotranslatebyheartfromEnglishtoSpanishbutneedhelptotranslatetoFrench,youmightpublishthenewpagewithmissingFrenchsentences,andpartsofthewebsitewouldbedisplayedinEnglishinstead;
-- it’smucheasierforthetranslatortounderstandwhat’sgoingonandmakeapropertranslationbasedonthe<code>msgid</code>;
-- itgivesyou“free”l10nforonelanguage-thesourceone;
-- Theonlydisadvantage:ifyouneedtochangetheactualtext,youwouldneedtoreplacethesame<code>msgid</code>acrossseverallanguagefiles.
-- _<code>msgid</code>asaunique,structuredkey_.
-
-Itwoulddescribethesentenceroleintheapplicationinastructuredway,includingthetemplateorpartwherethestringislocatedinsteadofitscontent.
-- it’sagreatwaytohavethecodeorganized,separatingthetextcontentfromthetemplatelogic.
-- however,thatcouldbringproblemstothetranslatorthatwouldmissthecontext.Asourcelanguagefilewouldbeneededasabasisforothertranslations.Example:thedeveloperwouldideallyhavean<code>en.po</code>file,thattranslatorswouldreadtounderstandwhattowritein<code>fr.po</code>forinstance.
-- missingtranslationswoulddisplaymeaninglesskeysonscreen(<code>top_menu.welcome</code>insteadof<code>Hellothere,User!</code>onthesaiduntranslatedFrenchpage).That’sgooditaswouldforcetranslationtobecompletebeforepublishing-butbadastranslationissueswouldbereallyawfulintheinterface.Somelibraries,though,includeanoptiontospecifyagivenlanguageas“fallback”,havingasimilarbehaviorastheotherapproach.
-The [Gettext manual](http://www.gnu.org/software/gettext/manual/gettext.html) favors the first approach as, in general, it’s easier for translators and users in            case of trouble. That’s how we will be working here as well. However, the [Symfony documentation](https://symfony.com/doc/current/components/translation/usage.html#creating-translations) favors            keyword-based translation, to allow for independent changes of all translations without affecting templates as well.
+<ol>
+- _msgid as a real sentence_. The main advantages are: 
+  - if there are pieces of the software untranslated in any given language, the key displayed will still maintain some meaning. Example: if you happen to translate by heart from English to Spanish but need help to translate to French, you might publish the new page with missing French sentences, and parts of the website would be displayed in English instead;
+  - it’s much easier for the translator to understand what’s going on and make a proper translation based on the msgid;
+  - it gives you “free” l10n for one language - the source one;
+  - The only disadvantage: if you need to change the actual text, you would need to replace the same msgid across several language files.
+- _msgid as a unique, structured key_. It would describe the sentence role in the application in a structured way, including the template or part where the string is located instead of its content. 
+  - it’s a great way to have the code organized, separating the text content from the template logic.
+  - however, that could bring problems to the translator that would miss the context. A source language file would be needed as a basis for other translations. Example: the developer would ideally have an en.po file, that translators would read to understand what to write in fr.po for instance.
+  - missing translations would display meaningless keys on screen (top_menu.welcome instead of Hello there, User! on the said untranslated French page). That’s good it as would force translation to be complete before publishing - but bad as translation issues would be really awful in the interface. Some libraries, though, include an option to specify a given language as “fallback”, having a similar behavior as the other approach.</ol>
+The [Gettext manual](http://www.gnu.org/software/gettext/manual/gettext.html) favors the first approach as, in general, it’s easier for translators and users in case of trouble. That’s how we will be working here as well. However, the [Symfony documentation](https://symfony.com/doc/current/components/translation/usage.html#creating-translations) favors keyword-based translation, to allow for independent changes of all translations without affecting templates as well.
 
 ### Everyday usage
 
-In a common application, you would use some Gettext functions while writing static text in your pages. Those sentences            would then appear in <code>.po</code> files, get translated, compiled into <code>.mo</code> files and then, used by Gettext when rendering            the actual interface. Given that, let’s tie together what we have discussed so far in a step-by-step example:
+In a common application, you would use some Gettext functions while writing static text in your pages. Those sentences would then appear in <code>.po</code> files, get translated, compiled into <code>.mo</code> files and then, used by Gettext when rendering the actual interface. Given that, let’s tie together what we have discussed so far in a step-by-step example:
 
 #### 1. A sample template file, including some different gettext calls
 
 
 <pre><code class="language-php" data-lang="php">&lt;?php include &#39;i18n_setup.php&#39; ?&gt;
 &lt;div id=&#34;header&#34;&gt;
-    &lt;h1&gt;&lt;?=sprintf(gettext(&#39;Welcome, %s!&#39;), $name)?&gt;&lt;/h1&gt;
+    &lt;h1&gt;&lt;?=sprintf(gettext(&#39;Welcome, %s!&#39;), - name)?&gt;&lt;/h1&gt;
     &lt;!-- code indented this way only for legibility --&gt;
-    &lt;?php if ($unread): ?&gt;
+    &lt;?php if (- unread): ?&gt;
         &lt;h2&gt;&lt;?=sprintf(
             ngettext(&#39;Only one unread message&#39;,
                      &#39;%d unread messages&#39;,
-                     $unread),
-            $unread)?&gt;
+                     - unread),
+            - unread)?&gt;
         &lt;/h2&gt;
     &lt;?php endif ?&gt;
 &lt;/div&gt;
@@ -891,49 +879,49 @@ In a common application, you would use some Gettext functions while writing stat
 &lt;p&gt;&lt;?=gettext(&#39;We\&#39;re now translating some strings&#39;)?&gt;&lt;/p&gt;</code></pre>
 
 
-- [<code>gettext()</code>](http://php.net/manual/en/function.gettext.php)simplytranslatesa<code>msgid</code>intoitscorresponding<code>msgstr</code>foragivenlanguage.There’salsotheshorthandfunction<code>_()</code>thatworksthesameway;
-- [<code>ngettext()</code>](http://php.net/manual/en/function.ngettext.php)doesthesamebutwithpluralrules;
-- there’salso[<code>dgettext()</code>](http://php.net/manual/en/function.dgettext.php)and[<code>dngettext()</code>](http://php.net/manual/en/function.dngettext.php),thatallowsyoutooverridethedomainforasinglecall.Moreondomainconfigurationinthenextexample.
+- [gettext()](http://php.net/manual/en/function.gettext.php) simply translates a msgid into its corresponding msgstr for a given language. There’s also the shorthand function _() that works the same way;
+- [ngettext()](http://php.net/manual/en/function.ngettext.php) does the same but with plural rules;
+- there’s also [dgettext()](http://php.net/manual/en/function.dgettext.php) and [dngettext()](http://php.net/manual/en/function.dngettext.php), that allows you to override the domain for a single call. More on domain configuration in the next example.
 #### 2. A sample setup file (<code>i18n_setup.php</code> as used above), selecting the correct locale and configuring Gettext
 
 
 <pre><code class="language-php" data-lang="php">&lt;?php
 /**
- * Verifies if the given $locale is supported in the project
- * @param string $locale
+ * Verifies if the given - locale is supported in the project
+ * @param string - locale
  * @return bool
  */
-function valid($locale) {
-   return in_array($locale, [&#39;en_US&#39;, &#39;en&#39;, &#39;pt_BR&#39;, &#39;pt&#39;, &#39;es_ES&#39;, &#39;es&#39;);
+function valid(- locale) {
+   return in_array(- locale, [&#39;en_US&#39;, &#39;en&#39;, &#39;pt_BR&#39;, &#39;pt&#39;, &#39;es_ES&#39;, &#39;es&#39;);
 }
 
 //setting the source/default locale, for informational purposes
-$lang = &#39;en_US&#39;;
+- lang = &#39;en_US&#39;;
 
-if (isset($_GET[&#39;lang&#39;]) &amp;&amp; valid($_GET[&#39;lang&#39;])) {
+if (isset(- _GET[&#39;lang&#39;]) &amp;&amp; valid(- _GET[&#39;lang&#39;])) {
     // the locale can be changed through the query-string
-    $lang = $_GET[&#39;lang&#39;];    //you should sanitize this!
-    setcookie(&#39;lang&#39;, $lang); //it&#39;s stored in a cookie so it can be reused
-} elseif (isset($_COOKIE[&#39;lang&#39;]) &amp;&amp; valid($_COOKIE[&#39;lang&#39;])) {
+    - lang = - _GET[&#39;lang&#39;];    //you should sanitize this!
+    setcookie(&#39;lang&#39;, - lang); //it&#39;s stored in a cookie so it can be reused
+} elseif (isset(- _COOKIE[&#39;lang&#39;]) &amp;&amp; valid(- _COOKIE[&#39;lang&#39;])) {
     // if the cookie is present instead, let&#39;s just keep it
-    $lang = $_COOKIE[&#39;lang&#39;]; //you should sanitize this!
-} elseif (isset($_SERVER[&#39;HTTP_ACCEPT_LANGUAGE&#39;])) {
+    - lang = - _COOKIE[&#39;lang&#39;]; //you should sanitize this!
+} elseif (isset(- _SERVER[&#39;HTTP_ACCEPT_LANGUAGE&#39;])) {
     // default: look for the languages the browser says the user accepts
-    $langs = explode(&#39;,&#39;, $_SERVER[&#39;HTTP_ACCEPT_LANGUAGE&#39;]);
-    array_walk($langs, function (&amp;$lang) { $lang = strtr(strtok($lang, &#39;;&#39;), [&#39;-&#39; =&gt; &#39;_&#39;]); });
-    foreach ($langs as $browser_lang) {
-        if (valid($browser_lang)) {
-            $lang = $browser_lang;
+    - langs = explode(&#39;,&#39;, - _SERVER[&#39;HTTP_ACCEPT_LANGUAGE&#39;]);
+    array_walk(- langs, function (&amp;- lang) { - lang = strtr(strtok(- lang, &#39;;&#39;), [&#39;-&#39; =&gt; &#39;_&#39;]); });
+    foreach (- langs as - browser_lang) {
+        if (valid(- browser_lang)) {
+            - lang = - browser_lang;
             break;
         }
     }
 }
 
 // here we define the global system locale given the found language
-putenv(&#34;LANG=$lang&#34;);
+putenv(&#34;LANG=- lang&#34;);
 
 // this might be useful for date functions (LC_TIME) or money formatting (LC_MONETARY), for instance
-setlocale(LC_ALL, $lang);
+setlocale(LC_ALL, - lang);
 
 // this will make Gettext look for ../locales/&lt;lang&gt;/LC_MESSAGES/main.mo
 bindtextdomain(&#39;main&#39;, &#39;../locales&#39;);
@@ -955,52 +943,50 @@ textdomain(&#39;main&#39;);
 
 #### 3. Preparing translation for the first run
 
-To make matters easier - and one of the powerful advantages Gettext has over custom framework i18n packages - is its            custom file type. “Oh man, that’s quite hard to understand and edit by hand, a simple array would be easier!” Make no            mistake, applications like [Poedit](https://poedit.net) are here to help - _a lot_. You can get the program from            [their website](https://poedit.net/download), it’s free and available for all platforms. It’s a pretty easy tool to get used to,            and a very powerful one at the same time - using all powerful features Gettext has available.
+To make matters easier - and one of the powerful advantages Gettext has over custom framework i18n packages - is its custom file type. “Oh man, that’s quite hard to understand and edit by hand, a simple array would be easier!” Make no mistake, applications like [Poedit](https://poedit.net) are here to help - _a lot_. You can get the program from [their website](https://poedit.net/download), it’s free and available for all platforms. It’s a pretty easy tool to get used to, and a very powerful one at the same time - using all powerful features Gettext has available.
 
-In the first run, you should select “File &gt; New Catalog” from the menu. There you’ll have a small screen where we will            set the terrain so everything else runs smoothly. You’ll be able to find those settings later through            “Catalog &gt; Properties”:
+In the first run, you should select “File &gt; New Catalog” from the menu. There you’ll have a small screen where we will set the terrain so everything else runs smoothly. You’ll be able to find those settings later through “Catalog &gt; Properties”:
 
-- Projectnameandversion,TranslationTeamandemailaddress:usefulinformationthatgoesinthe<code>.po</code>fileheader;
-- Language:hereyoushouldusethatformatwementionedbefore,suchas<code>en_US</code>or<code>pt_BR</code>;
-- Charsets:UTF-8,preferably;
-- Sourcecharset:setherethecharsetusedbyyourPHPfiles-probablyUTF-8aswell,right?
-- pluralforms:heregothoseruleswementionedbefore-there’salinkintherewithsamplesaswell;
-- Sourcepaths:hereyoumustincludeallfoldersfromtheprojectwhere<code>gettext()</code>(andsiblings)willhappen-thisisusuallyyourtemplatesfolder(s)
-- Sourcekeywords:thislastpartisfilledbydefault,butyoumightneedtoalteritlater-andisoneofthepowerfulpointsofGettext.Theunderlyingsoftwareknowshowthe<code>gettext()</code>callslooklikeinseveralprogramminglanguages,butyoumightaswellcreateyourowntranslationforms.Thiswillbediscussedlaterinthe“Tips”section.
-After setting those points you’ll be prompted to save the file - using that directory structure we mentioned as well,            and then it will run a scan through your source files to find the localization calls. They’ll be fed empty into the            translation table, and you’ll start typing in the localized versions of those strings. Save it and a <code>.mo</code> file will be            (re)compiled into the same folder and ta-dah: your project is internationalized.
+- Project name and version, Translation Team and email address: useful information that goes in the .po file header;
+- Language: here you should use that format we mentioned before, such as en_US or pt_BR;
+- Charsets: UTF-8, preferably;
+- Source charset: set here the charset used by your PHP files - probably UTF-8 as well, right?
+- plural forms: here go those rules we mentioned before - there’s a link in there with samples as well;
+- Source paths: here you must include all folders from the project where gettext() (and siblings) will happen - this is usually your templates folder(s)
+- Source keywords: this last part is filled by default, but you might need to alter it later - and is one of the powerful points of Gettext. The underlying software knows how the gettext() calls look like in several programming languages, but you might as well create your own translation forms. This will be discussed later in the “Tips” section.
+After setting those points you’ll be prompted to save the file - using that directory structure we mentioned as well, and then it will run a scan through your source files to find the localization calls. They’ll be fed empty into the translation table, and you’ll start typing in the localized versions of those strings. Save it and a <code>.mo</code> file will be (re)compiled into the same folder and ta-dah: your project is internationalized.
 
 #### 4. Translating strings
 
-As you may have noticed before, there are two main types of localized strings: simple ones and the ones with plural            forms. The first ones have simply two boxes: source and localized string. The source string can’t be modified as            Gettext/Poedit do not include the powers to alter your source files - you should change the source itself and rescan            the files. Tip: you may right-click a translation line and it will hint you with the source files and lines where that            string is being used.
+As you may have noticed before, there are two main types of localized strings: simple ones and the ones with plural forms. The first ones have simply two boxes: source and localized string. The source string can’t be modified as Gettext/Poedit do not include the powers to alter your source files - you should change the source itself and rescan the files. Tip: you may right-click a translation line and it will hint you with the source files and lines where that string is being used. On the other hand, plural form strings include two boxes to show the two source strings, and tabs so you can configure the different final forms.
 
-            On the other hand, plural form strings include two boxes to show the two source strings, and tabs so you can configure            the different final forms.
+Whenever you change your sources and need to update the translations, just hit Refresh and Poedit will rescan the code, removing non-existent entries, merging the ones that changed and adding new ones. It may also try to guess some translations, based on other ones you did. Those guesses and the changed entries will receive a “Fuzzy” marker, indicating it needs review, being highlighted in the list. It’s also useful if you have a translation team and someone tries to write something they’re not sure about: just mark Fuzzy and someone else will review later.
 
-Whenever you change your sources and need to update the translations, just hit Refresh and Poedit will rescan the code,            removing non-existent entries, merging the ones that changed and adding new ones. It may also try to guess some            translations, based on other ones you did. Those guesses and the changed entries will receive a “Fuzzy” marker,            indicating it needs review, being highlighted in the list. It’s also useful if you have a translation team and someone            tries to write something they’re not sure about: just mark Fuzzy and someone else will review later.
-
-Finally, it’s advised to leave “View &gt; Untranslated entries first” marked, as it will help you _a lot_ to not forget            any entry. From that menu, you can also open parts of the UI that allow you to leave contextual information for            translators if needed.
+Finally, it’s advised to leave “View &gt; Untranslated entries first” marked, as it will help you _a lot_ to not forget any entry. From that menu, you can also open parts of the UI that allow you to leave contextual information for translators if needed.
 
 ### Tips &amp; Tricks
 
 #### Possible caching issues
 
-If you’re running PHP as a module on Apache (<code>mod_php</code>), you might face issues with the <code>.mo</code> file being cached. It            happens the first time it’s read, and then, to update it, you might need to restart the server. On Nginx and PHP5 it            usually takes only a couple of page refreshes to refresh the translation cache, and on PHP7 it is rarely needed.
+If you’re running PHP as a module on Apache (<code>mod_php</code>), you might face issues with the <code>.mo</code> file being cached. It happens the first time it’s read, and then, to update it, you might need to restart the server. On Nginx and PHP5 it usually takes only a couple of page refreshes to refresh the translation cache, and on PHP7 it is rarely needed.
 
 #### Additional helper functions
 
-As preferred by many people, it’s easier to use <code>_()</code> instead of <code>gettext()</code>. Many custom i18n libraries from            frameworks use something similar to <code>t()</code> as well, to make translated code shorter. However, that’s the only function            that sports a shortcut. You might want to add in your project some others, such as <code>__()</code> or <code>_n()</code> for <code>ngettext()</code>,            or maybe a fancy <code>_r()</code> that would join <code>gettext()</code> and <code>sprintf()</code> calls. Other libraries, such as            [oscarotero’s Gettext](https://github.com/oscarotero/Gettext) also provide helper functions like these.
+As preferred by many people, it’s easier to use <code>_()</code> instead of <code>gettext()</code>. Many custom i18n libraries from frameworks use something similar to <code>t()</code> as well, to make translated code shorter. However, that’s the only function that sports a shortcut. You might want to add in your project some others, such as <code>__()</code> or <code>_n()</code> for <code>ngettext()</code>, or maybe a fancy <code>_r()</code> that would join <code>gettext()</code> and <code>sprintf()</code> calls. Other libraries, such as [oscarotero’s Gettext](https://github.com/oscarotero/Gettext) also provide helper functions like these.
 
-In those cases, you’ll need to instruct the Gettext utility on how to extract the strings from those new functions.            Don’t be afraid, it’s very easy. It’s just a field in the <code>.po</code> file, or a Settings screen on Poedit. In the editor,            that option is inside “Catalog &gt; Properties &gt; Source keywords”. You need to include there the specifications of those            new functions, following [a specific format](https://www.gnu.org/software/gettext/manual/gettext.html#Language-specific-options):
+In those cases, you’ll need to instruct the Gettext utility on how to extract the strings from those new functions. Don’t be afraid, it’s very easy. It’s just a field in the <code>.po</code> file, or a Settings screen on Poedit. In the editor, that option is inside “Catalog &gt; Properties &gt; Source keywords”. You need to include there the specifications of those new functions, following [a specific format](https://www.gnu.org/software/gettext/manual/gettext.html#Language-specific-options):
 
-- ifyoucreatesomethinglike<code>t()</code>thatsimplyreturnsthetranslationforastring,youcanspecifyitas<code>t</code>.Gettextwillknowtheonlyfunctionargumentisthestringtobetranslated;
-- ifthefunctionhasmorethanoneargument,youcanspecifyinwhichonethefirststringis-andifneeded,thepluralformaswell.Forinstance,ifwecallourfunctionlikethis:<code>__(&#39;oneuser&#39;,&#39;%dusers&#39;,$number)</code>,thespecificationwouldbe<code>__:1,2</code>,meaningthefirstformisthefirstargument,andthesecondformisthesecondargument.Ifyournumbercomesasthefirstargumentinstead,thespecwouldbe<code>__:2,3</code>,indicatingthefirstformisthesecondargument,andsoon.
+- if you create something like t() that simply returns the translation for a string, you can specify it as t. Gettext will know the only function argument is the string to be translated;
+- if the function has more than one argument, you can specify in which one the first string is - and if needed, the plural form as well. For instance, if we call our function like this: __(&#39;one user&#39;, &#39;%d users&#39;, - number), the specification would be __:1,2, meaning the first form is the first argument, and the second form is the second argument. If your number comes as the first argument instead, the spec would be __:2,3, indicating the first form is the second argument, and so on.
 After including those new rules in the <code>.po</code> file, a new scan will bring in your new strings just as easy as before.
 
 ### References
 
-- [Wikipedia:i18nandl10n](https://en.wikipedia.org/wiki/Internationalization_and_localization)
-- [Wikipedia:Gettext](https://en.wikipedia.org/wiki/Gettext)
-- [LingoHub:PHPinternationalizationwithgettexttutorial](https://lingohub.com/blog/2013/07/php-internationalization-with-gettext-tutorial/)
-- [PHPManual:Gettext](http://php.net/manual/en/book.gettext.php)
-- [GettextManual](http://www.gnu.org/software/gettext/manual/gettext.html)
+- [Wikipedia: i18n and l10n](https://en.wikipedia.org/wiki/Internationalization_and_localization)
+- [Wikipedia: Gettext](https://en.wikipedia.org/wiki/Gettext)
+- [LingoHub: PHP internationalization with gettext tutorial](https://lingohub.com/blog/2013/07/php-internationalization-with-gettext-tutorial/)
+- [PHP Manual: Gettext](http://php.net/manual/en/book.gettext.php)
+- [Gettext Manual](http://www.gnu.org/software/gettext/manual/gettext.html)
 
 
 [回到顶部](#top)
@@ -1010,12 +996,12 @@ After including those new rules in the <code>.po</code> file, a new scan will br
 # 依赖注入
 
 出自维基百科 [Wikipedia](http://en.wikipedia.org/wiki/Dependency_injection):
-        
+ 
 
+<blockquote>            依赖注入是一种允许我们从硬编码的依赖中解耦出来，从而在运行时或者编译时能够修改的软件设计模式。        
+</blockquote>
 
-&gt;             依赖注入是一种允许我们从硬编码的依赖中解耦出来，从而在运行时或者编译时能够修改的软件设计模式。        
-
-        
+ 
 这句解释让依赖注入的概念听起来比它实际要复杂很多。依赖注入通过构造注入，函数调用或者属性的设置来提供组件的依赖关系。就是这么简单。
 
 
@@ -1032,11 +1018,11 @@ namespace Database;
 
 class Database
 {
-    protected $adapter;
+    protected - adapter;
 
     public function __construct()
     {
-        $this-&gt;adapter = new MySqlAdapter;
+        - this-&gt;adapter = new MySqlAdapter;
     }
 }
 
@@ -1051,18 +1037,18 @@ namespace Database;
 
 class Database
 {
-    protected $adapter;
+    protected - adapter;
 
-    public function __construct(MySqlAdapter $adapter)
+    public function __construct(MySqlAdapter - adapter)
     {
-        $this-&gt;adapter = $adapter;
+        - this-&gt;adapter = - adapter;
     }
 }
 
 class MysqlAdapter {}</code></pre>
 
 
-现在我们通过外界给予 <code>Database</code> 类的依赖，而不是让它自己产生依赖的对象。我们甚至能用可以接受依赖对象参数的成员函数来设置，或者如果 <code>$adapter</code> 属性本身是 <code>public</code>的，我们可以直接给它赋值。
+现在我们通过外界给予 <code>Database</code> 类的依赖，而不是让它自己产生依赖的对象。我们甚至能用可以接受依赖对象参数的成员函数来设置，或者如果 <code>- adapter</code> 属性本身是 <code>public</code>的，我们可以直接给它赋值。
 
 
 
@@ -1088,11 +1074,11 @@ namespace Database;
 
 class Database
 {
-    protected $adapter;
+    protected - adapter;
 
-    public function __construct(AdapterInterface $adapter)
+    public function __construct(AdapterInterface - adapter)
     {
-        $this-&gt;adapter = $adapter;
+        - this-&gt;adapter = - adapter;
     }
 }
 
@@ -1119,11 +1105,11 @@ class MysqlAdapter implements AdapterInterface {}</code></pre>
 
 ## 延伸阅读
 
-- [LearningaboutDependencyInjectionandPHP](http://ralphschindler.com/2011/05/18/learning-about-dependency-injection-and-php)
-- [WhatisDependencyInjection?](http://fabien.potencier.org/article/11/what-is-dependency-injection)
-- [DependencyInjection:Ananalogy](https://mwop.net/blog/260-Dependency-Injection-An-analogy.html)
-- [DependencyInjection:Huh?](http://net.tutsplus.com/tutorials/php/dependency-injection-huh/)
-- [DependencyInjectionasatoolfortesting](http://philipobenito.github.io/dependency-injection-as-a-tool-for-testing/)
+- [Learning about Dependency Injection and PHP](http://ralphschindler.com/2011/05/18/learning-about-dependency-injection-and-php)
+- [What is Dependency Injection?](http://fabien.potencier.org/article/11/what-is-dependency-injection)
+- [Dependency Injection: An analogy](https://mwop.net/blog/260-Dependency-Injection-An-analogy.html)
+- [Dependency Injection: Huh?](http://net.tutsplus.com/tutorials/php/dependency-injection-huh/)
+- [Dependency Injection as a tool for testing](http://philipobenito.github.io/dependency-injection-as-a-tool-for-testing/)
 
 
 [回到顶部](#top)
@@ -1146,14 +1132,14 @@ class MysqlAdapter implements AdapterInterface {}</code></pre>
 - [pdo](http://php.net/pdo)
 PHP 中的 [mysql](http://php.net/mysql) 扩展已经不再进行新的开发了，[在 PHP 5.5.0 版本中正式标记为废弃](http://php.net/migration55.deprecated)，并在 **[7.0 正式被移除](http://php.net/manual/en/migration70.removed-exts-sapis.php)** 。
 
-想要辨别 <code>mysql</code> 是否被使用，你不需要到 <code>php.ini</code> 去查看。只需要使用编辑器打开你的项目，然后全局搜索 <code>mysql_*</code>            ，如果有类似 <code>mysql_connect()</code> 或者 <code>mysql_query()</code> 方法出现，那么你就使用了 <code>mysql</code>。
+想要辨别 <code>mysql</code> 是否被使用，你不需要到 <code>php.ini</code> 去查看。只需要使用编辑器打开你的项目，然后全局搜索 <code>mysql_*</code> ，如果有类似 <code>mysql_connect()</code> 或者 <code>mysql_query()</code> 方法出现，那么你就使用了 <code>mysql</code>。
 
 如果因为特别原因还未考虑升级到 PHP 7.x 的话，可以考虑使用 [mysqli](http://php.net/mysqli) 或者 [PDO](http://php.net/pdo) 来临时解决问题。
 
 **如果你是从 [mysql](http://php.net/mysql) 升级到 [mysqli](http://php.net/mysqli)，请尽量不要使用全局替换 <code>mysql_*</code> 为 <code>mysqli_*</code>。你会错过 mysqli 提供的一些优秀特性，如数据参数绑定，此功能能有效的防止 SQL 注入攻击。[PDO](http://php.net/pdo) 也提供此功能。**
 
-- [PHP:MySQL增强版扩展](http://php.net/mysqlinfo.api.choosing)
-- [MySQL开发者PDO使用教程](http://wiki.hashphp.org/PDO_Tutorial_for_MySQL_Developers)
+- [PHP: MySQL增强版扩展](http://php.net/mysqlinfo.api.choosing)
+- [MySQL 开发者 PDO 使用教程](http://wiki.hashphp.org/PDO_Tutorial_for_MySQL_Developers)
 
 
 ## PDO 扩展
@@ -1163,16 +1149,16 @@ PHP 中的 [mysql](http://php.net/mysql) 扩展已经不再进行新的开发了
 
 <pre><code class="language-php" data-lang="php">&lt;?php
 // PDO + MySQL
-$pdo = new PDO(&#39;mysql:host=example.com;dbname=database&#39;, &#39;user&#39;, &#39;password&#39;);
-$statement = $pdo-&gt;query(&#34;SELECT some_field FROM some_table&#34;);
-$row = $statement-&gt;fetch(PDO::FETCH_ASSOC);
-echo htmlentities($row[&#39;some_field&#39;]);
+- pdo = new PDO(&#39;mysql:host=example.com;dbname=database&#39;, &#39;user&#39;, &#39;password&#39;);
+- statement = - pdo-&gt;query(&#34;SELECT some_field FROM some_table&#34;);
+- row = - statement-&gt;fetch(PDO::FETCH_ASSOC);
+echo htmlentities(- row[&#39;some_field&#39;]);
 
 // PDO + SQLite
-$pdo = new PDO(&#39;sqlite:/path/db/foo.sqlite&#39;);
-$statement = $pdo-&gt;query(&#34;SELECT some_field FROM some_table&#34;);
-$row = $statement-&gt;fetch(PDO::FETCH_ASSOC);
-echo htmlentities($row[&#39;some_field&#39;]);</code></pre>
+- pdo = new PDO(&#39;sqlite:/path/db/foo.sqlite&#39;);
+- statement = - pdo-&gt;query(&#34;SELECT some_field FROM some_table&#34;);
+- row = - statement-&gt;fetch(PDO::FETCH_ASSOC);
+echo htmlentities(- row[&#39;some_field&#39;]);</code></pre>
 
 
 PDO 并不会对 SQL 请求进行转换或者模拟实现并不存在的功能特性；它只是单纯地使用相同的 API 连接不同种类的数据库。
@@ -1183,30 +1169,30 @@ PDO 并不会对 SQL 请求进行转换或者模拟实现并不存在的功能�
 
 
 <pre><code class="language-php" data-lang="php">&lt;?php
-$pdo = new PDO(&#39;sqlite:/path/db/users.db&#39;);
-$pdo-&gt;query(&#34;SELECT name FROM users WHERE id = &#34; . $_GET[&#39;id&#39;]); // &lt;-- NO!</code></pre>
+- pdo = new PDO(&#39;sqlite:/path/db/users.db&#39;);
+- pdo-&gt;query(&#34;SELECT name FROM users WHERE id = &#34; . - _GET[&#39;id&#39;]); // &lt;-- NO!</code></pre>
 
 
-这是一段糟糕的代码。你正在插入一个原始的请求参数到 SQL 请求中。这将让被黑客轻松地利用[SQL 注入]方式进行攻击。想一下如果黑客将一个构造的 <code>id</code> 参数通过像 <code>http://domain.com/?id=1%3BDELETE+FROM+users</code> 这样的 URL 传入。这将会使 <code>$_GET[&#39;id&#39;]</code> 变量的值被设为 <code>1;DELETE
+这是一段糟糕的代码。你正在插入一个原始的请求参数到 SQL 请求中。这将让被黑客轻松地利用[SQL 注入]方式进行攻击。想一下如果黑客将一个构造的 <code>id</code> 参数通过像 <code>http://domain.com/?id=1%3BDELETE+FROM+users</code> 这样的 URL 传入。这将会使 <code>- _GET[&#39;id&#39;]</code> 变量的值被设为 <code>1;DELETE
             FROM users</code> 然后被执行从而删除所有的 user 记录！因此，你应该使用 PDO 限制参数来过滤 ID 输入。
 
 
 <pre><code class="language-php" data-lang="php">&lt;?php
-$pdo = new PDO(&#39;sqlite:/path/db/users.db&#39;);
-$stmt = $pdo-&gt;prepare(&#39;SELECT name FROM users WHERE id = :id&#39;);
-$id = filter_input(INPUT_GET, &#39;id&#39;, FILTER_SANITIZE_NUMBER_INT); // &lt;-- filter your data first (see [Data Filtering](#data_filtering)), especially important for INSERT, UPDATE, etc.
-$stmt-&gt;bindParam(&#39;:id&#39;, $id, PDO::PARAM_INT); // &lt;-- Automatically sanitized for SQL by PDO
-$stmt-&gt;execute();</code></pre>
+- pdo = new PDO(&#39;sqlite:/path/db/users.db&#39;);
+- stmt = - pdo-&gt;prepare(&#39;SELECT name FROM users WHERE id = :id&#39;);
+- id = filter_input(INPUT_GET, &#39;id&#39;, FILTER_SANITIZE_NUMBER_INT); // &lt;-- filter your data first (see [Data Filtering](#data_filtering)), especially important for INSERT, UPDATE, etc.
+- stmt-&gt;bindParam(&#39;:id&#39;, - id, PDO::PARAM_INT); // &lt;-- Automatically sanitized for SQL by PDO
+- stmt-&gt;execute();</code></pre>
 
 
 这是正确的代码。它在一条 PDO 语句中使用了一个限制参数。这将对外部 ID 输入在发送给数据库之前进行转义来防止潜在的 SQL 注入攻击。
 
 对于写入操作，例如 INSERT 或者 UPDATE，进行[数据过滤](#data_filtering)并对其他内容进行清理（去除 HTML 标签，Javascript 等等）是尤其重要的。PDO 只会为 SQL 进行清理，并不会为你的应用做任何处理。
 
-- [了解PDO](http://php.net/book.pdo)
+- [了解 PDO](http://php.net/book.pdo)
 你也应该知道数据库连接有时会耗尽全部资源，如果连接没有被隐式地关闭的话，有可能会造成可用资源枯竭的情况。不过这通常在其他语言中更为常见一些。使用 PDO 你可以通过销毁（destroy）对象，也就是将值设为 NULL，来隐式地关闭这些连接，确保所有剩余的引用对象的连接都被删除。如果你没有亲自做这件事情，PHP 会在你的脚本结束的时候自动为你完成 —— 除非你使用的是持久链接。
 
-- [了解PDO连接](http://php.net/pdo.connections)
+- [了解 PDO 连接](http://php.net/pdo.connections)
 
 
 ## 数据库交互
@@ -1216,8 +1202,8 @@ $stmt-&gt;execute();</code></pre>
 
 <pre><code class="language-php" data-lang="php">&lt;ul&gt;
 &lt;?php
-foreach ($db-&gt;query(&#39;SELECT * FROM table&#39;) as $row) {
-    echo &#34;&lt;li&gt;&#34;.$row[&#39;field1&#39;].&#34; - &#34;.$row[&#39;field1&#39;].&#34;&lt;/li&gt;&#34;;
+foreach (- db-&gt;query(&#39;SELECT * FROM table&#39;) as - row) {
+    echo &#34;&lt;li&gt;&#34;.- row[&#39;field1&#39;].&#34; - &#34;.- row[&#39;field1&#39;].&#34;&lt;/li&gt;&#34;;
 }
 ?&gt;
 &lt;/ul&gt;</code></pre>
@@ -1231,12 +1217,12 @@ foreach ($db-&gt;query(&#39;SELECT * FROM table&#39;) as $row) {
 
 
 <pre><code class="language-php" data-lang="php">&lt;?php
-function getAllFoos($db) {
-    return $db-&gt;query(&#39;SELECT * FROM table&#39;);
+function getAllFoos(- db) {
+    return - db-&gt;query(&#39;SELECT * FROM table&#39;);
 }
 
-foreach (getAllFoos($db) as $row) {
-    echo &#34;&lt;li&gt;&#34;.$row[&#39;field1&#39;].&#34; - &#34;.$row[&#39;field1&#39;].&#34;&lt;/li&gt;&#34;; // BAD!!
+foreach (getAllFoos(- db) as - row) {
+    echo &#34;&lt;li&gt;&#34;.- row[&#39;field1&#39;].&#34; - &#34;.- row[&#39;field1&#39;].&#34;&lt;/li&gt;&#34;; // BAD!!
 }</code></pre>
 
 
@@ -1248,15 +1234,15 @@ foreach (getAllFoos($db) as $row) {
 
 
 <pre><code class="language-php" data-lang="php">&lt;?php
-$db = new PDO(&#39;mysql:host=localhost;dbname=testdb;charset=utf8&#39;, &#39;username&#39;, &#39;password&#39;);
+- db = new PDO(&#39;mysql:host=localhost;dbname=testdb;charset=utf8&#39;, &#39;username&#39;, &#39;password&#39;);
 
 // Make your model available
 include &#39;models/FooModel.php&#39;;
 
 // Create an instance
-$fooModel = new FooModel($db);
+- fooModel = new FooModel(- db);
 // Get the list of Foos
-$fooList = $fooModel-&gt;getAllFoos();
+- fooList = - fooModel-&gt;getAllFoos();
 
 // Show the view
 include &#39;views/foo-list.php&#39;;</code></pre>
@@ -1268,15 +1254,15 @@ include &#39;views/foo-list.php&#39;;</code></pre>
 <pre><code class="language-php" data-lang="php">&lt;?php
 class FooModel
 {
-    protected $db;
+    protected - db;
 
-    public function __construct(PDO $db)
+    public function __construct(PDO - db)
     {
-        $this-&gt;db = $db;
+        - this-&gt;db = - db;
     }
 
     public function getAllFoos() {
-        return $this-&gt;db-&gt;query(&#39;SELECT * FROM table&#39;);
+        return - this-&gt;db-&gt;query(&#39;SELECT * FROM table&#39;);
     }
 }</code></pre>
 
@@ -1284,8 +1270,8 @@ class FooModel
 **views/foo-list.php**
 
 
-<pre><code class="language-php" data-lang="php">&lt;?php foreach ($fooList as $row): ?&gt;
-    &lt;?= $row[&#39;field1&#39;] ?&gt; - &lt;?= $row[&#39;field1&#39;] ?&gt;
+<pre><code class="language-php" data-lang="php">&lt;?php foreach (- fooList as - row): ?&gt;
+    &lt;?= - row[&#39;field1&#39;] ?&gt; - &lt;?= - row[&#39;field1&#39;] ?&gt;
 &lt;?php endforeach ?&gt;</code></pre>
 
 
@@ -1301,8 +1287,8 @@ class FooModel
 
 有一些抽象层使用的是[PSR-0](http://www.php-fig.org/psr/psr-0/) 或 [PSR-4](http://www.php-fig.org/psr/psr-4/) 命名空间标准，所以他们可以安装在任何你需要的应用程序中。
 
-- [AuraSQL](https://github.com/auraphp/Aura.Sql)
-- [Doctrine2DBAL](http://www.doctrine-project.org/projects/dbal.html)
+- [Aura SQL](https://github.com/auraphp/Aura.Sql)
+- [Doctrine2 DBAL](http://www.doctrine-project.org/projects/dbal.html)
 - [Propel](http://propelorm.org/)
 - [Zend-db](https://packages.zendframework.com/docs/latest/manual/en/index.html#zendframework/zend-db)
 
@@ -1344,12 +1330,12 @@ class FooModel
 
 <pre><code class="language-php" data-lang="php">&lt;?php // user_profile.php ?&gt;
 
-&lt;?php $this-&gt;insert(&#39;header&#39;, [&#39;title&#39; =&gt; &#39;User Profile&#39;]) ?&gt;
+&lt;?php - this-&gt;insert(&#39;header&#39;, [&#39;title&#39; =&gt; &#39;User Profile&#39;]) ?&gt;
 
 &lt;h1&gt;User Profile&lt;/h1&gt;
-&lt;p&gt;Hello, &lt;?=$this-&gt;escape($name)?&gt;&lt;/p&gt;
+&lt;p&gt;Hello, &lt;?=- this-&gt;escape(- name)?&gt;&lt;/p&gt;
 
-&lt;?php $this-&gt;insert(&#39;footer&#39;) ?&gt;</code></pre>
+&lt;?php - this-&gt;insert(&#39;footer&#39;) ?&gt;</code></pre>
 
 
 ### 原生 PHP 模板使用继承的示例
@@ -1361,12 +1347,12 @@ class FooModel
 
 &lt;html&gt;
 &lt;head&gt;
-    &lt;title&gt;&lt;?=$title?&gt;&lt;/title&gt;
+    &lt;title&gt;&lt;?=- title?&gt;&lt;/title&gt;
 &lt;/head&gt;
 &lt;body&gt;
 
 &lt;main&gt;
-    &lt;?=$this-&gt;section(&#39;content&#39;)?&gt;
+    &lt;?=- this-&gt;section(&#39;content&#39;)?&gt;
 &lt;/main&gt;
 
 &lt;/body&gt;
@@ -1376,10 +1362,10 @@ class FooModel
 
 <pre><code class="language-php" data-lang="php">&lt;?php // user_profile.php ?&gt;
 
-&lt;?php $this-&gt;layout(&#39;template&#39;, [&#39;title&#39; =&gt; &#39;User Profile&#39;]) ?&gt;
+&lt;?php - this-&gt;layout(&#39;template&#39;, [&#39;title&#39; =&gt; &#39;User Profile&#39;]) ?&gt;
 
 &lt;h1&gt;User Profile&lt;/h1&gt;
-&lt;p&gt;Hello, &lt;?=$this-&gt;escape($name)?&gt;&lt;/p&gt;</code></pre>
+&lt;p&gt;Hello, &lt;?=- this-&gt;escape(- name)?&gt;&lt;/p&gt;</code></pre>
 
 
 
@@ -1442,17 +1428,17 @@ _*虽然 Smarty 提供了自动转义的功能, 不过这个功能默认是关�
 
 ### 文章与教程
 
-- [TemplatingEnginesinPHP](http://fabien.potencier.org/article/34/templating-engines-in-php)
-- [AnIntroductiontoViews&amp;TemplatinginCodeIgniter](http://code.tutsplus.com/tutorials/an-introduction-to-views-templating-in-codeigniter--net-25648)
-- [GettingStartedWithPHPTemplating](http://www.smashingmagazine.com/2011/10/17/getting-started-with-php-templating/)
-- [RollYourOwnTemplatingSysteminPHP](http://code.tutsplus.com/tutorials/roll-your-own-templating-system-in-php--net-16596)
-- [MasterPages](https://laracasts.com/series/laravel-from-scratch/episodes/7)
-- [WorkingWithTemplatesinSymfony2](http://code.tutsplus.com/tutorials/working-with-templates-in-symfony-2--cms-21172)
-- [WritingSaferTemplates](https://github.com/box/brainy/wiki/Writing-Safe-Templates)
+- [Templating Engines in PHP](http://fabien.potencier.org/article/34/templating-engines-in-php)
+- [An Introduction to Views &amp; Templating in CodeIgniter](http://code.tutsplus.com/tutorials/an-introduction-to-views-templating-in-codeigniter--net-25648)
+- [Getting Started With PHP Templating](http://www.smashingmagazine.com/2011/10/17/getting-started-with-php-templating/)
+- [Roll Your Own Templating System in PHP](http://code.tutsplus.com/tutorials/roll-your-own-templating-system-in-php--net-16596)
+- [Master Pages](https://laracasts.com/series/laravel-from-scratch/episodes/7)
+- [Working With Templates in Symfony 2](http://code.tutsplus.com/tutorials/working-with-templates-in-symfony-2--cms-21172)
+- [Writing Safer Templates](https://github.com/box/brainy/wiki/Writing-Safe-Templates)
 ### 类库
 
 - [Aura.View](https://github.com/auraphp/Aura.View)_(native)_
-- [Blade](http://laravel.com/docs/blade)_(compiled,frameworkspecific)_
+- [Blade](http://laravel.com/docs/blade)_(compiled, framework specific)_
 - [Brainy](https://github.com/box/brainy)_(compiled)_
 - [Dwoo](http://dwoo.org/)_(compiled)_
 - [Latte](https://github.com/nette/latte)_(compiled)_
@@ -1461,7 +1447,7 @@ _*虽然 Smarty 提供了自动转义的功能, 不过这个功能默认是关�
 - [Plates](http://platesphp.com/)_(native)_
 - [Smarty](http://www.smarty.net/)_(compiled)_
 - [Twig](http://twig.sensiolabs.org/)_(compiled)_
-- [Zend\View](http://framework.zend.com/manual/2.3/en/modules/zend.view.quick-start.html)_(native,frameworkspecific)_
+- [Zend\View](http://framework.zend.com/manual/2.3/en/modules/zend.view.quick-start.html)_(native, framework specific)_
 
 
 [回到顶部](#top)
@@ -1479,16 +1465,15 @@ _*虽然 Smarty 提供了自动转义的功能, 不过这个功能默认是关�
 举例来说:
 
 
-<pre><code class="language-console" data-lang="console">$ php -a
-php &gt; echo $foo;
+<pre><code class="language-console" data-lang="console">-  php -a
+php &gt; echo - foo;
 Notice: Undefined variable: foo in php shell code on line 1</code></pre>
 
 
 这里只是一个 notice 级别的错误，PHP 仍然会愉快的继续执行。这对有「重异常」编程经验的人来说会带来困惑，例如在 Python 中，引用一个不存在的变量会抛出异常：
 
 
-<pre><code class="language-console" data-lang="console">$ python
-&gt;&gt;&gt; print foo
+<pre><code class="language-console" data-lang="console">-  python&gt;&gt;&gt; print foo
 Traceback (most recent call last):
   File &#34;&lt;stdin&gt;&#34;, line 1, in &lt;module&gt;
 NameError: name &#39;foo&#39; is not defined</code></pre>
@@ -1498,7 +1483,7 @@ NameError: name &#39;foo&#39; is not defined</code></pre>
 
 ### 错误严重性
 
-PHP 有几个错误严重性等级。三个最常见的的信息类型是错误（error）、通知（notice）和警告（warning）。它们有不同的严重性: <code>E_ERROR</code> 、<code>E_NOTICE</code>和 <code>E_WARNING</code>。错误是运行期间的严重问题，通常是因为代码出错而造成，必须要修正它，否则会使 PHP 停止执行。通知是建议性质的信息，是因为程序代码在执行期有可能造成问题，但程序不会停止。            警告是非致命错误，程序执行也不会因此而中止。
+PHP 有几个错误严重性等级。三个最常见的的信息类型是错误（error）、通知（notice）和警告（warning）。它们有不同的严重性: <code>E_ERROR</code> 、<code>E_NOTICE</code>和 <code>E_WARNING</code>。错误是运行期间的严重问题，通常是因为代码出错而造成，必须要修正它，否则会使 PHP 停止执行。通知是建议性质的信息，是因为程序代码在执行期有可能造成问题，但程序不会停止。 警告是非致命错误，程序执行也不会因此而中止。
 
 另一个在编译期间会报错的信息类型是 <code>E_STRICT</code>。这个信息用來建议修改程序代码以维持最佳的互通性并能与今后的 PHP 版本兼容。
 
@@ -1519,10 +1504,10 @@ error_reporting(E_ERROR | E_WARNING);</code></pre>
 
 
 <pre><code class="language-php" data-lang="php">&lt;?php
-echo @$foo[&#39;bar&#39;];</code></pre>
+echo @- foo[&#39;bar&#39;];</code></pre>
 
 
-如果 <code>$foo[&#39;bar&#39;]</code> 存在，程序会将结果输出，如果变量 <code>$foo</code> 或是 <code>&#39;bar&#39;</code> 键值不存在，则会返回 null 并且不输出任何东西。如果不使用错误控制操作符，这个表达式会产生一个错误信息 <code>PHP Notice: Undefined
+如果 <code>- foo[&#39;bar&#39;]</code> 存在，程序会将结果输出，如果变量 <code>- foo</code> 或是 <code>&#39;bar&#39;</code> 键值不存在，则会返回 null 并且不输出任何东西。如果不使用错误控制操作符，这个表达式会产生一个错误信息 <code>PHP Notice: Undefined
             variable: foo</code> 或 <code>PHP Notice: Undefined index: bar</code> 。
 
 这看起来像是个好主意，不过也有一些讨厌的代价。PHP 处理使用 <code>@</code> 的表达式比起不用时效率会低一些。过早的性能优化在所有程序语言中也许都是争论点，不过如果性能在你的应用程序 / 类库中占有重要地位，那么了解错误控制操作符的性能影响就比较重要。
@@ -1533,7 +1518,7 @@ echo @$foo[&#39;bar&#39;];</code></pre>
 
 
 <pre><code class="language-php" data-lang="php">&lt;?php
-echo isset($foo[&#39;bar&#39;]) ? $foo[&#39;bar&#39;] : &#39;&#39;;</code></pre>
+echo isset(- foo[&#39;bar&#39;]) ? - foo[&#39;bar&#39;] : &#39;&#39;;</code></pre>
 
 
 当 <code>fopen()</code> 载入文件失败时，也许是一个使用错误抑制符的合理例子。你可以在尝试载入文件前检查是否存在，但是如果这个文件在检查后才被删除，而此时 <code>fopen()</code> 还未执行 （听起来有点不太可能，但是确实会发生），这时 <code>fopen()</code> 会返回 false _并且_ 抛出操作。这也许应该由 PHP 本身来解决，但这时一个错误抑制符才能有效解决的例子。
@@ -1555,7 +1540,7 @@ ini_set(&#39;xdebug.scream&#39;, &#39;1&#39;)</code></pre>
 
 当你在调试代码而错误信息被隐藏时，这是最有用的方法。请务必小心使用 scream ，而是把它当作暂时性的调试工具。有许多的 PHP 函数类库代码也许无法在错误抑制操作符停用时正常使用。
 
-- [ErrorControlOperators](http://php.net/language.operators.errorcontrol)
+- [Error Control Operators](http://php.net/language.operators.errorcontrol)
 - [SitePoint](http://www.sitepoint.com/)
 - [Xdebug](http://xdebug.org/docs/basic)
 - [Scream](http://php.net/book.scream)
@@ -1571,9 +1556,9 @@ There are also some packages available for better error and exception handling a
 
 更多关于如何使用 <code>ErrorException</code> 来处理错误的细节，可以参考 [ErrorException Class](errorexception)。
 
-- [ErrorControlOperators](http://php.net/language.operators.errorcontrol)
-- [PredefinedConstantsforErrorHandling](http://php.net/errorfunc.constants)
-- [<code>error_reporting()</code>](http://php.net/function.error-reporting)
+- [Error Control Operators](http://php.net/language.operators.errorcontrol)
+- [Predefined Constants for Error Handling](http://php.net/errorfunc.constants)
+- [error_reporting()](http://php.net/function.error-reporting)
 - [Reporting](/#error_reporting)
 
 
@@ -1581,26 +1566,26 @@ There are also some packages available for better error and exception handling a
 
 异常是许多流行编程语言的标配，但它们往往被 PHP 开发人员所忽视。像 Ruby 就是一个极度重视异常的语言，无论有什么错误发生，像是 HTTP 请求失败，或者数据库查询有问题，甚至找不到一个图片资源，Ruby （或是所使用的 gems），将会抛出异常，你可以通过屏幕立刻知道所发生的问题。
 
-PHP 处理这个问题则比较随意，调用 <code>file_get_contents()</code> 函数通常只会给出 <code>FALSE</code> 值和警告。许多较早的 PHP 框架比如 CodeIgniter 只是返回 false，将信息写入专有的日志，或者让你使用类似 <code>$this-&gt;upload-&gt;get_error()</code> 的方法来查看错误原因。这里的问题在于你必须找出错误所在，并且通过翻阅文档来查看这个类使用了什么样的错误的方法，而不是明确的暴露错误。
+PHP 处理这个问题则比较随意，调用 <code>file_get_contents()</code> 函数通常只会给出 <code>FALSE</code> 值和警告。许多较早的 PHP 框架比如 CodeIgniter 只是返回 false，将信息写入专有的日志，或者让你使用类似 <code>- this-&gt;upload-&gt;get_error()</code> 的方法来查看错误原因。这里的问题在于你必须找出错误所在，并且通过翻阅文档来查看这个类使用了什么样的错误的方法，而不是明确的暴露错误。
 
 另一个问题发生在当类自动抛出错误到屏幕时会结束程序。这样做会阻挡其他开发者动态处理错误的机会。应该抛出异常让开发人员意识到错误的存在，让他们可以选择处理的方式，例如：
 
 
 <pre><code class="language-php" data-lang="php">&lt;?php
-$email = new Fuel\Email;
-$email-&gt;subject(&#39;My Subject&#39;);
-$email-&gt;body(&#39;How the heck are you?&#39;);
-$email-&gt;to(&#39;guy@example.com&#39;, &#39;Some Guy&#39;);
+- email = new Fuel\Email;
+- email-&gt;subject(&#39;My Subject&#39;);
+- email-&gt;body(&#39;How the heck are you?&#39;);
+- email-&gt;to(&#39;guy@example.com&#39;, &#39;Some Guy&#39;);
 
 try
 {
-    $email-&gt;send();
+    - email-&gt;send();
 }
-catch(Fuel\Email\ValidationFailedException $e)
+catch(Fuel\Email\ValidationFailedException - e)
 {
     // 验证失败
 }
-catch(Fuel\Email\SendingFailedException $e)
+catch(Fuel\Email\SendingFailedException - e)
 {
     // 这个驱动无法发送 email
 }
@@ -1623,10 +1608,10 @@ class ValidationException extends Exception {}</code></pre>
 
 举例来说，如果你使用了 <code>__call()</code> 魔术方法去调用一个无效的方法，而不是抛出一个模糊的标准 Exception 或是建立自定义的异常处理，你可以直接抛出 <code>throw new BadMethodCallException;</code>。
 
-- [ReadaboutExceptions](http://php.net/language.exceptions)
-- [ReadaboutSPLExceptions](http://php.net/spl.exceptions)
-- [NestingExceptionsInPHP](http://www.brandonsavage.net/exceptional-php-nesting-exceptions-in-php/)
-- [ExceptionBestPracticesinPHP5.3](http://ralphschindler.com/2010/09/15/exception-best-practices-in-php-5-3)
+- [Read about Exceptions](http://php.net/language.exceptions)
+- [Read about SPL Exceptions](http://php.net/spl.exceptions)
+- [Nesting Exceptions In PHP](http://www.brandonsavage.net/exceptional-php-nesting-exceptions-in-php/)
+- [Exception Best Practices in PHP 5.3](http://ralphschindler.com/2010/09/15/exception-best-practices-in-php-5-3)
 
 
 [回到顶部](#top)
@@ -1641,16 +1626,16 @@ class ValidationException extends Exception {}</code></pre>
 
 攻击者无时无刻不在准备对你的 Web 应用程序进行攻击，因此提高你的 Web 应用程序的安全性是非常有必要的。幸运的是，来自[开放式 Web 应用程序安全项目](https://www.owasp.org/) (OWASP) 的有心人已经整理了一份包含了已知安全问题和防御方式的全面的清单。这份清单对于具有安全意识的开发者来说是必读的。由 Padraic Brady 著作的 [生存手册：PHP 安全](http://phpsecurity.readthedocs.org/en/latest/index.html) 也是一份很不错的 PHP 安全阅读资料。
 
-- [阅读OWASP安全指南](https://www.owasp.org/index.php/Guide_Table_of_Contents)
+- [阅读 OWASP 安全指南](https://www.owasp.org/index.php/Guide_Table_of_Contents)
 
 
 ## 密码哈希
 
 每个人在建构 PHP 应用时终究都会加入用户登录的模块。用户的帐号及密码会被储存在数据库中，在登录时用来验证用户。
 
-在存储密码前正确的 [哈希密码](http://en.wikipedia.org/wiki/Cryptographic_hash_function)  是非常重要的。哈希密码是单向不可逆的，该哈希值是一段固定长度的字符串且无法逆向推算出原始密码。这就代表你可以哈希另一串密码，来比较两者是否是同一个密码，但又无需知道原始的密码。如果你不将密码哈希，那么当未授权的第三者进入你的数据库时，所有用户的帐号资料将会一览无遗。有些用户可能（很不幸的）在别的网站也使用相同的密码。所以务必要重视数据安全的问题。
+在存储密码前正确的 [哈希密码](http://en.wikipedia.org/wiki/Cryptographic_hash_function) 是非常重要的。哈希密码是单向不可逆的，该哈希值是一段固定长度的字符串且无法逆向推算出原始密码。这就代表你可以哈希另一串密码，来比较两者是否是同一个密码，但又无需知道原始的密码。如果你不将密码哈希，那么当未授权的第三者进入你的数据库时，所有用户的帐号资料将会一览无遗。有些用户可能（很不幸的）在别的网站也使用相同的密码。所以务必要重视数据安全的问题。
 
-密码应该单独被  [加盐处理](https://en.wikipedia.org/wiki/Salt_(cryptography)) ，加盐值指的是在哈希之前先加入随机子串。以此来防范「字典破解」或者「彩虹碰撞」（一个可以保存了通用哈希后的密码数据库，可用来逆向推出密码）。
+密码应该单独被 [加盐处理](https://en.wikipedia.org/wiki/Salt_(cryptography)) ，加盐值指的是在哈希之前先加入随机子串。以此来防范「字典破解」或者「彩虹碰撞」（一个可以保存了通用哈希后的密码数据库，可用来逆向推出密码）。
 
 哈希和加盐非常重要，因为很多情况下，用户会在不同的服务中选择使用同一个密码，密码的安全性很低。
 
@@ -1666,9 +1651,9 @@ class ValidationException extends Exception {}</code></pre>
 <pre><code class="language-php" data-lang="php">&lt;?php
 require &#39;password.php&#39;;
 
-$passwordHash = password_hash(&#39;secret-password&#39;, PASSWORD_DEFAULT);
+- passwordHash = password_hash(&#39;secret-password&#39;, PASSWORD_DEFAULT);
 
-if (password_verify(&#39;bad-password&#39;, $passwordHash)) {
+if (password_verify(&#39;bad-password&#39;, - passwordHash)) {
     // Correct Password
 } else {
     // Wrong password
@@ -1677,18 +1662,18 @@ if (password_verify(&#39;bad-password&#39;, $passwordHash)) {
 
 <code>password_hash()</code> 已经帮你处理好了加盐。加进去的随机子串通过加密算法自动保存着，成为哈希的一部分。<code>password_verify()</code> 会把随机子串从中提取，所以你不必使用另一个数据库来记录这些随机子串。
 
-- [了解<code>password_hash()</code>](http://php.net/function.password-hash)
-- [PHP&gt;=5.3.7&amp;&amp;&lt;5.5的<code>password_compat</code>](https://github.com/ircmaxell/password_compat)
+- [了解 password_hash()](http://php.net/function.password-hash)
+- [PHP &gt;= 5.3.7 &amp;&amp; &lt; 5.5 的 password_compat](https://github.com/ircmaxell/password_compat)
 - [了解密码学中的哈希](http://en.wikipedia.org/wiki/Cryptographic_hash_function)
 - [学习下加盐](https://en.wikipedia.org/wiki/Salt_(cryptography))
-- [PHP<code>password_hash()</code>RFC](https://wiki.php.net/rfc/password_hash)
+- [PHP password_hash() RFC](https://wiki.php.net/rfc/password_hash)
 
 
 ## 数据过滤
 
 永远不要信任外部输入。请在使用外部输入前进行过滤和验证。<code>filter_var()</code> 和 <code>filter_input()</code> 函数可以过滤文本并对格式进行校验（例如 email 地址）。
 
-外部输入可以是任何东西：<code>$_GET</code> 和 <code>$_POST</code> 等表单输入数据，<code>$_SERVER</code> 超全局变量中的某些值，还有通过 <code>fopen(&#39;php://input&#39;, &#39;r&#39;)</code> 得到的 HTTP 请求体。记住，外部输入的定义并不局限于用户通过表单提交的数据。上传和下载的文档，session 值，cookie 数据，还有来自第三方 web 服务的数据，这些都是外部输入。
+外部输入可以是任何东西：<code>- _GET</code> 和 <code>- _POST</code> 等表单输入数据，<code>- _SERVER</code> 超全局变量中的某些值，还有通过 <code>fopen(&#39;php://input&#39;, &#39;r&#39;)</code> 得到的 HTTP 请求体。记住，外部输入的定义并不局限于用户通过表单提交的数据。上传和下载的文档，session 值，cookie 数据，还有来自第三方 web 服务的数据，这些都是外部输入。
 
 虽然外部输入可以被存储、组合并在以后继续使用，但它依旧是外部输入。每次你处理、输出、连结或在代码中包含时，请提醒自己检查数据是否已经安全地完成了过滤。
 
@@ -1699,9 +1684,9 @@ if (password_verify(&#39;bad-password&#39;, $passwordHash)) {
 最后的一个例子是接受外部输入来从文件系统中加载文件。这可以通过将文件名修改为文件路径来进行利用。你需要过滤掉<code>&#34;/&#34;</code>, <code>&#34;../&#34;</code>, [null 字符](http://php.net/security.filesystem.nullbytes)或者其他文件路径的字符来确保不会去加载隐藏、私有或者敏感的文件。
 
 - [学习更多数据过滤](http://php.net/book.filter)
-- [学习更多<code>filter_var</code>](http://php.net/function.filter-var)
-- [学习更多<code>filter_input</code>](http://php.net/function.filter-input)
-- [学习更多null字符问题](http://php.net/security.filesystem.nullbytes)
+- [学习更多 filter_var](http://php.net/function.filter-var)
+- [学习更多 filter_input](http://php.net/function.filter-input)
+- [学习更多 null 字符问题](http://php.net/security.filesystem.nullbytes)
 ### 数据清理
 
 数据清理是指删除（或转义）外部输入中的非法和不安全的字符。
@@ -1731,20 +1716,20 @@ if (password_verify(&#39;bad-password&#39;, $passwordHash)) {
 当你在为你的应用程序创建配置文件时，最好的选择时参照以下的做法：
 
 - 推荐你将你的配置信息存储在无法被直接读取和上传的位置上。
-- 如果你一定要存储配置文件在根目录下，那么请使用<code>.php</code>的扩展名来进行命名。这将可以确保即使脚本被直接访问到，它也不会被以明文的形式输出出来。
+- 如果你一定要存储配置文件在根目录下，那么请使用 .php 的扩展名来进行命名。这将可以确保即使脚本被直接访问到，它也不会被以明文的形式输出出来。
 - 配置文件中的信息需要被针对性的保护起来，对其进行加密或者设置访问权限。
-- 建议不要把敏感信息如密码或者API令牌放到版本控制器中。
+- 建议不要把敏感信息如密码或者 API 令牌放到版本控制器中。
 
 
 ## 注册全局变量
 
 **注意：** 自 PHP 5.4.0 开始，<code>register_globals</code> 选项已经被移除并不再使用。这是在提醒你如果你正在升级旧的应用程序的话，你需要注意这一点。
 
-当 <code>register_globals</code> 选项被开启时，它会使许多类型的变量（包括 <code>$_POST</code>, <code>$_GET</code> 和 <code>$_REQUEST</code>）被注册为全局变量。这将很容易使你的程序无法有效地判断数据的来源并导致安全问题。
+当 <code>register_globals</code> 选项被开启时，它会使许多类型的变量（包括 <code>- _POST</code>, <code>- _GET</code> 和 <code>- _REQUEST</code>）被注册为全局变量。这将很容易使你的程序无法有效地判断数据的来源并导致安全问题。
 
-例如：<code>$_GET[&#39;foo&#39;]</code> 可以通过 <code>$foo</code> 被访问到，也就是可以对未声明的变量进行覆盖。如果你使用低于 5.4.0 版本的 PHP 的话，请 **确保** <code>register_globals</code> 是被设为 **off** 的。
+例如：<code>- _GET[&#39;foo&#39;]</code> 可以通过 <code>- foo</code> 被访问到，也就是可以对未声明的变量进行覆盖。如果你使用低于 5.4.0 版本的 PHP 的话，请 **确保** <code>register_globals</code> 是被设为 **off** 的。
 
-- [在PHP手册中了解Register_globals](http://php.net/security.globals)
+- [在 PHP 手册中了解 Register_globals](http://php.net/security.globals)
 
 
 ## 错误报告
@@ -1761,19 +1746,19 @@ display_startup_errors = On
 error_reporting = -1
 log_errors = On</code></pre>
 
-        
+ 
 
+<blockquote>            将值设为 <code class="highlighter-rouge">-1</code> 将会显示出所有的错误，甚至包括在未来的 PHP 版本中新增加的类型和参数。                和 PHP 5.4 起开始使用的 <code class="highlighter-rouge">E_ALL</code> 是相同的。-                [php.net](http://php.net/function.error-reporting)        
+</blockquote>
 
-&gt;             将值设为 <code class="highlighter-rouge">-1</code> 将会显示出所有的错误，甚至包括在未来的 PHP 版本中新增加的类型和参数。                和 PHP 5.4 起开始使用的 <code class="highlighter-rouge">E_ALL</code> 是相同的。-                [php.net](http://php.net/function.error-reporting)        
-
-        
+ 
 <code>E_STRICT</code> 类型的错误是在 5.3.0 中被引入的，并没有被包含在 <code>E_ALL</code> 中。然而从 5.4.0 开始，它被包含在了 <code>E_ALL</code> 中。这意味着什么？这表示如果你想要在 5.3 中显示所有的错误信息，你需要使用 <code>-1</code> 或者 <code>E_ALL | E_STRICT</code>。
 
 **不同 PHP 版本下开启全部错误显示**
 
-- &lt;5.3<code>-1</code>或<code>E_ALL</code>
-- 5.3<code>-1</code>或<code>E_ALL|E_STRICT</code>
-- &gt;5.3<code>-1</code>或<code>E_ALL</code>
+- &lt; 5.3 -1 或 E_ALL
+-   5.3 -1 或 E_ALL | E_STRICT
+- &gt; 5.3 -1 或 E_ALL
 ### 生产环境
 
 为了在 **生产** 环境中隐藏错误显示，将你的 <code>php.ini</code> 进行如下配置：
@@ -1808,12 +1793,12 @@ PHP 有一些不同种类的测试工具 (或框架) 可以使用，它们使用
 ## 测试驱动开发
 
 [Wikipedia](http://en.wikipedia.org/wiki/Test-driven_development) 上的定义:
-        
+ 
 
+<blockquote>            测试驱动开发 (TDD) 是一种以非常短的开发周期不断迭代的软件开发过程:首先开发者对将要实现的功能或者新的方法写一个失败的自动化测试用例，然后就去写代码来通过这个测试用例，最终通过重构代码让一其达到可接受的水准。**Kent Beck**， 这个技术创造者或者说重新发现者，在2003年声明TDD 鼓励简单的设计和激励信心。        
+</blockquote>
 
-&gt;             测试驱动开发 (TDD) 是一种以非常短的开发周期不断迭代的软件开发过程:首先开发者对将要实现的功能或者新的方法写一个失败的自动化测试用例，然后就去写代码来通过这个测试用例，最终通过重构代码让一其达到可接受的水准。**Kent Beck**， 这个技术创造者或者说重新发现者，在2003年声明TDD 鼓励简单的设计和激励信心。        
-
-        
+ 
 目前你可以应用的几种不同类型的测试：
 
 ### 单元测试
@@ -1833,12 +1818,12 @@ PHP 有一些不同种类的测试工具 (或框架) 可以使用，它们使用
 ### 集成测试
 
 [Wikipedia](http://en.wikipedia.org/wiki/Test-driven_development) 上的定义:
-        
+ 
 
+<blockquote>            集成测试 (有时候称为集成和测试，缩写为 <code class="highlighter-rouge">I&amp;T</code>)是把各个模块组合在一起进行整体测试的软件测试阶段。它处于单元测试之后，验收测试之前。集成测试将已经经过了单元测试的模块做为输入模块，组合成一个整体，然后运行集成测试用例，然后输出一个可以进行系统测试的系统。        
+</blockquote>
 
-&gt;             集成测试 (有时候称为集成和测试，缩写为 <code class="highlighter-rouge">I&amp;T</code>)是把各个模块组合在一起进行整体测试的软件测试阶段。它处于单元测试之后，验收测试之前。集成测试将已经经过了单元测试的模块做为输入模块，组合成一个整体，然后运行集成测试用例，然后输出一个可以进行系统测试的系统。        
-
-        
+ 
 许多相同的测试工具既可以运用到单元测试，也可以运用到集成测试。
 
 ### 功能性测试
@@ -1849,8 +1834,8 @@ PHP 有一些不同种类的测试工具 (或框架) 可以使用，它们使用
 
 - [Selenium](http://docs.seleniumhq.org/)
 - [Mink](http://mink.behat.org/en/latest/)
-- [Codeception](http://codeception.com/)是一个全栈的测试框架包括验收性测试工具。
-- [Storyplayer](http://datasift.github.io/storyplayer/)是一个全栈的测试框架并且支持随时创建和销毁测试环境。
+- [Codeception](http://codeception.com/) 是一个全栈的测试框架包括验收性测试工具。
+- [Storyplayer](http://datasift.github.io/storyplayer/) 是一个全栈的测试框架并且支持随时创建和销毁测试环境。
 
 
 ## 行为驱动开发
@@ -1863,9 +1848,9 @@ PHP 有一些不同种类的测试工具 (或框架) 可以使用，它们使用
 
 ### BDD 链接
 
-- [Behat](http://behat.org/),PHP的StoryBDD框架，受到了Ruby’s[Cucumber](http://cukes.info/)项目的启发。
-- [PHPSpec](http://www.phpspec.net/),PHP的SpecBDD框架，受到了Ruby’s[RSpec](http://rspec.info/)项目的启发。
-- [Codeception](http://codeception.com/)是一个使用BDD准则的全栈测试框架。
+- [Behat](http://behat.org/), PHP 的 StoryBDD 框架， 受到了 Ruby’s [Cucumber](http://cukes.info/) 项目的启发。
+- [PHPSpec](http://www.phpspec.net/), PHP 的 SpecBDD 框架， 受到了 Ruby’s [RSpec](http://rspec.info/) 项目的启发。
+- [Codeception](http://codeception.com/) 是一个使用 BDD 准则的全栈测试框架。
 
 
 ## 其他测试工具
@@ -1874,9 +1859,9 @@ PHP 有一些不同种类的测试工具 (或框架) 可以使用，它们使用
 
 ### 工具地址
 
-- [Selenium](http://seleniumhq.org/)是一个浏览器自动化工具[integratedwithPHPUnit](https://github.com/giorgiosironi/phpunit-selenium/)
-- [Mockery](https://github.com/padraic/mockery)是一个可以跟[PHPUnit](http://phpunit.de/)或者[PHPSpec](http://www.phpspec.net/)整合的Mock对象框架
-- [Prophecy](https://github.com/phpspec/prophecy)是个有自己的想法，且非常强大灵活的PHP对象mocking框架。它整合了[PHPSpec](http://www.phpspec.net/)并且可以和[PHPUnit](http://phpunit.de/)一起使用
+- [Selenium](http://seleniumhq.org/) 是一个浏览器自动化工具 [integrated with PHPUnit](https://github.com/giorgiosironi/phpunit-selenium/)
+- [Mockery](https://github.com/padraic/mockery) 是一个可以跟 [PHPUnit](http://phpunit.de/) 或者 [PHPSpec](http://www.phpspec.net/) 整合的 Mock 对象框架
+- [Prophecy](https://github.com/phpspec/prophecy) 是个有自己的想法，且非常强大灵活的 PHP 对象 mocking 框架。它整合了 [PHPSpec](http://www.phpspec.net/) 并且可以和 [PHPUnit](http://phpunit.de/) 一起使用
 
 
 [回到顶部](#top)
@@ -1893,7 +1878,7 @@ PHP 有一些不同种类的测试工具 (或框架) 可以使用，它们使用
 
 PaaS 提供了运行 PHP 应用程序所必须的系统环境和网络架构。这就意味着只需做少量配置就可以运行 PHP 应用程序或者 PHP 框架。
 
-现在，PaaS 已经成为一种部署、托管和扩展各种规模的 PHP 应用程序的流行方式。你可以在 [资源部分](#resources) 查看 [PHP PaaS “Platform as a Service” 提供商](#php_paas_providers)  列表。
+现在，PaaS 已经成为一种部署、托管和扩展各种规模的 PHP 应用程序的流行方式。你可以在 [资源部分](#resources) 查看 [PHP PaaS “Platform as a Service” 提供商](#php_paas_providers) 列表。
 
 
 
@@ -1905,23 +1890,23 @@ PaaS 提供了运行 PHP 应用程序所必须的系统环境和网络架构。�
 
 PHP 通过内置的 FastCGI 进程管理器（FPM），可以很好的与轻量级的高性能 web 服务器 [nginx](http://nginx.org/) 协作使用。nginx 比 Apache 占用更少内存而且可以更好的处理并发请求，这对于并没有太多内存的虚拟服务器尤其重要。
 
-- [阅读更多nginx的内容](http://nginx.org/)
-- [阅读更多PHP-FPM的内容](http://php.net/install.fpm)
-- [学习如何配置安全的nginx和PHP-FPM](https://nealpoole.com/blog/2011/04/setting-up-php-fastcgi-and-nginx-dont-trust-the-tutorials-check-your-configuration/)
+- [阅读更多 nginx 的内容](http://nginx.org/)
+- [阅读更多 PHP-FPM 的内容](http://php.net/install.fpm)
+- [学习如何配置安全的 nginx 和 PHP-FPM](https://nealpoole.com/blog/2011/04/setting-up-php-fastcgi-and-nginx-dont-trust-the-tutorials-check-your-configuration/)
 ### Apache 和 PHP
 
-PHP 和 Apache 有很长的合作历史。Apache 有很强的可配置性和大量的 [扩展模块](http://httpd.apache.org/docs/2.4/mod/)            。是共享主机中常见的Web服务器，完美支持各种 PHP 框架和开源应用(如 WordPress )。可惜的是，默认情况下，Apache 会比 nginx 消耗更多的资源，而且并发处理能力不强。
+PHP 和 Apache 有很长的合作历史。Apache 有很强的可配置性和大量的 [扩展模块](http://httpd.apache.org/docs/2.4/mod/) 。是共享主机中常见的Web服务器，完美支持各种 PHP 框架和开源应用(如 WordPress )。可惜的是，默认情况下，Apache 会比 nginx 消耗更多的资源，而且并发处理能力不强。
 
 Apache 有多种方式运行 PHP，最常见的方式就是使用 mode_php5 的 [prefork MPM](http://httpd.apache.org/docs/2.4/mod/prefork.html) 方式。但是它对内存的利用效率并不高，如果你不想深入服务器管理方面学习，那么这种简单的方式可能是你最好的选择。需要注意的事如果你使用 mod_php5，就必须使用 prefork MPM。
 
-如果你追求高性能和高稳定性，可以为 Apache 选择与 nginx 类似的的 FPM 系统 [worker MPM](http://httpd.apache.org/docs/2.4/mod/worker.html) 或者            [event MPM](http://httpd.apache.org/docs/2.4/mod/event.html)，它们分别使用 mod_fastcgi 和 mod_fcgid。这种方式可以更高效的利用内存，运行速度也更快，但是配置也相对复杂一些。
+如果你追求高性能和高稳定性，可以为 Apache 选择与 nginx 类似的的 FPM 系统 [worker MPM](http://httpd.apache.org/docs/2.4/mod/worker.html) 或者 [event MPM](http://httpd.apache.org/docs/2.4/mod/event.html)，它们分别使用 mod_fastcgi 和 mod_fcgid。这种方式可以更高效的利用内存，运行速度也更快，但是配置也相对复杂一些。
 
-- [阅读更多Apache](http://httpd.apache.org/)
-- [阅读更多Apache多进程模块](http://httpd.apache.org/docs/2.4/mod/mpm_common.html)
-- [阅读更多mod_fastcgi](https://blogs.oracle.com/opal/entry/php_fpm_fastcgi_process_manager)
-- [阅读更多mod_fcgid](http://httpd.apache.org/mod_fcgid/)
-- [阅读更多mod_proxy_fcgi](https://httpd.apache.org/docs/current/mod/mod_proxy_fcgi.html)
-- [配置Apache通过mod_proxy_fcgi使用PHP-FPM](https://serversforhackers.com/video/apache-and-php-fpm)
+- [阅读更多 Apache](http://httpd.apache.org/)
+- [阅读更多 Apache 多进程模块](http://httpd.apache.org/docs/2.4/mod/mpm_common.html)
+- [阅读更多 mod_fastcgi](https://blogs.oracle.com/opal/entry/php_fpm_fastcgi_process_manager)
+- [阅读更多 mod_fcgid](http://httpd.apache.org/mod_fcgid/)
+- [阅读更多 mod_proxy_fcgi](https://httpd.apache.org/docs/current/mod/mod_proxy_fcgi.html)
+- [配置 Apache 通过 mod_proxy_fcgi 使用 PHP-FPM](https://serversforhackers.com/video/apache-and-php-fpm)
 
 
 ## 共享主机
@@ -1964,9 +1949,9 @@ PHP 非常流行，很少有服务器没有安装 PHP 的，因而有很多共�
 
 #### 延伸阅读：
 
-- [AutomateyourprojectwithApacheAnt](http://net.tutsplus.com/tutorials/other/automate-your-projects-with-apache-ant/)
-- [ExpertPHPDeployments](http://viccherubini.com/assets/Expert-PHP-Deployments.pdf)-freebookondeploymentwithCapistrano,PhingandVagrant.
-- [DeployingPHPApplications](http://www.deployingphpapplications.com)-paidbookonbestpracticesandtoolsforPHPdeployment.
+- [Automate your project with Apache Ant](http://net.tutsplus.com/tutorials/other/automate-your-projects-with-apache-ant/)
+- [Expert PHP Deployments](http://viccherubini.com/assets/Expert-PHP-Deployments.pdf) - free book on deployment with Capistrano, Phing and Vagrant.
+- [Deploying PHP Applications](http://www.deployingphpapplications.com) - paid book on best practices and tools for PHP deployment.
 ### 服务器布置 Server Provisioning
 
 在多台服务器的场景下，管理服务器系统配置信息将会是一个令人棘手的事情。接下来介绍几种工具来让你自动化这些工作。一般情况下，一些大型的云托管商（如：Amazon Web Services, Heroku, DigitalOcean 等）会集成自动化管理工具。
@@ -1979,28 +1964,28 @@ PHP 非常流行，很少有服务器没有安装 PHP 的，因而有很多共�
 
 #### 延伸阅读：
 
-- [AnAnsibleTutorial](https://serversforhackers.com/an-ansible-tutorial)
-- [AnsibleforDevOps](https://leanpub.com/ansible-for-devops)-paidbookoneverythingAnsible
-- [AnsibleforAWS](https://leanpub.com/ansible-for-aws)-paidbookonintegratingAnsibleandAmazonWebServices
-- [ThreepartblogseriesaboutdeployingaLAMPapplicationwithChef,Vagrant,andEC2](http://www.jasongrimes.org/2012/06/managing-lamp-environments-with-chef-vagrant-and-ec2-1-of-3/)
-- [ChefCookbookwhichinstallsandconfiguresPHPandthePEARpackagemanagementsystem](https://github.com/chef-cookbooks/php)
-- [Chefvideotutorialseries](https://www.youtube.com/playlist?list=PL11cZfNdwNyPnZA9D1MbVqldGuOWqbumZ)
+- [An Ansible Tutorial](https://serversforhackers.com/an-ansible-tutorial)
+- [Ansible for DevOps](https://leanpub.com/ansible-for-devops) - paid book on everything Ansible
+- [Ansible for AWS](https://leanpub.com/ansible-for-aws) - paid book on integrating Ansible and Amazon Web Services
+- [Three part blog series about deploying a LAMP application with Chef, Vagrant, and EC2](http://www.jasongrimes.org/2012/06/managing-lamp-environments-with-chef-vagrant-and-ec2-1-of-3/)
+- [Chef Cookbook which installs and configures PHP and the PEAR package management system](https://github.com/chef-cookbooks/php)
+- [Chef video tutorial series](https://www.youtube.com/playlist?list=PL11cZfNdwNyPnZA9D1MbVqldGuOWqbumZ)
 ### 持续集成
-        
+ 
 
+<blockquote>            持续集成是一种软件开发实践，团队的成员经常用来集成他们的工作，                通常每一个成员至少每天都会进行集成 — 因此每天都会有许多的集成。许多团队发现这种方式会显著地降低集成问题，                approach leads to significantly reduced integration problems and allows a team to develop cohesive software more                并允许一个团队更快的开发软件。        
+</blockquote>
 
-&gt;             持续集成是一种软件开发实践，团队的成员经常用来集成他们的工作，                通常每一个成员至少每天都会进行集成 — 因此每天都会有许多的集成。许多团队发现这种方式会显著地降低集成问题，                approach leads to significantly reduced integration problems and allows a team to develop cohesive software more                并允许一个团队更快的开发软件。        
-
-        
+ 
 _– Martin Fowler_
 
 对于 PHP 来说，有许多的方式来实现持续集成。近来 [Travis CI](https://travis-ci.org/) 在持续集成上做的很棒，对于小项目来说也可以很好的使用。Travis CI 是一个托管的持续集成服务用于开源社区。它可以和 Github 很好的集成，并且提供了很多语言的支持包括 PHP 。
 
 #### 延伸阅读：
 
-- [使用Jenkins进行持续集成](http://jenkins-ci.org/)
-- [使用PHPCI进行持续集成](http://www.phptesting.org/)
-- [使用Teamcity进行持续集成](http://www.jetbrains.com/teamcity/)
+- [使用 Jenkins 进行持续集成](http://jenkins-ci.org/)
+- [使用 PHPCI 进行持续集成](http://www.phptesting.org/)
+- [使用 Teamcity 进行持续集成](http://www.jetbrains.com/teamcity/)
 
 
 [回到顶部](#top)
@@ -2029,15 +2014,15 @@ Vagrant 还可以在虚拟机和主机上分享文件夹, 意味着你可以在�
 
 下面是一些其他的软件, 可以帮助你更好的使用 Vagrant:
 
-- [Rove](http://rove.io/):使用Chef自动化安装一些常用的软件,PHP包含在内.
-- [Puphpet](https://puphpet.com/):简单的Web图形界面用来生成部署PHP环境的Puppet脚本,此项目不仅可以用在开发上,也可以在生产环境中使用.
-- [Protobox](http://getprotobox.com/):是一个基于vagrant的一个层,还有Web图形界面,允许你使用一个YAML文件来安装和配置虚拟机里面的软件.
-- [Phansible](http://phansible.com/):提供了一个简单的Web图形界面,用来创建Ansible自动化部署脚本,专门为PHP项目定制.
+- [Rove](http://rove.io/): 使用 Chef 自动化安装一些常用的软件, PHP 包含在内.
+- [Puphpet](https://puphpet.com/): 简单的 Web 图形界面用来生成部署 PHP 环境的 Puppet 脚本, 此项目不仅可以用在开发上, 也可以在生产环境中使用.
+- [Protobox](http://getprotobox.com/): 是一个基于 vagrant 的一个层, 还有 Web 图形界面, 允许你使用一个 YAML 文件来安装和配置虚拟机里面的软件.
+- [Phansible](http://phansible.com/): 提供了一个简单的 Web 图形界面, 用来创建 Ansible 自动化部署脚本, 专门为 PHP 项目定制.
 
 
 ## Docker 简介
 
-[Docker](http://docker.com/) - 一个轻量级的虚拟化解决方案。Docker 为各种应用程序提供了 Linux 容器。 A container is a building block which, in the simplest case, does one specific job, e.g. running a web server.  An “image” is the package you use to build the container - Docker has a repository full of them.
+[Docker](http://docker.com/) - 一个轻量级的虚拟化解决方案。Docker 为各种应用程序提供了 Linux 容器。 A container is a building block which, in the simplest case, does one specific job, e.g. running a web server. An “image” is the package you use to build the container - Docker has a repository full of them.
 
 通常情况下，一个 LAMP 应用汇包含以下三个容器：一个 Web 服务器，一个 PHP-FPM 线程和 MySQL。在 Vagrant 的共享文件夹中，你不需要改变你应用文件路径，你只需要告诉 Docker 到哪里可以找到他们即可。
 
@@ -2063,11 +2048,11 @@ This will initialize and launch your container. <code>-d</code> makes it runs in
 
 [PHPDocker.io](https://phpdocker.io/generator) 是另一个很棒的 PHP 相关的 Docker 资源站点。支持自动生成一个全栈的 LAMP/LEMP 服务器，包含你自定义的 PHP 版本和扩展。
 
-- [DockerWebsite](http://docker.com/)
-- [DockerInstallation](https://docs.docker.com/installation/)
-- [DockerUserGuide](https://docs.docker.com/userguide/)
-- [DockerHub](https://hub.docker.com/)
-- [DockerHub-officialimages](https://hub.docker.com/explore/)
+- [Docker Website](http://docker.com/)
+- [Docker Installation](https://docs.docker.com/installation/)
+- [Docker User Guide](https://docs.docker.com/userguide/)
+- [Docker Hub](https://hub.docker.com/)
+- [Docker Hub - official images](https://hub.docker.com/explore/)
 
 
 [回到顶部](#top)
@@ -2076,13 +2061,13 @@ This will initialize and launch your container. <code>-d</code> makes it runs in
 
 # 缓存
 
-PHP 本身来说是非常快的，但是但你当发起远程连接、加载文件等操作时也会遇到瓶颈。            幸运的是，有各种各样的工具可以用来加速你应用程序某些耗时的部分，或者说减少某些耗时任务所需要运行的次数。
+PHP 本身来说是非常快的，但是但你当发起远程连接、加载文件等操作时也会遇到瓶颈。 幸运的是，有各种各样的工具可以用来加速你应用程序某些耗时的部分，或者说减少某些耗时任务所需要运行的次数。
 
 
 
 ## Opcode 缓存
 
-当一个 PHP 文件被解释执行的时候，首先是被编译成名为 [opcodes](http://php.net/manual/en/internals2.opcodes.php) 的中间代码，然后才被底层的虚拟机执行。            如果PHP文件没有被修改过，opcode 始终是一样的。这就意味着编译步骤白白浪费了 CPU 的资源。
+当一个 PHP 文件被解释执行的时候，首先是被编译成名为 [opcodes](http://php.net/manual/en/internals2.opcodes.php) 的中间代码，然后才被底层的虚拟机执行。 如果PHP文件没有被修改过，opcode 始终是一样的。这就意味着编译步骤白白浪费了 CPU 的资源。
 
 此时 opcode 缓存就派上用场了。通过将 opcode 缓存在内存中，它能防止冗余的编译步骤，并且在下次调用执行时得到重用。设置 opcode 缓存只需要几分钟的时间，你的应用程序便会因此大大加速，实在没有理由不用它。
 
@@ -2090,12 +2075,12 @@ PHP 5.5 中自带了 opcode 缓存工具，叫做[Zend OPcache](http://php.net/b
 
 更多关于 opcode 缓存的资料：
 
-- [ZendOPcache](http://php.net/book.opcache)(bundledwithPHPsince5.5)
-- ZendOPcache(formerlyknownasZendOptimizer+)isnow[opensource](https://github.com/zendtech/ZendOptimizerPlus)
-- [APC](http://php.net/book.apc)-PHP5.4andearlier
+- [Zend OPcache](http://php.net/book.opcache) (bundled with PHP since 5.5)
+- Zend OPcache (formerly known as Zend Optimizer+) is now [open source](https://github.com/zendtech/ZendOptimizerPlus)
+- [APC](http://php.net/book.apc) - PHP 5.4 and earlier
 - [XCache](http://xcache.lighttpd.net/)
-- [WinCache](http://www.iis.net/download/wincacheforphp)(extensionforMSWindowsServer)
-- [listofPHPacceleratorsonWikipedia](http://en.wikipedia.org/wiki/List_of_PHP_accelerators)
+- [WinCache](http://www.iis.net/download/wincacheforphp) (extension for MS Windows Server)
+- [list of PHP accelerators on Wikipedia](http://en.wikipedia.org/wiki/List_of_PHP_accelerators)
 
 
 ## 对象缓存
@@ -2115,13 +2100,13 @@ PHP 5.5 中自带了 opcode 缓存工具，叫做[Zend OPcache](http://php.net/b
 
 <pre><code class="language-php" data-lang="php">&lt;?php
 // check if there is data saved as &#39;expensive_data&#39; in cache
-$data = apc_fetch(&#39;expensive_data&#39;);
-if ($data === false) {
+- data = apc_fetch(&#39;expensive_data&#39;);
+if (- data === false) {
     // data is not in cache; save result of expensive call for later use
-    apc_add(&#39;expensive_data&#39;, $data = get_expensive_data());
+    apc_add(&#39;expensive_data&#39;, - data = get_expensive_data());
 }
 
-print_r($data);</code></pre>
+print_r(- data);</code></pre>
 
 
 注意在 PHP 5.5 之前，APC 同时提供了对象缓存与字节码缓存。APCu 是为了将 APC 的对象缓存移植到 PHP 5.5+ 的一个项目，因为现在 PHP 有了内建的字节码缓存方案 (OPcache)。
@@ -2129,11 +2114,11 @@ print_r($data);</code></pre>
 ### 更多关于缓存系统的项目：
 
 - [APCu](https://github.com/krakjoe/apcu)
-- [APCFunctions](http://php.net/ref.apc)
+- [APC Functions](http://php.net/ref.apc)
 - [Memcached](http://memcached.org/)
 - [Redis](http://redis.io/)
-- [XCacheAPIs](http://xcache.lighttpd.net/wiki/XcacheApi)
-- [WinCacheFunctions](http://php.net/ref.wincache)
+- [XCache APIs](http://xcache.lighttpd.net/wiki/XcacheApi)
+- [WinCache Functions](http://php.net/ref.wincache)
 
 
 [回到顶部](#top)
@@ -2159,41 +2144,41 @@ PHPDoc 是注释 PHP 代码的非正式标准。它有_许多_不同的[标记](
 class DateTimeHelper
 {
     /**
-     * @param mixed $anything Anything that we can convert to a \DateTime object
+     * @param mixed - anything Anything that we can convert to a \DateTime object
      *
      * @throws \InvalidArgumentException
      *
      * @return \DateTime
      */
-    public function dateTimeFromAnything($anything)
+    public function dateTimeFromAnything(- anything)
     {
-        $type = gettype($anything);
+        - type = gettype(- anything);
 
-        switch ($type) {
+        switch (- type) {
             // Some code that tries to return a \DateTime object
         }
 
         throw new \InvalidArgumentException(
-            &#34;Failed Converting param of type &#39;{$type}&#39; to DateTime object&#34;
+            &#34;Failed Converting param of type &#39;{- type}&#39; to DateTime object&#34;
         );
     }
 
     /**
-     * @param mixed $date Anything that we can convert to a \DateTime object
+     * @param mixed - date Anything that we can convert to a \DateTime object
      *
      * @return void
      */
-    public function printISO8601Date($date)
+    public function printISO8601Date(- date)
     {
-        echo $this-&gt;dateTimeFromAnything($date)-&gt;format(&#39;c&#39;);
+        echo - this-&gt;dateTimeFromAnything(- date)-&gt;format(&#39;c&#39;);
     }
 
     /**
-     * @param mixed $date Anything that we can convert to a \DateTime object
+     * @param mixed - date Anything that we can convert to a \DateTime object
      */
-    public function printRFC2822Date($date)
+    public function printRFC2822Date(- date)
     {
-        echo $this-&gt;dateTimeFromAnything($date)-&gt;format(&#39;r&#39;);
+        echo - this-&gt;dateTimeFromAnything(- date)-&gt;format(&#39;r&#39;);
     }
 }</code></pre>
 
@@ -2216,21 +2201,21 @@ class DateTimeHelper
 
 ## PHP 官方
 
-- [PHP官方网站](http://php.net/)
-- [PHP官方文档](http://php.net/docs.php)
+- [PHP 官方网站](http://php.net/)
+- [PHP 官方文档](http://php.net/docs.php)
 
 
 ## 值得关注的大牛
 
 刚进入社区时很难一下子找到很多有趣或者经验丰富的 PHP 社区成员，你可以在以下链接中找到 PHP 社区成员的 Twitter：
 
-- [NewRelic:25PHPDeveloperstoFollowOnline](https://blog.newrelic.com/2014/05/02/25-php-developers-follow-online/)
-- [OGProgrammer:HowtogetconnectedwiththePHPcommunity](https://www.ogprogrammer.com/2017/06/28/how-to-get-connected-with-the-php-community/)
+- [New Relic: 25 PHP Developers to Follow Online](https://blog.newrelic.com/2014/05/02/25-php-developers-follow-online/)
+- [OGProgrammer: How to get connected with the PHP community](https://www.ogprogrammer.com/2017/06/28/how-to-get-connected-with-the-php-community/)
 
 
 ## 指导
 
-- [php-mentoring.org](http://php-mentoring.org/)-PHP社区中的一对一指导。
+- [php-mentoring.org](http://php-mentoring.org/) - PHP 社区中的一对一指导。
 
 
 ## PHP 的 Paas 提供商
@@ -2239,16 +2224,16 @@ class DateTimeHelper
 - [AppFog](https://www.ctl.io/appfog/)
 - [Heroku](https://devcenter.heroku.com/categories/php)
 - [fortrabbit](https://www.fortrabbit.com/)
-- [EngineYardCloud](https://www.engineyard.com/features)
-- [RedHatOpenShiftPlatform](https://www.openshift.com/)
-- [AWSElasticBeanstalk](https://aws.amazon.com/elasticbeanstalk/)
-- [WindowsAzure](http://www.windowsazure.com/)
-- [GoogleAppEngine](https://cloud.google.com/appengine/docs/php/)
+- [Engine Yard Cloud](https://www.engineyard.com/features)
+- [Red Hat OpenShift Platform](https://www.openshift.com/)
+- [AWS Elastic Beanstalk](https://aws.amazon.com/elasticbeanstalk/)
+- [Windows Azure](http://www.windowsazure.com/)
+- [Google App Engine](https://cloud.google.com/appengine/docs/php/)
 - [Jelastic](http://jelastic.com/)
 - [Platform.sh](https://platform.sh/)
 - [Cloudways](https://www.cloudways.com/en/)
-- [IBMBluemixCloudFoundry](https://console.ng.bluemix.net/)
-- [PivotalWebServiceCloudFoundry](https://run.pivotal.io/)
+- [IBM Bluemix Cloud Foundry](https://console.ng.bluemix.net/)
+- [Pivotal Web Service Cloud Foundry](https://run.pivotal.io/)
 To see which versions these PaaS hosts are running, head over to [PHP Versions](http://phpversions.info/paas-hosting/).
 
 
@@ -2268,7 +2253,7 @@ To see which versions these PaaS hosts are running, head over to [PHP Versions](
 
 组件框架是多个独立的类库所结合起来的。不同的组件框架可以一起使用在微型或是全栈框架上。
 
-- [热门的PHP框架](https://github.com/codeguy/php-the-right-way/wiki/Frameworks)
+- [热门的 PHP 框架](https://github.com/codeguy/php-the-right-way/wiki/Frameworks)
 
 
 ## 组件
@@ -2285,69 +2270,72 @@ To see which versions these PaaS hosts are running, head over to [PHP Versions](
 
 - [Aura](http://auraphp.com/framework/2.x/en/)
 - [FuelPHP](https://github.com/fuelphp)
-- [HoaProject](https://github.com/hoaproject)
+- [Hoa Project](https://github.com/hoaproject)
 - [Orno](https://github.com/orno)
-- [SymfonyComponents](http://symfony.com/doc/current/components/index.html)
-- [TheLeagueofExtraordinaryPackages](http://thephpleague.com/)
-- Laravel’sIlluminateComponents<ul><li>[IoCContainer](https://github.com/illuminate/container)</li><li>[EloquentORM](https://github.com/illuminate/database)</li><li>[Queue](https://github.com/illuminate/queue)</li></ul>
+- [Symfony Components](http://symfony.com/doc/current/components/index.html)
+- [The League of Extraordinary Packages](http://thephpleague.com/)
+- Laravel’s Illuminate Components 
+  - [IoC Container](https://github.com/illuminate/container)
+  - [Eloquent ORM](https://github.com/illuminate/database)
+  - [Queue](https://github.com/illuminate/queue)
 _Laravel 的 [Illuminate 组件] 和 Laravel 框架将变得更加解耦。 现在我们只列出和 Laravel 框架最没有依赖关系的组件。_
 
 Laravel 中文资料：
 
-- [Laravel中文书籍《Laravel入门教程》](https://laravel-china.org/topics/3383)
-- [下载量最高的100个Laravel扩展包推荐](https://laravel-china.org/topics/2530)
-- [Laravel中文文档，涵盖5.1,5.2,5.3版本](https://laravel-china.org/docs/home)
-- [Laravel招聘](https://laravel-china.org/categories/1)
-- [Laravel远程工作](https://laravel-china.org/topics/3626)
-- [Laravel中文社区](https://laravel-china.org/)我们是现代化PHP的拥护者
-- [Laravel速查表](https://cs.laravel-china.org/)
+- [Laravel 中文书籍《Laravel 入门教程》](https://laravel-china.org/topics/3383)
+- [下载量最高的 100 个 Laravel 扩展包推荐 ](https://laravel-china.org/topics/2530)
+- [Laravel 中文文档，涵盖 5.1, 5.2, 5.3 版本](https://laravel-china.org/docs/home)
+- [Laravel 招聘 ](https://laravel-china.org/categories/1)
+- [Laravel 远程工作](https://laravel-china.org/topics/3626)
+- [Laravel 中文社区](https://laravel-china.org/) 我们是现代化 PHP 的拥护者
+- [Laravel 速查表](https://cs.laravel-china.org/)
 
 
 ## Other Useful Resources
 
 ### Cheatsheets
 
-- [PHPCheatsheets](http://phpcheatsheets.com/)-forvariablecomparisons,arithmeticsandvariabletestinginvariousPHPversions
-- [PHPSecurityCheatsheet](https://www.owasp.org/index.php/PHP_Security_Cheat_Sheet)
+- [PHP Cheatsheets](http://phpcheatsheets.com/) - for variable comparisons, arithmetics and variable testing in various PHP versions
+- [PHP Security Cheatsheet](https://www.owasp.org/index.php/PHP_Security_Cheat_Sheet)
 ### 更多最佳实践
 
-- [PHPBestPractices](https://phpbestpractices.org/)
-- [BestpracticesforModernPHPDevelopment](https://www.airpair.com/php/posts/best-practices-for-modern-php-development)
+- [PHP Best Practices](https://phpbestpractices.org/)
+- [Best practices for Modern PHP Development](https://www.airpair.com/php/posts/best-practices-for-modern-php-development)
 ### PHP Web 开发社区的新人
 
 你可以通过订阅周刊资讯来获取关于扩展包推荐、最新消息、特殊事件或者是社区公告，还有不定时发布的资源：
 
-- [PHPWeekly](http://www.phpweekly.com)
-- [JavaScriptWeekly](http://javascriptweekly.com)
-- [HTML5Weekly](http://html5weekly.com)
-- [MobileWebWeekly](http://mobilewebweekly.co)
-- TherearealsoWeekliesonotherplatformsyoumightbeinterestedin;here’s[alistofsome](https://github.com/jondot/awesome-weekly).
+- [PHP Weekly](http://www.phpweekly.com)
+- [JavaScript Weekly](http://javascriptweekly.com)
+- [HTML5 Weekly](http://html5weekly.com)
+- [Mobile Web Weekly](http://mobilewebweekly.co)
+- There are also Weeklies on other platforms you might be interested in; here’s [a list of some](https://github.com/jondot/awesome-weekly).
 ### PHP 世界
 
-- [PHPDeveloperblog](http://blog.phpdeveloper.org/)
+- [PHP Developer blog](http://blog.phpdeveloper.org/)
 ## Laravel 中文资料
 
-- [Laravel中文书籍《Laravel入门教程》](https://laravel-china.org/topics/3383)
-- [下载量最高的100个Laravel扩展包推荐](https://laravel-china.org/topics/2530)
-- [Laravel中文文档，涵盖5.1,5.2,5.3版本](https://laravel-china.org/docs/home)
-- [Laravel招聘](https://laravel-china.org/categories/1)
-- [Laravel远程工作](https://laravel-china.org/topics/3626)
-- [Laravel中文社区](https://laravel-china.org/)我们是现代化PHP的拥护者
-- [Laravel速查表](https://cs.laravel-china.org/)
+- [Laravel 中文书籍《Laravel 入门教程》](https://laravel-china.org/topics/3383)
+- [下载量最高的 100 个 Laravel 扩展包推荐 ](https://laravel-china.org/topics/2530)
+- [Laravel 中文文档，涵盖 5.1, 5.2, 5.3 版本](https://laravel-china.org/docs/home)
+- [Laravel 招聘 ](https://laravel-china.org/categories/1)
+- [Laravel 远程工作](https://laravel-china.org/topics/3626)
+- [Laravel 中文社区](https://laravel-china.org/) 我们是现代化 PHP 的拥护者
+- [Laravel 速查表](https://cs.laravel-china.org/)
 
 
 ### Youtube 视频
 
-- [PHPAcademy](https://www.youtube.com/user/phpacademy)
-- [TheNewBoston](https://www.youtube.com/user/thenewboston)
-- [SherifRamadan](https://www.youtube.com/user/businessgeek)
-- [LevelUpTuts](https://www.youtube.com/user/LevelUpTuts)
+- [PHP Academy](https://www.youtube.com/user/phpacademy)
+- [The New Boston](https://www.youtube.com/user/thenewboston)
+- [Sherif Ramadan](https://www.youtube.com/user/businessgeek)
+- [Level Up Tuts](https://www.youtube.com/user/LevelUpTuts)
 ### 付费视频
 
-- [StandardsandBestpractices](http://teamtreehouse.com/library/standards-and-best-practices)
-- [PHPTrainingonPluralsight](http://www.pluralsight.com/search/?searchTerm=php)
-- [PHPTrainingonLynda.com](http://www.lynda.com/search?q=php)
-- [PHPTrainingonTutsplus](http://code.tutsplus.com/categories/php/courses)
+- [Standards and Best practices](http://teamtreehouse.com/library/standards-and-best-practices)
+- [PHP Training on Pluralsight](http://www.pluralsight.com/search/?searchTerm=php)
+- [PHP Training on Lynda.com](http://www.lynda.com/search?q=php)
+- [PHP Training on Tutsplus](http://code.tutsplus.com/categories/php/courses)
 - [Laracasts](https://laracasts.com/)
 
 
@@ -2359,22 +2347,22 @@ Laravel 中文资料：
 
 ### 免费书籍
 
-- [PHPPandas](http://daylerees.com/php-pandas/)-Web开发入门书籍
-- [PHPTheRightWay](https://leanpub.com/phptherightway/)-本书完全免费
-- [UsingLibsodiuminPHPProjects](https://paragonie.com/book/pecl-libsodium)-使用Libsodium来构建现代的、安全的、快速的PHP加密
+- [PHP Pandas](http://daylerees.com/php-pandas/) - Web 开发入门书籍
+- [PHP The Right Way](https://leanpub.com/phptherightway/) - 本书完全免费
+- [Using Libsodium in PHP Projects](https://paragonie.com/book/pecl-libsodium) - 使用 Libsodium 来构建现代的、安全的、快速的 PHP 加密
 ### 付费书籍
 
-- [Laravel中文书籍《Laravel入门教程》](https://laravel-china.org/topics/3383)-Web开发实战书籍，一步步构建一个微博应用
-- [BuildAPIsYouWon’tHate](https://apisyouwonthate.com/)-教你构建API
-- [ModernPHP](http://shop.oreilly.com/product/0636920033868.do)-现代化PHP
-- [BuildingSecurePHPApps](https://leanpub.com/buildingsecurephpapps)-构建安全的PHP应用
-- [ModernizingLegacyApplicationsInPHP](https://leanpub.com/mlaphp)-小步迭代的升级你的PHP项目
-- [SecuringPHP:CoreConcepts](https://leanpub.com/securingphp-coreconcepts)-PHP安全核心概念
-- [ScalingPHP](http://www.scalingphpbook.com/)-高可用性PHP
-- [SignalingPHP](https://leanpub.com/signalingphp)-PHP命令行实战
-- [TheGrumpyProgrammer’sGuideToBuildingTestablePHPApplications](https://leanpub.com/grumpy-testing)-PHP测试指南
-- [MinimumViableTests](https://leanpub.com/minimumviabletests)-小步迭代开始学习PHP测试
-- [Domain-DrivenDesigninPHP](https://leanpub.com/ddd-in-php)-PHP的DDD设计模式详解
+- [Laravel 中文书籍《Laravel 入门教程》](https://laravel-china.org/topics/3383) - Web 开发实战书籍，一步步构建一个微博应用
+- [Build APIs You Won’t Hate](https://apisyouwonthate.com/) - 教你构建 API
+- [Modern PHP](http://shop.oreilly.com/product/0636920033868.do) - 现代化 PHP
+- [Building Secure PHP Apps](https://leanpub.com/buildingsecurephpapps) - 构建安全的 PHP 应用
+- [Modernizing Legacy Applications In PHP](https://leanpub.com/mlaphp) - 小步迭代的升级你的 PHP 项目
+- [Securing PHP: Core Concepts](https://leanpub.com/securingphp-coreconcepts) - PHP 安全核心概念
+- [Scaling PHP](http://www.scalingphpbook.com/) - 高可用性 PHP
+- [Signaling PHP](https://leanpub.com/signalingphp) - PHP 命令行实战
+- [The Grumpy Programmer’s Guide To Building Testable PHP Applications](https://leanpub.com/grumpy-testing) - PHP 测试指南
+- [Minimum Viable Tests](https://leanpub.com/minimumviabletests) - 小步迭代开始学习 PHP 测试
+- [Domain-Driven Design in PHP](https://leanpub.com/ddd-in-php) - PHP 的 DDD 设计模式详解
 
 
 [回到顶部](#top)

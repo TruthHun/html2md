@@ -1,18 +1,24 @@
-
-
-
 # [1. 程序构建](#id11)[¶](#program-build)
 
 
 目录
 
-- [程序构建](#program-build)<ul><li>[配置](#id3)</li><li>[编译](#id4)<ul><li>[makefile编写的要点](#makefile)</li><li>[makefile中的全局自变量](#id5)</li><li>[更多选择CMake](#cmake)</li><li>[编译依赖的库](#id7)</li><li>[g++编译](#g)</li></ul></li><li>[安装](#id8)</li><li>[总结](#id9)</li></ul>
+- [程序构建](#program-build)
+  - [配置](#id3)
+  - [编译](#id4)
+    - [makefile编写的要点](#makefile)
+    - [makefile中的全局自变量](#id5)
+    - [更多选择 CMake](#cmake)
+    - [编译依赖的库](#id7)
+    - [g++编译](#g)
+  - [安装](#id8)
+  - [总结](#id9)
 
 一般源代码提供的程序安装需要通过配置、编译、安装三个步骤；
-
+<ol class="arabic simple">
 - 配置做的工作主要是检查当前环境是否满足要安装软件的依赖关系，以及设置程序安装所需要的初始化信息，比如安装路径，需要安装哪些组件；配置完成，会生成makefile文件供第二步make使用；
 - 编译是对源文件进行编译链接生成可执行程序；
-- 安装做的工作就简单多了，就是将生成的可执行文件拷贝到配置时设置的初始路径下；
+- 安装做的工作就简单多了，就是将生成的可执行文件拷贝到配置时设置的初始路径下；</ol>
 
 ## [1.1. 配置](#id12)[¶](#id3)
 
@@ -62,7 +68,7 @@ makefile Makefile
 
 ### [makefile中的全局自变量](#id15)[¶](#id5)
 
-- $@目标文件名
+- - @目标文件名
 - @^所有前提名，除副本
 - @＋所有前提名，含副本
 - @＜一个前提名
@@ -125,7 +131,7 @@ LDFLAGS  -L标记非标准库存放路径
 
 - -o:指明生成的目标文件
 - -g：添加调试信息
-- -E:查看中间文件
+- -E: 查看中间文件
 应用：查询宏展开的中间文件：
 
 在g++的编译选项中，添加 -E选项，然后去掉-o选项 ，重定向到一个文件中即可:
@@ -141,7 +147,7 @@ LDFLAGS  -L标记非标准库存放路径
 
 
 
-<pre>$ldd myprogrammer
+<pre>- ldd myprogrammer
     libstdc++.so.6 =&gt; /usr/lib64/libstdc++.so.6 (0x00000039a7e00000)
     libm.so.6 =&gt; /lib64/libm.so.6 (0x0000003996400000)
     libgcc_s.so.1 =&gt; /lib64/libgcc_s.so.1 (0x00000039a5600000)
@@ -166,7 +172,7 @@ LDFLAGS  -L标记非标准库存放路径
 
 
 
-<pre>$make install
+<pre>- make install
 </pre>
 
 

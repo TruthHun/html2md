@@ -1,16 +1,10 @@
-
-
-
-
-
-
 # What Is a Front-End Developer?
-                    
+ 
 
+<blockquote>                        Front-end web development, also known as client-side development is the practice of producing HTML, CSS and JavaScript for a website or Web Application so that a user can see and interact with them directly. The challenge associated with front end development is that the tools and techniques used to create the front end of a website change constantly and so the developer needs to constantly be aware of how the field is developing.                        The objective of designing a site is to ensure that when the users open up the site they see the information in a format that is easy to read and relevant. This is further complicated by the fact that users now use a large variety of devices with varying screen sizes and resolutions thus forcing the designer to take into consideration these aspects when designing the site. They need to ensure that their site comes up correctly in different browsers (cross-browser), different operating systems (cross-platform) and different devices (cross-device), which requires careful planning on the side of the developer.                        _[https://en.wikipedia.org/wiki/Front-end_web_development](https://en.wikipedia.org/wiki/Front-end_web_development)_                    
+</blockquote>
 
-&gt;                         Front-end web development, also known as client-side development is the practice of producing HTML, CSS and JavaScript for a website or Web Application so that a user can see and interact with them directly. The challenge associated with front end development is that the tools and techniques used to create the front end of a website change constantly and so the developer needs to constantly be aware of how the field is developing.                        The objective of designing a site is to ensure that when the users open up the site they see the information in a format that is easy to read and relevant. This is further complicated by the fact that users now use a large variety of devices with varying screen sizes and resolutions thus forcing the designer to take into consideration these aspects when designing the site. They need to ensure that their site comes up correctly in different browsers (cross-browser), different operating systems (cross-platform) and different devices (cross-device), which requires careful planning on the side of the developer.                        _[https://en.wikipedia.org/wiki/Front-end_web_development](https://en.wikipedia.org/wiki/Front-end_web_development)_                    
-
-                    
+ 
 ##### HTML, CSS, &amp; JavaScript:
 
 A front-end developer architects and develops websites and applications using web technologies (i.e., HTML, CSS, DOM, and JavaScript), which run on the [web platform](https://en.wikipedia.org/wiki/Open_Web_Platform) or act as compilation input for non-web platform environments (i.e., [NativeScript](https://www.nativescript.org/)).
@@ -28,7 +22,7 @@ A web browser is software used to retrieve, present, and traverse information on
 The most common web browsers are (shown in order of most used first):
 
 - [Chrome](http://www.google.com/chrome/)
-- [InternetExplorer](https://en.wikipedia.org/wiki/Internet_Explorer)(Note:not[Edge](http://dev.modern.ie/),referringtoIE9toIE11)
+- [Internet Explorer](https://en.wikipedia.org/wiki/Internet_Explorer) (Note: not [Edge](http://dev.modern.ie/), referring to IE 9 to IE 11)
 - [Firefox](https://www.mozilla.org/firefox/)
 - [Safari](http://www.apple.com/safari/)
 ##### Headless Browsers
@@ -46,9 +40,9 @@ The most common headless browsers are:
 
 The most common solutions for [webview](http://developer.telerik.com/featured/what-is-a-webview/) development are:
 
-- [Cordova](https://cordova.apache.org/)(typicallyfornativephone/tabletapps)
-- [NW.js](https://github.com/nwjs/nw.js)(typicallyusedfordesktopapps)
-- [Electron](http://electron.atom.io/)(typicallyusedfordesktopapps)
+- [Cordova](https://cordova.apache.org/) (typically for native phone/tablet apps)
+- [NW.js](https://github.com/nwjs/nw.js) (typically used for desktop apps)
+- [Electron](http://electron.atom.io/) (typically used for desktop apps)
 ##### Native from Web Tech
 
 Eventually, what is learned from web browser development can be used by front-end developers to craft code for environments that are not fueled by a browser engine. As of late, development environments are being dreamed up that use web technologies (e.g., CSS and JavaScript), without web engines, to create native applications.
@@ -56,7 +50,7 @@ Eventually, what is learned from web browser development can be used by front-en
 Some examples of these environments are: 
 
 - [NativeScript](https://www.nativescript.org/)
-- [ReactNative](https://facebook.github.io/react-native/)
+- [React Native](https://facebook.github.io/react-native/)
 - - -
 
 ###### NOTES:
