@@ -4,6 +4,8 @@
 package html2md
 
 import (
+	"io/ioutil"
+	"os"
 	"strings"
 
 	"fmt"
@@ -45,6 +47,7 @@ var nextlineTag = []string{
 //convert html to markdown
 //将html转成markdown
 func Convert(htmlstr string) (md string) {
+	ioutil.WriteFile("1.html", []byte(htmlstr), os.ModePerm)
 	doc, _ := goquery.NewDocumentFromReader(strings.NewReader(htmlstr))
 	doc = compressHtml(doc)
 	doc = handleNextLine(doc)   //<div>...
@@ -162,8 +165,8 @@ func handleLi(doc *goquery.Document) *goquery.Document {
 	var tags = []string{"ul", "li"}
 	doc.Find("li").Each(func(i int, selection *goquery.Selection) {
 		l := len(selection.ParentsFiltered("li").Nodes)
-		tab := strings.Join(make([]string, l+2), "{$space}")
-		selection.PrependHtml("\r$" + tab)
+		tab := strings.Join(make([]string, l+2), "{$@$space}")
+		selection.PrependHtml("\r$@$" + tab)
 	})
 	for _, tag := range tags {
 		doc.Find(tag).Each(func(i int, selection *goquery.Selection) {
@@ -173,7 +176,7 @@ func handleLi(doc *goquery.Document) *goquery.Document {
 	}
 	htmlstr, _ := doc.Find("body").Html()
 	for i := 10; i > 0; i-- {
-		oldTab := "$" + strings.Join(make([]string, i), "{$space}")
+		oldTab := "$@$" + strings.Join(make([]string, i), "{$@$space}")
 		newTab := strings.Join(make([]string, i-1), "  ") + "- "
 		htmlstr = strings.Replace(htmlstr, oldTab, newTab, -1)
 	}
