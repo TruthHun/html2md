@@ -4,8 +4,6 @@
 package html2md
 
 import (
-	"io/ioutil"
-	"os"
 	"strings"
 
 	"fmt"
@@ -47,7 +45,6 @@ var nextlineTag = []string{
 //convert html to markdown
 //将html转成markdown
 func Convert(htmlstr string) (md string) {
-	ioutil.WriteFile("1.html", []byte(htmlstr), os.ModePerm)
 	doc, _ := goquery.NewDocumentFromReader(strings.NewReader(htmlstr))
 	doc = compressHtml(doc)
 	doc = handleNextLine(doc)   //<div>...
@@ -162,7 +159,7 @@ func handleA(doc *goquery.Document) *goquery.Document {
 //1、先给每个li标签里面的内容加上"- "或者"\t- "
 //2、提取li内容
 func handleLi(doc *goquery.Document) *goquery.Document {
-	var tags = []string{"ul", "li"}
+	var tags = []string{"ol", "ul", "li"}
 	doc.Find("li").Each(func(i int, selection *goquery.Selection) {
 		l := len(selection.ParentsFiltered("li").Nodes)
 		tab := strings.Join(make([]string, l+2), "{$@$space}")
