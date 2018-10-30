@@ -145,7 +145,7 @@ func handleBlockTag(doc *goquery.Document) *goquery.Document {
 		for hasTag {
 			if tagEle := doc.Find(tag); len(tagEle.Nodes) > 0 {
 				tagEle.Each(func(i int, selection *goquery.Selection) {
-					selection.BeforeHtml("\n\r" + getInnerHtml(selection) + "\n\r")
+					selection.BeforeHtml("\n" + getInnerHtml(selection) + "\n")
 					selection.Remove()
 				})
 			} else {
@@ -254,7 +254,7 @@ func handleHead(doc *goquery.Document) *goquery.Document {
 	for tag, replace := range heads {
 		doc.Find(tag).Each(func(i int, selection *goquery.Selection) {
 			text, _ := selection.Html()
-			selection.BeforeHtml("\n\r" + replace + text + "\n\r")
+			selection.BeforeHtml("\n" + replace + text + "\n")
 			selection.Remove()
 		})
 	}
