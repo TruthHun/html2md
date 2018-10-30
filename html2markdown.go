@@ -70,7 +70,7 @@ func depress(md string, maps map[string]string) string {
 
 	for key, val := range maps {
 		if strings.HasPrefix(key, "{$pre") {
-			md = strings.Replace(md, key, val, -1)
+			md = strings.Replace(md, key, "\n\r"+val+"\n\r", -1)
 		}
 	}
 
