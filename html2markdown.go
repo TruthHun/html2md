@@ -284,26 +284,14 @@ func handleNextLine(doc *goquery.Document) *goquery.Document {
 }
 
 func handleTable(doc *goquery.Document) *goquery.Document {
+	attrs := []string{
+		"border", "colspan", "rowspan", "style", "cellspacing",
+		"cellpadding", "bgcolor", "width", "align", "frame",
+	}
 	doc.Find("table").Each(func(i int, table *goquery.Selection) {
-		rows := []string{}
-		table.Find("tr").Each(func(i int, tr *goquery.Selection) {
-			ths := []string{}
-			tr.Find("th").Each(func(i int, trth *goquery.Selection) {
-				ths = append(ths, getInnerHtml(trth))
-			})
-			if len(ths) > 0 {
-				rows = append(rows, "|"+strings.Join(ths, "|")+"\n|-----\n")
-			}
-			tds := []string{}
-			tr.Find("td").Each(func(i int, trtd *goquery.Selection) {
-				tds = append(tds, getInnerHtml(trtd))
-			})
-			if len(tds) > 0 {
-				rows = append(rows, "|"+strings.Join(tds, "|")+"\n")
-			}
-		})
-		table.BeforeHtml(strings.Join(rows, ""))
-		table.Remove()
+		for _, item := range attrs {
+			table.RemoveAttr(item)
+		}
 	})
 	return doc
 }
