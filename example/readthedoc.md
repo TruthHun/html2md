@@ -1,11 +1,10 @@
+
+
 # [1. 程序构建](#id11)[¶](#program-build)
 
 
 
-
-
 目录
-
 
 - [程序构建](#program-build)
   - [配置](#id3)
@@ -18,19 +17,14 @@
   - [安装](#id8)
   - [总结](#id9)
 
-
-
 一般源代码提供的程序安装需要通过配置、编译、安装三个步骤；
-
 
 - 配置做的工作主要是检查当前环境是否满足要安装软件的依赖关系，以及设置程序安装所需要的初始化信息，比如安装路径，需要安装哪些组件；配置完成，会生成makefile文件供第二步make使用；
 - 编译是对源文件进行编译链接生成可执行程序；
 - 安装做的工作就简单多了，就是将生成的可执行文件拷贝到配置时设置的初始路径下；
 
 
-
 ## [1.1. 配置](#id12)[¶](#id3)
-
 
 
 查询可用的配置选项:
@@ -38,11 +32,8 @@
 
 
 
-
-<pre><span></span><span class="o">./</span><span class="n">configure</span> <span class="o">--</span><span class="n">help</span>
+<pre>./configure --help
 </pre>
-
-
 
 
 
@@ -51,11 +42,8 @@
 
 
 
-
-<pre><span></span><span class="o">./</span><span class="n">configure</span> <span class="o">--</span><span class="n">prefix</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">snmp</span>
+<pre>./configure --prefix=/usr/local/snmp
 </pre>
-
-
 
 
 
@@ -64,11 +52,7 @@
 
 
 
-
-
-
 ## [1.2. 编译](#id13)[¶](#id4)
-
 
 
 编译使用make编译:
@@ -76,21 +60,14 @@
 
 
 
-
-<pre><span></span><span class="n">make</span> <span class="o">-</span><span class="n">f</span> <span class="n">myMakefile</span>
+<pre>make -f myMakefile
 </pre>
-
-
 
 
 
 通过-f选项显示指定需要编译的makefile；如果待使用makefile文件在当前路径，且文件名为以下几个，则不用显示指定：
 
-
-
 makefile Makefile
-
-
 
 
 
@@ -99,8 +76,6 @@ makefile Makefile
 
 - 必须满足第一条规则，满足后停止
 - 除第一条规则，其他无顺序
-
-
 
 
 
@@ -114,17 +89,9 @@ makefile Makefile
 - @？所有新于目标文件的前提名
 - @*目标文件的基名称
 
-
-
 注解
 
-
-
 系统学习makefile的书写规则，请参考 跟我一起学makefile [[1]](#id10)
-
-
-
-
 
 
 
@@ -133,11 +100,7 @@ makefile Makefile
 ### [更多选择 CMake](#id16)[¶](#cmake)
 
 
-
 CMake是一个跨平台的安装（编译）工具，可以用简单的语句来描述所有平台的安装(编译过程)。他能够输出各种各样的makefile或者project文件。使用CMake，能够使程序员从复杂的编译连接过程中解脱出来。它使用一个名为 CMakeLists.txt 的文件来描述构建过程,可以生成标准的构建文件,如 Unix/Linux 的 Makefile 或Windows Visual C++ 的 projects/workspaces 。
-
-
-
 
 
 
@@ -145,18 +108,14 @@ CMake是一个跨平台的安装（编译）工具，可以用简单的语句来
 ### [编译依赖的库](#id17)[¶](#id7)
 
 
-
 makefile编译过程中所依赖的非标准库和头文件路径需要显示指明:
 
 
 
 
-
-<pre><span></span><span class="n">CPPFLAGS</span> <span class="o">-</span><span class="n">I标记非标准头文件存放路径</span>
-<span class="n">LDFLAGS</span>  <span class="o">-</span><span class="n">L标记非标准库存放路径</span>
+<pre>CPPFLAGS -I标记非标准头文件存放路径
+LDFLAGS  -L标记非标准库存放路径
 </pre>
-
-
 
 
 
@@ -165,26 +124,16 @@ makefile编译过程中所依赖的非标准库和头文件路径需要显示指
 
 
 
-
-<pre><span></span><span class="n">make</span> <span class="o">-</span><span class="n">f</span> <span class="n">myMakefile</span> <span class="n">LDFLAGS</span><span class="o">=</span><span class="s1">&#39;-L/var/xxx/lib -L/opt/mysql/lib&#39;</span>
-    <span class="n">CPPFLAGS</span><span class="o">=</span><span class="s1">&#39;-I/usr/local/libcom/include -I/usr/local/libpng/include&#39;</span>
+<pre>make -f myMakefile LDFLAGS=&#39;-L/var/xxx/lib -L/opt/mysql/lib&#39;
+    CPPFLAGS=&#39;-I/usr/local/libcom/include -I/usr/local/libpng/include&#39;
 </pre>
-
-
-
 
 
 
 
 警告
 
-
-
 链接多库时，多个库之间如果有依赖，需要注意书写的顺序，右边是左边的前提；
-
-
-
-
 
 
 
@@ -196,34 +145,25 @@ makefile编译过程中所依赖的非标准库和头文件路径需要显示指
 
 
 
-<pre><span></span><span class="n">g</span><span class="o">++</span> <span class="o">-</span><span class="n">o</span> <span class="n">unixApp</span> <span class="n">unixApp</span><span class="o">.</span><span class="n">o</span> <span class="n">a</span><span class="o">.</span><span class="n">o</span> <span class="n">b</span><span class="o">.</span><span class="n">o</span>
+<pre>g++ -o unixApp unixApp.o a.o b.o
 </pre>
-
-
 
 
 
 选项说明：
 
-
 - -o:指明生成的目标文件
 - -g：添加调试信息
 - -E: 查看中间文件
-
 应用：查询宏展开的中间文件：
-
-
 
 在g++的编译选项中，添加 -E选项，然后去掉-o选项 ，重定向到一个文件中即可:
 
 
 
 
-
-<pre><span></span><span class="n">g</span><span class="o">++</span> <span class="o">-</span><span class="n">g</span> <span class="o">-</span><span class="n">E</span> <span class="n">unixApp</span><span class="o">.</span><span class="n">cpp</span>  <span class="o">-</span><span class="n">I</span><span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">app</span><span class="o">/</span><span class="n">source</span> <span class="o">&gt;</span> <span class="n">midfile</span>
+<pre>g++ -g -E unixApp.cpp  -I/opt/app/source &gt; midfile
 </pre>
-
-
 
 
 
@@ -232,8 +172,7 @@ makefile编译过程中所依赖的非标准库和头文件路径需要显示指
 
 
 
-
-<pre><span></span>$ldd myprogrammer
+<pre>$ldd myprogrammer
     libstdc++.so.6 =&gt; /usr/lib64/libstdc++.so.6 (0x00000039a7e00000)
     libm.so.6 =&gt; /lib64/libm.so.6 (0x0000003996400000)
     libgcc_s.so.1 =&gt; /lib64/libgcc_s.so.1 (0x00000039a5600000)
@@ -244,19 +183,9 @@ makefile编译过程中所依赖的非标准库和头文件路径需要显示指
 
 
 
-
-
-
 注解
 
-
-
 关于ldd的使用细节，参见 [ldd 查看程序依赖库](../tool/ldd.html#ldd)
-
-
-
-
-
 
 
 
@@ -266,17 +195,13 @@ makefile编译过程中所依赖的非标准库和头文件路径需要显示指
 ## [1.3. 安装](#id19)[¶](#id8)
 
 
-
 安装做的工作就简单多了，就是将生成的可执行文件拷贝到配置时设置的初始路径下:
 
 
 
 
-
-<pre><span></span>$make install
+<pre>$make install
 </pre>
-
-
 
 
 
@@ -285,23 +210,13 @@ makefile编译过程中所依赖的非标准库和头文件路径需要显示指
 
 
 
-
-
-
 ## [1.4. 总结](#id20)[¶](#id9)
-
 
 
 configure make install g++
 
 
-
-|[[1]](#id6)|陈皓 跟我一起写Makefile [http://scc.qibebt.cas.cn/docs/linux/base/%B8%FA%CE%D2%D2%BB%C6%F0%D0%B4Makefile-%B3%C2%F0%A9.pdf](http://scc.qibebt.cas.cn/docs/linux/base/%B8%FA%CE%D2%D2%BB%C6%F0%D0%B4Makefile-%B3%C2%F0%A9.pdf)
-
-
-
-
-
+<table rules="none"><colgroup><col class="label"/><col/></colgroup><tbody valign="top"><tr><td>[[1]](#id6)</td><td>陈皓 跟我一起写Makefile [http://scc.qibebt.cas.cn/docs/linux/base/%B8%FA%CE%D2%D2%BB%C6%F0%D0%B4Makefile-%B3%C2%F0%A9.pdf](http://scc.qibebt.cas.cn/docs/linux/base/%B8%FA%CE%D2%D2%BB%C6%F0%D0%B4Makefile-%B3%C2%F0%A9.pdf)</td></tr></tbody></table>
 
 
 

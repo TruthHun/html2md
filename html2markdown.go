@@ -24,8 +24,6 @@ var closeTag = map[string]string{
 	"var":    "_",
 	"cite":   "_",
 	"br":     "\n",
-	"span":   "",
-	"small":  "",
 }
 
 var blockTag = []string{
@@ -63,6 +61,7 @@ func Convert(htmlstr string) (md string) {
 	return
 }
 
+
 // 解压，释放code和pre
 func depress(md string, maps map[string]string) string {
 
@@ -80,12 +79,25 @@ func depress(md string, maps map[string]string) string {
 		}
 	}
 
+	if doc,err:=goquery.NewDocumentFromReader(strings.NewReader(md));err==nil{
+		rmAttr:=[]string{"span","li","ul","ol","dt","dd","dl","tr","td","tbody","table"}
+		for _,tag:=range rmAttr{
+			doc.Find(tag).Each(func(i int, selection *goquery.Selection) {
+				selection.RemoveAttr("class")
+				selection.RemoveAttr("id")
+				selection.RemoveAttr("style")
+			})
+		}
+		md,_=doc.Find("body").Html()
+		md=strings.Replace(md,"<span>","",-1)
+		md=strings.Replace(md,"</span>","",-1)
+	}
 	return md
 }
 
 //压缩html
 func compress(doc *goquery.Document) (*goquery.Document, map[string]string) {
-	//blockquote、pre、code
+	//blockquote、pre、code，并替换 span 为空
 
 	var blockquoteMap = make(map[string]string)
 	var maps = make(map[string]string)
