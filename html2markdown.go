@@ -137,6 +137,12 @@ func compress(doc *goquery.Document) (*goquery.Document, map[string]string) {
 	htmlstr = strings.Replace(htmlstr, "\n", "", -1)
 	htmlstr = strings.Replace(htmlstr, "\r", "", -1)
 	htmlstr = strings.Replace(htmlstr, "\t", "", -1)
+	htmlstr = strings.Replace(htmlstr, "<dl", "<ul", -1)
+	htmlstr = strings.Replace(htmlstr, "</dl", "</ul", -1)
+	htmlstr = strings.Replace(htmlstr, "<dt", "<li", -1)
+	htmlstr = strings.Replace(htmlstr, "</dt", "</li", -1)
+	htmlstr = strings.Replace(htmlstr, "<dd", "<li", -1)
+	htmlstr = strings.Replace(htmlstr, "</dd", "</li", -1)
 	//正则匹配，把“>”和“<”直接的空格全部去掉
 	//去除标签之间的空格，如果是存在代码预览的页面，不要替换空格，否则预览的代码会错乱
 	r, _ := regexp.Compile(">\\s{1,}<")

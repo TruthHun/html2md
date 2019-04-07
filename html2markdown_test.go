@@ -34,4 +34,9 @@ func TestConvert(t *testing.T) {
 	md = Convert(string(b))
 	ioutil.WriteFile("example/gitbook1.md", []byte(md), 0777)
 
+
+	b, _ = ioutil.ReadFile("example/django.html")
+	md = Convert(string(b))
+	ioutil.WriteFile("example/django.md", []byte(md), 0777)
+
 }

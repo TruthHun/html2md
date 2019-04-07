@@ -915,23 +915,39 @@ protected void onInit(InitEvent event) {
 
 - - -
 
-<dl><dt> table 的属性 </dt><dd>
+
+-  table 的属性 
+- 
 [align](gui_attributes.html#gui_attr_align) - [aggregatable](#gui_Table_aggregatable) - [aggregationStyle](#gui_Table_aggregationStyle) - [caption](gui_attributes.html#gui_attr_caption) - [captionAsHtml](gui_attributes.html#gui_attr_captionAsHtml) - [columnControlVisible](#gui_Table_columnControlVisible) - [columnHeaderVisible](#gui_Table_columnHeaderVisible) - [contextHelpText](gui_attributes.html#gui_attr_contextHelpText) - [contextHelpTextHtmlEnabled](gui_attributes.html#gui_attr_contextHelpTextHtmlEnabled) - [contextMenuEnabled](#gui_Table_allowPopupMenu) - [css](gui_attributes.html#gui_attr_css) - [dataContainer](gui_attributes.html#gui_attr_dataContainer) - [description](gui_attributes.html#gui_attr_description) - [descriptionAsHtml](gui_attributes.html#gui_attr_descriptionAsHtml) - [editable](#gui_Table_editable) - [enable](gui_attributes.html#gui_attr_enable) - [box.expandRatio](gui_attributes.html#gui_attr_expandRatio) - [height](gui_attributes.html#gui_attr_height) - [id](gui_attributes.html#gui_attr_id) - [multiLineCells](#gui_Table_multiLineCells) - [multiselect](#gui_Table_multiselect) - [presentations](#gui_Table_presentations) - [reorderingAllowed](#gui_Table_reorderingAllowed) - [settingsEnabled](gui_attributes.html#gui_attr_settingsEnabled) - [showSelection](#gui_Table_showSelection) - [sortable](#gui_Table_sortable) - [stylename](#gui_Table_stylename) - [tabIndex](gui_attributes.html#gui_attr_tabIndex) - [textSelectionEnabled](gui_attributes.html#gui_attr_textSelectionEnabled) - [visible](gui_attributes.html#gui_attr_visible) - [width](gui_attributes.html#gui_attr_width)
-</dd><dt> table 的元素 </dt><dd>
+
+-  table 的元素 
+- 
 [actions](#gui_Table_actions) - [buttonsPanel](#gui_Table_buttonsPanel) - [columns](#gui_Table_columns) - [rows](#gui_Table_rows) - [rowsCount](#gui_Table_rowsCount)
-</dd><dt>[column](#gui_Table_columns) 元素的属性 </dt><dd>
+
+- [column](#gui_Table_columns) 元素的属性 
+- 
 [align](#gui_Table_column_align) - [caption](#gui_Table_column_caption) - [captionProperty](#gui_Table_column_captionProperty) - [collapsed](#gui_Table_column_collapsed) - [dateFormat](gui_DateField.html#gui_DateField_dateFormat) - [editable](#gui_Table_column_editable) - [generator](#gui_Table_column_generator) - [id](#gui_Table_column_id) - [link](#gui_Table_column_link) - [linkInvoke](#gui_Table_column_linkInvoke) - [linkScreen](#gui_Table_column_linkScreen) - [linkScreenOpenType](#gui_Table_column_linkScreenOpenType) - [maxTextLength](#gui_Table_column_maxTextLength) - [optionsDatasource](gui_attributes.html#gui_attr_optionsDatasource) - [resolution](gui_DateField.html#gui_DateField_resolution) - [sortable](#gui_Table_column_sortable) - [visible](gui_attributes.html#gui_attr_visible) - [width](#gui_Table_column_width)
-</dd><dt>[column](#gui_Table_columns)的元素 </dt><dd>
+
+- [column](#gui_Table_columns)的元素 
+- 
 [aggregation](#gui_Table_column_aggregation) - [formatter](gui_formatter.html)
-</dd><dt>[aggregation](#gui_Table_column_aggregation)的属性 </dt><dd>
+
+- [aggregation](#gui_Table_column_aggregation)的属性 
+- 
 [type](#gui_Table_column_aggregation) - [strategyClass](#gui_Table_column_aggregation_strategyClass)
-</dd><dt>[rows](#gui_Table_rows)的属性 </dt><dd>
+
+- [rows](#gui_Table_rows)的属性 
+- 
 [datasource](gui_attributes.html#gui_attr_datasource)
-</dd><dt> table 的预定义样式 </dt><dd>
+
+-  table 的预定义样式 
+- 
 [borderless](#gui_table_borderless) - [compact](#gui_table_compact) - [no-header](#gui_table_no-header) - [no-horizontal-lines](#gui_table_no-horizontal-lines) - [no-stripes](#gui_table_no-stripes) - [no-vertical-lines](#gui_table_no-vertical-lines) - [small](#gui_table_small)
-</dd><dt> API </dt><dd>
+
+-  API 
+- 
 [addGeneratedColumn](#gui_Table_addGeneratedColumn) - [addPrintable](#gui_Table_addPrintable) - [addColumnCollapseListener](#gui_Table_ColumnCollapseListener) - [addSelectionListener](#gui_Table_SelectionListener) - [applySettings](gui_api.html#gui_api_settings) - [generateCell](#gui_Table_generateCell) - [getSelected](#gui_Table_getSelected) - [requestFocus](#gui_Table_requestFocus) - [saveSettings](gui_api.html#gui_api_settings) - [scrollTo](#gui_Table_scrollTo) - [setClickListener](#gui_Table_CellClickListener) - [setEnterPressAction](#gui_Table_setEnterPressAction) - [setItemClickAction](#gui_Table_setItemClickAction) - [setStyleProvider](#gui_Table_setStyleProvider)
-</dd></dl>
+
 
 - - -
 
