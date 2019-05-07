@@ -36,9 +36,9 @@
 好吧，他们都有一个响亮的Slogan，那么我们也要有一个：
 
 
-<blockquote>    书栈阅读 - 让阅读，成为一种本能
+<blockquote>
+    <p>书栈阅读 - 让阅读，成为一种本能</p>
 </blockquote>
-
 
 - - -
 

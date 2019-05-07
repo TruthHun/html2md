@@ -431,8 +431,9 @@ Composer 是一个 **杰出** 的依赖管理器。在 <code>composer.json</code
 现在已经有许多 PHP 第三方包已兼容 Composer，随时可以在你的项目中使用。这些「packages(包)」都已列在 [Packagist](http://packagist.org/)，这是一个官方的 Composer 兼容包仓库。
  
 
-<blockquote>            为了提高国内 Composer 的使用体验，Laravel China 社区维护了 [Composer 中文镜像 /Packagist 中国全量镜像](https://laravel-china.org/composer) ，此镜像使用了又拍云的 CDN 加速，将会极大加速 Composer 依赖的下载速度。        
-</blockquote>
+<blockquote>
+            <p>为了提高国内 Composer 的使用体验，Laravel China 社区维护了 <a href="https://laravel-china.org/composer">Composer 中文镜像 /Packagist 中国全量镜像</a> ，此镜像使用了又拍云的 CDN 加速，将会极大加速 Composer 依赖的下载速度。</p>
+        </blockquote>
 
  
 
@@ -613,8 +614,9 @@ PEAR 安装扩展包的时候, 是全局安装的, 意味着一旦安装了某�
 第一部分 <code>&#34;repositories&#34;</code> 是让 Composer 从哪个渠道去获取扩展包, 然后, <code>&#34;require&#34;</code> 部分使用下面的命名规范:
  
 
-<blockquote>            pear-channel/Package        
-</blockquote>
+<blockquote>
+            <p>pear-channel/Package</p>
+        </blockquote>
 
  
 前缀 “pear” 是为了避免冲突写死的，因为 <code>pear-channel</code> 有可能是任意扩展包名称，所以 <code>channel</code> 的简称（或者是完整 URL）可以用来指引扩展包在哪个 <code>channel</code> 里。
@@ -622,8 +624,9 @@ PEAR 安装扩展包的时候, 是全局安装的, 意味着一旦安装了某�
 成功安装扩展包以后, 代码会放到项目的 <code>vendor</code> 文件夹中, 并且可以通过加载 Composer 的自动加载器进行加载:
  
 
-<blockquote>            vendor/pear-pear2.php.net/PEAR2_HTTP_Request/pear2/HTTP/Request.php        
-</blockquote>
+<blockquote>
+            <p>vendor/pear-pear2.php.net/PEAR2_HTTP_Request/pear2/HTTP/Request.php</p>
+        </blockquote>
 
  
 在代码里面可以这样使用:
@@ -1192,8 +1195,9 @@ After including those new rules in the <code>.po</code> file, a new scan will br
 出自维基百科 [Wikipedia](http://en.wikipedia.org/wiki/Dependency_injection):
  
 
-<blockquote>            依赖注入是一种允许我们从硬编码的依赖中解耦出来，从而在运行时或者编译时能够修改的软件设计模式。        
-</blockquote>
+<blockquote>
+            <p>依赖注入是一种允许我们从硬编码的依赖中解耦出来，从而在运行时或者编译时能够修改的软件设计模式。</p>
+        </blockquote>
 
  
 这句解释让依赖注入的概念听起来比它实际要复杂很多。依赖注入通过构造注入，函数调用或者属性的设置来提供组件的依赖关系。就是这么简单。
@@ -2053,8 +2057,11 @@ log_errors = On</code></pre>
 
  
 
-<blockquote>            将值设为 <code>-1</code> 将会显示出所有的错误，甚至包括在未来的 PHP 版本中新增加的类型和参数。                和 PHP 5.4 起开始使用的 <code>E_ALL</code> 是相同的。-                [php.net](http://php.net/function.error-reporting)        
-</blockquote>
+<blockquote>
+            <p>将值设为 <code>-1</code> 将会显示出所有的错误，甚至包括在未来的 PHP 版本中新增加的类型和参数。
+                和 PHP 5.4 起开始使用的 <code>E_ALL</code> 是相同的。-
+                <a href="http://php.net/function.error-reporting">php.net</a></p>
+        </blockquote>
 
  
 <code>E_STRICT</code> 类型的错误是在 5.3.0 中被引入的，并没有被包含在 <code>E_ALL</code> 中。然而从 5.4.0 开始，它被包含在了 <code>E_ALL</code> 中。这意味着什么？这表示如果你想要在 5.3 中显示所有的错误信息，你需要使用 <code>-1</code> 或者 <code>E_ALL | E_STRICT</code>。
@@ -2107,8 +2114,9 @@ PHP 有一些不同种类的测试工具 (或框架) 可以使用，它们使用
 [Wikipedia](http://en.wikipedia.org/wiki/Test-driven_development) 上的定义:
  
 
-<blockquote>            测试驱动开发 (TDD) 是一种以非常短的开发周期不断迭代的软件开发过程:首先开发者对将要实现的功能或者新的方法写一个失败的自动化测试用例，然后就去写代码来通过这个测试用例，最终通过重构代码让一其达到可接受的水准。**Kent Beck**， 这个技术创造者或者说重新发现者，在2003年声明TDD 鼓励简单的设计和激励信心。        
-</blockquote>
+<blockquote>
+            <p>测试驱动开发 (TDD) 是一种以非常短的开发周期不断迭代的软件开发过程:首先开发者对将要实现的功能或者新的方法写一个失败的自动化测试用例，然后就去写代码来通过这个测试用例，最终通过重构代码让一其达到可接受的水准。<strong>Kent Beck</strong>， 这个技术创造者或者说重新发现者，在2003年声明TDD 鼓励简单的设计和激励信心。</p>
+        </blockquote>
 
  
 目前你可以应用的几种不同类型的测试：
@@ -2136,8 +2144,9 @@ PHP 有一些不同种类的测试工具 (或框架) 可以使用，它们使用
 [Wikipedia](http://en.wikipedia.org/wiki/Test-driven_development) 上的定义:
  
 
-<blockquote>            集成测试 (有时候称为集成和测试，缩写为 <code>I&amp;T</code>)是把各个模块组合在一起进行整体测试的软件测试阶段。它处于单元测试之后，验收测试之前。集成测试将已经经过了单元测试的模块做为输入模块，组合成一个整体，然后运行集成测试用例，然后输出一个可以进行系统测试的系统。        
-</blockquote>
+<blockquote>
+            <p>集成测试 (有时候称为集成和测试，缩写为 <code>I&amp;T</code>)是把各个模块组合在一起进行整体测试的软件测试阶段。它处于单元测试之后，验收测试之前。集成测试将已经经过了单元测试的模块做为输入模块，组合成一个整体，然后运行集成测试用例，然后输出一个可以进行系统测试的系统。</p>
+        </blockquote>
 
  
 许多相同的测试工具既可以运用到单元测试，也可以运用到集成测试。
@@ -2325,8 +2334,12 @@ PHP 非常流行，很少有服务器没有安装 PHP 的，因而有很多共�
 
  
 
-<blockquote>            持续集成是一种软件开发实践，团队的成员经常用来集成他们的工作，                通常每一个成员至少每天都会进行集成 — 因此每天都会有许多的集成。许多团队发现这种方式会显著地降低集成问题，                approach leads to significantly reduced integration problems and allows a team to develop cohesive software more                并允许一个团队更快的开发软件。        
-</blockquote>
+<blockquote>
+            <p>持续集成是一种软件开发实践，团队的成员经常用来集成他们的工作，
+                通常每一个成员至少每天都会进行集成 — 因此每天都会有许多的集成。许多团队发现这种方式会显著地降低集成问题，
+                approach leads to significantly reduced integration problems and allows a team to develop cohesive software more
+                并允许一个团队更快的开发软件。</p>
+        </blockquote>
 
  
 _– Martin Fowler_
