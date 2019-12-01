@@ -27,16 +27,11 @@ var closeTag = map[string]string{
 }
 
 var blockTag = []string{
-	"div",
-	"figure",
-	"p",
-	"article",
-	"aside",
-	"nav",
-	"footer",
-	"header",
-	"section",
+	"address", "div", "figure", "p", "figcaption",
+	"article", "aside", "nav", "footer", "fieldset", "menu",
+	"header", "section", "center", "frameset", "details", "summary",
 }
+
 var nextlineTag = []string{
 	"pre", "blockquote", "table",
 }
@@ -229,7 +224,11 @@ func handleLi(doc *goquery.Document) *goquery.Document {
 	})
 	for _, tag := range tags {
 		doc.Find(tag).Each(func(i int, selection *goquery.Selection) {
-			selection.BeforeHtml(selection.Text())
+			if tag == "ul" {
+				selection.BeforeHtml("\n" + selection.Text() + "\n")
+			} else {
+				selection.BeforeHtml(selection.Text())
+			}
 			selection.Remove()
 		})
 	}
@@ -304,8 +303,8 @@ func handleClosedTag(doc *goquery.Document) *goquery.Document {
 func handleNextLine(doc *goquery.Document) *goquery.Document {
 	for _, tag := range nextlineTag {
 		doc.Find(tag).Each(func(i int, selection *goquery.Selection) {
-			selection.BeforeHtml("\n")
-			selection.AfterHtml("\n")
+			selection.BeforeHtml("\n\n")
+			selection.AfterHtml("\n\n")
 		})
 	}
 	return doc
