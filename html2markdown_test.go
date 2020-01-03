@@ -10,6 +10,10 @@ func TestConvert(t *testing.T) {
 	md := Convert(string(b))
 	ioutil.WriteFile("example/code.md", []byte(md), 0777)
 
+	b, _ = ioutil.ReadFile("example/resuite.html")
+	md = Convert(string(b))
+	ioutil.WriteFile("example/resuite.md", []byte(md), 0777)
+
 	b, _ = ioutil.ReadFile("example/hello.html")
 	md = Convert(string(b))
 	ioutil.WriteFile("example/hello.md", []byte(md), 0777)
@@ -33,7 +37,6 @@ func TestConvert(t *testing.T) {
 	b, _ = ioutil.ReadFile("example/gitbook1.html")
 	md = Convert(string(b))
 	ioutil.WriteFile("example/gitbook1.md", []byte(md), 0777)
-
 
 	b, _ = ioutil.ReadFile("example/django.html")
 	md = Convert(string(b))
