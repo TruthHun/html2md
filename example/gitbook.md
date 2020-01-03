@@ -2,8 +2,11 @@
 
  
 
-<blockquote>                        Front-end web development, also known as client-side development is the practice of producing HTML, CSS and JavaScript for a website or Web Application so that a user can see and interact with them directly. The challenge associated with front end development is that the tools and techniques used to create the front end of a website change constantly and so the developer needs to constantly be aware of how the field is developing.                        The objective of designing a site is to ensure that when the users open up the site they see the information in a format that is easy to read and relevant. This is further complicated by the fact that users now use a large variety of devices with varying screen sizes and resolutions thus forcing the designer to take into consideration these aspects when designing the site. They need to ensure that their site comes up correctly in different browsers (cross-browser), different operating systems (cross-platform) and different devices (cross-device), which requires careful planning on the side of the developer.                        _[https://en.wikipedia.org/wiki/Front-end_web_development](https://en.wikipedia.org/wiki/Front-end_web_development)_                    
-</blockquote>
+<blockquote>
+                        <p>Front-end web development, also known as client-side development is the practice of producing HTML, CSS and JavaScript for a website or Web Application so that a user can see and interact with them directly. The challenge associated with front end development is that the tools and techniques used to create the front end of a website change constantly and so the developer needs to constantly be aware of how the field is developing.</p>
+                        <p>The objective of designing a site is to ensure that when the users open up the site they see the information in a format that is easy to read and relevant. This is further complicated by the fact that users now use a large variety of devices with varying screen sizes and resolutions thus forcing the designer to take into consideration these aspects when designing the site. They need to ensure that their site comes up correctly in different browsers (cross-browser), different operating systems (cross-platform) and different devices (cross-device), which requires careful planning on the side of the developer.</p>
+                        <p><cite><a href="https://en.wikipedia.org/wiki/Front-end_web_development" target="_blank">https://en.wikipedia.org/wiki/Front-end_web_development</a></cite></p>
+                    </blockquote>
 
  
 
@@ -26,10 +29,12 @@ A web browser is software used to retrieve, present, and traverse information on
 
 The most common web browsers are (shown in order of most used first):
 
+
 - [Chrome](http://www.google.com/chrome/)
 - [Internet Explorer](https://en.wikipedia.org/wiki/Internet_Explorer) (Note: not [Edge](http://dev.modern.ie/), referring to IE 9 to IE 11)
 - [Firefox](https://www.mozilla.org/firefox/)
 - [Safari](http://www.apple.com/safari/)
+
 
 ##### Headless Browsers
 
@@ -38,9 +43,11 @@ Headless browsers are a web browser without a graphical user interface that can 
 
 The most common headless browsers are:
 
+
 - [PhantomJS](http://phantomjs.org/)
 - [slimerjs](http://slimerjs.org/)
 - [trifleJS](http://triflejs.org/)
+
 
 ##### Webviews
 
@@ -49,9 +56,11 @@ The most common headless browsers are:
 
 The most common solutions for [webview](http://developer.telerik.com/featured/what-is-a-webview/) development are:
 
+
 - [Cordova](https://cordova.apache.org/) (typically for native phone/tablet apps)
 - [NW.js](https://github.com/nwjs/nw.js) (typically used for desktop apps)
 - [Electron](http://electron.atom.io/) (typically used for desktop apps)
+
 
 ##### Native from Web Tech
 
@@ -60,8 +69,10 @@ Eventually, what is learned from web browser development can be used by front-en
 
 Some examples of these environments are: 
 
+
 - [NativeScript](https://www.nativescript.org/)
 - [React Native](https://facebook.github.io/react-native/)
+
 - - -
 
 
@@ -76,6 +87,8 @@ Make sure you are clear what what exactly is meant by the &#34;web platform&#34;
 
 
 #  results matching &#34;&#34;
+
+
 
 
 

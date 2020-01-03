@@ -42,4 +42,7 @@ func TestConvert(t *testing.T) {
 	md = Convert(string(b))
 	ioutil.WriteFile("example/django.md", []byte(md), 0777)
 
+	b, _ = ioutil.ReadFile("example/blockquote.html")
+	md = Convert(string(b))
+	ioutil.WriteFile("example/blockquote.md", []byte(md), 0777)
 }

@@ -56,6 +56,7 @@
 
 
 [](#gui_Table_rows)
+
 - 
 <code>rows</code> – 如果使用 [datasource](gui_attributes.html#gui_attr_datasource) 属性来做数据绑定，则必须设置此元素。
 
@@ -90,7 +91,9 @@ protected void onInit(InitEvent event) {
 
 
 
+
 [](#gui_Table_columns)
+
 - 
 <code>columns</code> – 定义表格列的必须元素。
 
@@ -261,7 +264,9 @@ public void linkedMethod(Entity item, String columnId) {
 
 
 
+
 [](#gui_Table_rowsCount)
+
 - 
 <code>rowsCount</code> − 可选元素，为表格添加 <code>RowsCount</code> 组件；此组件能够分页加载表格数据。可以使用[数据加载器](gui_data_loaders.html)的 <code>setMaxResults()</code> 方法限制数据容器中的记录数来定义分页的大小。这个方法通常是由链接到表格数据加载器的[过滤器](gui_Filter.html)组件来执行的。如果表格没有通用过滤器，则可以直接从界面控制器调用此方法。
 
@@ -270,14 +275,19 @@ public void linkedMethod(Entity item, String columnId) {
 
 
 
+
 [](#gui_Table_actions)
+
 - 
 <code>actions</code> − 可选元素，用于描述和表格相关的[操作](gui_Action.html)。除了自定义的操作外，该元素还支持以下在 <code>com.haulmont.cuba.gui.actions.list</code> 里定义[标准操作](std_list_actions.html)：<code>create</code> 、 <code>edit</code> 、 <code>remove</code> 、 <code>refresh</code> 、 <code>add</code> 、 <code>exclude</code> 、 <code>excel</code>。
 
 
+
 [](#gui_Table_buttonsPanel)
+
 - 
 可选元素，在表格上方添加一个 [ButtonsPanel](gui_ButtonsPanel.html) 容器来显示操作按钮。
+
 
 
 
@@ -285,11 +295,14 @@ public void linkedMethod(Entity item, String columnId) {
 
 
 [](#gui_Table_multiselect)
+
 - 
 <code>multiselect</code> 属性可以为表格行设置多选模式。如果 <code>multiselect</code> 为 <code>true</code>，用户可以按住 **Ctrl** 或 **Shift** 键在表格中选择多行。默认情况下关闭多选模式。
 
 
+
 [](#gui_Table_sortable)
+
 - 
 <code>sortable</code> 属性可以对表中的数据进行排序。默认情况下，它设置为 <code>true</code> 。如果允许排序，单击列标题在列名称右侧将显示图标 ![gui_sortable_down](./img/gui_sortable_down.png) / ![gui_sortable_up](./img/gui_sortable_up.png)。可以使用[sortable](#gui_Table_column_sortable)属性禁用特定列的排序。
 
@@ -328,14 +341,19 @@ public void linkedMethod(Entity item, String columnId) {
 
 
 
+
 [](#gui_Table_presentations)
+
 - 
 <code>presentations</code> 属性控制[展示设置](gui_presentations.html)。默认情况下，该值为 <code>false</code>。如果属性值为 <code>true</code>，则会在表格的右上角添加相应的图标 ![gui_presentation](./img/gui_presentation.png)。
 
 
+
 [](#gui_Table_columnControlVisible)
+
 - 
 如果 <code>columnControlVisible</code> 属性设置为 <code>false</code>，则用户无法使用位于表头的右侧的下拉菜单按钮 ![gui_table_columnControl](./img/gui_table_columnControl.png) 隐藏列：![gui_table_columnControl](./img/gui_table_columnControl.png) 按钮位于表头的右侧。当前显示的列在菜单中标记为选中状态。
+
 
 
 
@@ -343,31 +361,42 @@ public void linkedMethod(Entity item, String columnId) {
 
 
 [](#gui_Table_reorderingAllowed)
+
 - 
 如果 <code>reorderingAllowed</code> 属性设置为 <code>false</code>，则用户不能通过用鼠标拖动来更改列顺序。
 
 
+
 [](#gui_Table_columnHeaderVisible)
+
 - 
 如果 <code>columnHeaderVisible</code> 属性设置为 <code>false</code>，则该表没有列标题。
 
 
+
 [](#gui_Table_showSelection)
+
 - 
 如果 <code>showSelection</code> 属性设置为 <code>false</code>，则不突出显示当前行。
 
 
+
 [](#gui_Table_allowPopupMenu)
+
 - 
 <code>contextMenuEnabled</code> 属性启用右键菜单。默认情况下，此属性设置为 <code>true</code>。右键菜单中会列出表格操作（如果有的话）和 **System Information** 菜单项（如果用户具有 <code>cuba.gui.showInfo</code> [权限](permissions.html)），通过 **System Information** 菜单项可查看选中实体的详细信息。
 
 
+
 [](#gui_Table_multiLineCells)
+
 - 
 将 <code>multiLineCells</code> 设置为 <code>true</code> 可以让包含多行文本的单元格显示多行文本。在这种模式下，浏览器会一次加载表格中当前页的所有行，而不是延迟加载表格的可见部分。这就要求在 Web 客户端中适当的滚动。默认值为“false”。
 
 
+
 [](#gui_Table_aggregatable)
+
 - 
 <code>aggregatable</code> 属性启用表格行的聚合运算。支持以下操作：
 
@@ -477,7 +506,9 @@ column.setAggregation(info);</code></pre>
 
 
 
+
 [](#gui_Table_editable)
+
 - 
 <code>editable</code> 属性可以将表格转换为即时编辑模式。在这种模式下，具有 <code>editable = true</code> 属性的列显示用于编辑相应实体属性的组件。
 
@@ -498,7 +529,9 @@ column.setAggregation(info);</code></pre>
 
 
 
+
 [](#gui_Table_stylename)
+
 - 
 在具有基于 Halo-based 主题的 Web 客户端中，<code>stylename</code> 属性可以在 XML 描述中或者界面控制器中为 <code>Table</code> 组件设置预定义样式：
 
@@ -574,20 +607,26 @@ column.setAggregation(info);</code></pre>
 
 
 
+
 <code>Table</code> 接口的方法:
 
 
 [](#gui_Table_ColumnCollapseListener)
+
 - 
 可以使用 <code>addColumnCollapsedListener</code> 方法和 <code>ColumnCollapsedListener</code> 接口的实现跟踪列的可视化状态。
 
 
+
 [](#gui_Table_getSelected)
+
 - 
 <code>getSelected()</code> 、 <code>getSingleSelected()</code> 返回表格中的选定行对应的实体实例。可以通过调用 <code>getSelected()</code> 方法来获得集合。如果未选择任何内容，则程序将返回空集。如果禁用了 <code>multiselect</code>，应该使用 <code>getSingleSelected()</code> 方法返回一个选定实体，如果没有选择任何内容则返回 <code>null</code>。
 
 
+
 [](#gui_Table_SelectionListener)
+
 - 
 <code>addSelectionListener()</code> 可以跟踪表格选中行的变化，示例：
 
@@ -624,7 +663,9 @@ protected void onCustomersTableSelection(Table.SelectionEvent&lt;Customer&gt; ev
 
 
 
+
 [](#gui_Table_addGeneratedColumn)
+
 - 
 <code>addGeneratedColumn()</code> 方法允许在列中自定义数据的表现方式。它需要两个参数：列的标识符和 <code>Table.ColumnGenerator</code> 接口的实现。如果标识符可以匹配 XML 描述中为表格列设置的标识符 - 在这种情况下，插入新列代替 XML 中定义的列。如果标识符与任何列都不匹配，则会在右侧添加新列。
 
@@ -694,7 +735,9 @@ protected void onInit(InitEvent event) {
 
 
 
+
 [](#gui_Table_requestFocus)
+
 - 
 <code>requestFocus()</code> 方法允许将焦点设置在某一行的具体的可编辑字段上。需要两个参数：表示行的实体实例和列的标识符。请求焦点的示例如下：
 
@@ -707,7 +750,9 @@ protected void onInit(InitEvent event) {
 
 
 
+
 [](#gui_Table_scrollTo)
+
 - 
 <code>scrollTo()</code> 方法允许将表格滚动到具体行。需要一个参数：表示行的实体实例。
 
@@ -724,7 +769,9 @@ protected void onInit(InitEvent event) {
 
 
 
+
 [](#gui_Table_CellClickListener)
+
 - 
 如果需要在单元格中显示自定义内容并且在用户单击单元格的时候能收到通知，可以使用 <code>setClickListener()</code> 方法实现这些功能。<code>CellClickListener</code> 接口的实现接收选中实体和列标识符作为参数。这些单元格的内容将被包装在一个 span 元素中，这个 span 元素带有 <code>cuba-table-clickable-cell</code> 样式，可以利用该样式来定义单元格外观。
 
@@ -752,7 +799,9 @@ protected void onInit(InitEvent event) {
 
 
 
+
 [](#gui_Table_setStyleProvider)
+
 - 
 <code>setStyleProvider()</code> 方法可以设置表格单元格显示样式。该方法接受 <code>Table.StyleProvider</code> 接口的实现类作为参数。表格的每一行和每个单元分别调用这个接口的 <code>getStyleName()</code> 方法。如果某一行调用该方法，则第一个参数包含该行显示的实体实例，第二个参数为 <code>null</code>。如果单元格调用该方法，则第二个参数包含单元格显示的属性的名称。
 
@@ -814,7 +863,9 @@ protected void onInit(InitEvent event) {
 
 
 
+
 [](#gui_Table_addPrintable)
+
 - 
 <code>addPrintable()</code> 当通过 <code>excel</code> [标准操作](standard_actions.html)或直接使用 <code>ExcelExporter</code> 类导出数据到 XLS 文件时，此方法可以给列中数据设置自定义展现。该方法接收的两个参数为列标识符和为列提供的 <code>Table.Printable</code> 接口实现。例如：
 
@@ -866,7 +917,9 @@ protected void onInit(InitEvent event) {
 
 
 
+
 [](#gui_Table_setItemClickAction)
+
 - 
 <code>setItemClickAction()</code> 方法能够定义一个双击表格行时将执行的[操作](gui_Action.html)。如果未定义此操作，表格将尝试按以下顺序在其操作列表中查找适当的操作：
 
@@ -886,7 +939,9 @@ protected void onInit(InitEvent event) {
 
 
 
+
 [](#gui_Table_setEnterPressAction)
+
 - 
 <code>setEnterPressAction()</code> 方法可以定义按下 Enter 键时执行的[操作](gui_Action.html)。如果未定义此操作，则表将尝试按以下顺序在其操作列表中查找适当的操作：
 
@@ -913,7 +968,9 @@ protected void onInit(InitEvent event) {
 
 
 
+
 - - -
+
 
 
 -  table 的属性 
@@ -947,6 +1004,7 @@ protected void onInit(InitEvent event) {
 -  API 
 - 
 [addGeneratedColumn](#gui_Table_addGeneratedColumn) - [addPrintable](#gui_Table_addPrintable) - [addColumnCollapseListener](#gui_Table_ColumnCollapseListener) - [addSelectionListener](#gui_Table_SelectionListener) - [applySettings](gui_api.html#gui_api_settings) - [generateCell](#gui_Table_generateCell) - [getSelected](#gui_Table_getSelected) - [requestFocus](#gui_Table_requestFocus) - [saveSettings](gui_api.html#gui_api_settings) - [scrollTo](#gui_Table_scrollTo) - [setClickListener](#gui_Table_CellClickListener) - [setEnterPressAction](#gui_Table_setEnterPressAction) - [setItemClickAction](#gui_Table_setItemClickAction) - [setStyleProvider](#gui_Table_setStyleProvider)
+
 
 
 - - -

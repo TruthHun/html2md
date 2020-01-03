@@ -27,15 +27,11 @@ var closeTag = map[string]string{
 }
 
 var blockTag = []string{
-	"div",
-	"figure",
-	"p",
-	"article",
-	"nav",
-	"footer",
-	"header",
-	"section",
+	"address", "div", "figure", "p", "figcaption",
+	"article", "aside", "nav", "footer", "fieldset", "menu",
+	"header", "section", "center", "frameset", "details", "summary",
 }
+
 var nextlineTag = []string{
 	"pre", "blockquote", "table",
 }
@@ -45,17 +41,16 @@ var nextlineTag = []string{
 func Convert(htmlstr string) (md string) {
 	var maps map[string]string
 	doc, _ := goquery.NewDocumentFromReader(strings.NewReader(htmlstr))
+	doc = trimAttr(doc)
 	doc, maps = compress(doc)
-	doc = handleNextLine(doc)   //<div>...
-	doc = handleBlockTag(doc)   //<div>...
-	doc = handleA(doc)          //<a>
-	doc = handleImg(doc)        //<img>
-	doc = handleHead(doc)       //h1~h6
-	doc = handleClosedTag(doc)  //<strong>、<i>、eg..
-	doc = handleHr(doc)         //<hr>
-	doc = handleLi(doc)         //<li>
-	doc = handleTable(doc)      //<table>
-	doc = handleBlockquote(doc) //<blockquote>
+	doc = handleNextLine(doc)  //<div>...
+	doc = handleBlockTag(doc)  //<div>...
+	doc = handleA(doc)         //<a>
+	doc = handleImg(doc)       //<img>
+	doc = handleHead(doc)      //h1~h6
+	doc = handleClosedTag(doc) //<strong>、<i>、eg..
+	doc = handleHr(doc)        //<hr>
+	doc = handleLi(doc)        //<li>
 	md, _ = doc.Find("body").Html()
 	md = depress(md, maps)
 	return
@@ -63,8 +58,12 @@ func Convert(htmlstr string) (md string) {
 
 // 解压，释放code和pre
 func depress(md string, maps map[string]string) string {
-
 	// 先替换pre，再替换code，因为有的code在pre标签里面
+	for key, val := range maps {
+		if strings.HasPrefix(key, "{$blockquote") {
+			md = strings.Replace(md, key, "\n\r"+val+"\n\r", -1)
+		}
+	}
 
 	for key, val := range maps {
 		if strings.HasPrefix(key, "{$pre") {
@@ -79,14 +78,7 @@ func depress(md string, maps map[string]string) string {
 	}
 
 	if doc, err := goquery.NewDocumentFromReader(strings.NewReader(md)); err == nil {
-		rmAttr := []string{"span", "li", "ul", "ol", "dt", "dd", "dl", "tr", "td", "tbody", "table"}
-		for _, tag := range rmAttr {
-			doc.Find(tag).Each(func(i int, selection *goquery.Selection) {
-				selection.RemoveAttr("class")
-				selection.RemoveAttr("id")
-				selection.RemoveAttr("style")
-			})
-		}
+		doc = trimAttr(doc)
 		md, _ = doc.Find("body").Html()
 		md = strings.Replace(md, "<span>", "", -1)
 		md = strings.Replace(md, "</span>", "", -1)
@@ -94,11 +86,32 @@ func depress(md string, maps map[string]string) string {
 	return md
 }
 
+// trip attr
+func trimAttr(doc *goquery.Document) *goquery.Document {
+	attrs := []string{
+		"border", "colspan", "rowspan", "style", "cellspacing",
+		"cellpadding", "bgcolor", "width", "align", "frame", "id", "class",
+	}
+	elements := []string{
+		"table", "thead", "tbody", "tr", "td", "th", "h1", "h2", "h3", "h4", "img",
+		"h5", "h6", "i", "em", "strong", "span", "br", "hr", "ul", "li", "ol",
+	}
+	elements = append(elements, blockTag...)
+	elements = append(elements, nextlineTag...)
+	for _, tag := range elements {
+		doc.Find(tag).Each(func(i int, selection *goquery.Selection) {
+			for _, attr := range attrs {
+				selection.RemoveAttr(attr)
+			}
+		})
+	}
+	return doc
+}
+
 //压缩html
 func compress(doc *goquery.Document) (*goquery.Document, map[string]string) {
 	//blockquote、pre、code，并替换 span 为空
 
-	var blockquoteMap = make(map[string]string)
 	var maps = make(map[string]string)
 
 	if ele := doc.Find("textarea"); len(ele.Nodes) > 0 {
@@ -137,8 +150,7 @@ func compress(doc *goquery.Document) (*goquery.Document, map[string]string) {
 			cont := "<blockquote>" + getInnerHtml(selection) + "</blockquote>"
 			selection.BeforeHtml(key)
 			selection.Remove()
-			//maps = append(maps, map[string]string{key: cont})
-			blockquoteMap[key] = cont
+			maps[key] = cont
 		})
 	}
 
@@ -159,9 +171,6 @@ func compress(doc *goquery.Document) (*goquery.Document, map[string]string) {
 	//多个空格替换成一个空格
 	r2, _ := regexp.Compile("\\s{1,}")
 	htmlstr = r2.ReplaceAllString(htmlstr, " ")
-	for key, val := range blockquoteMap {
-		htmlstr = strings.Replace(htmlstr, key, val, -1)
-	}
 	doc, _ = goquery.NewDocumentFromReader(strings.NewReader(htmlstr))
 	return doc, maps
 }
@@ -183,23 +192,23 @@ func handleBlockTag(doc *goquery.Document) *goquery.Document {
 	return doc
 }
 
-func handleBlockquote(doc *goquery.Document) *goquery.Document {
-	if tagEle := doc.Find("blockquote"); len(tagEle.Nodes) > 0 {
-		tagEle.Each(func(i int, selection *goquery.Selection) {
-			cont := getInnerHtml(selection)
-			cont = strings.Replace(cont, "\r", "", -1)
-			cont = strings.Replace(cont, "\n", "", -1)
-			selection.BeforeHtml("\r\n<blockquote>" + cont + "\n</blockquote>\n")
-			selection.Remove()
-		})
-	}
-
-	doc.Find("code").Each(func(i int, selection *goquery.Selection) {
-		fmt.Println(selection.Html())
-	})
-
-	return doc
-}
+//func handleBlockquote(doc *goquery.Document) *goquery.Document {
+//	if tagEle := doc.Find("blockquote"); len(tagEle.Nodes) > 0 {
+//		tagEle.Each(func(i int, selection *goquery.Selection) {
+//			cont := getInnerHtml(selection)
+//			cont = strings.Replace(cont, "\r", "", -1)
+//			cont = strings.Replace(cont, "\n", "", -1)
+//			selection.BeforeHtml("\r\n<blockquote>" + cont + "\n</blockquote>\n")
+//			selection.Remove()
+//		})
+//	}
+//
+//	doc.Find("code").Each(func(i int, selection *goquery.Selection) {
+//		fmt.Println(selection.Html())
+//	})
+//
+//	return doc
+//}
 
 //[ok]handle tag <a>
 func handleA(doc *goquery.Document) *goquery.Document {
@@ -228,7 +237,11 @@ func handleLi(doc *goquery.Document) *goquery.Document {
 	})
 	for _, tag := range tags {
 		doc.Find(tag).Each(func(i int, selection *goquery.Selection) {
-			selection.BeforeHtml(selection.Text())
+			if tag == "ul" {
+				selection.BeforeHtml("\n" + selection.Text() + "\n")
+			} else {
+				selection.BeforeHtml(selection.Text())
+			}
 			selection.Remove()
 		})
 	}
@@ -303,23 +316,10 @@ func handleClosedTag(doc *goquery.Document) *goquery.Document {
 func handleNextLine(doc *goquery.Document) *goquery.Document {
 	for _, tag := range nextlineTag {
 		doc.Find(tag).Each(func(i int, selection *goquery.Selection) {
-			selection.BeforeHtml("\n")
-			selection.AfterHtml("\n")
+			selection.BeforeHtml("\n\n")
+			selection.AfterHtml("\n\n")
 		})
 	}
-	return doc
-}
-
-func handleTable(doc *goquery.Document) *goquery.Document {
-	attrs := []string{
-		"border", "colspan", "rowspan", "style", "cellspacing",
-		"cellpadding", "bgcolor", "width", "align", "frame",
-	}
-	doc.Find("table").Each(func(i int, table *goquery.Selection) {
-		for _, item := range attrs {
-			table.RemoveAttr(item)
-		}
-	})
 	return doc
 }
 

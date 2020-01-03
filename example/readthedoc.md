@@ -6,6 +6,7 @@
 
 目录
 
+
 - [程序构建](#program-build)
   - [配置](#id3)
   - [编译](#id4)
@@ -16,6 +17,7 @@
     - [g++编译](#g)
   - [安装](#id8)
   - [总结](#id9)
+
 
 一般源代码提供的程序安装需要通过配置、编译、安装三个步骤；
 
@@ -74,12 +76,15 @@ makefile Makefile
 ### [makefile编写的要点](#id14)[¶](#makefile)
 
 
+
 - 必须满足第一条规则，满足后停止
 - 除第一条规则，其他无顺序
 
 
 
+
 ### [makefile中的全局自变量](#id15)[¶](#id5)
+
 
 
 - $@目标文件名
@@ -88,6 +93,7 @@ makefile Makefile
 - @＜一个前提名
 - @？所有新于目标文件的前提名
 - @*目标文件的基名称
+
 
 注解
 
@@ -152,9 +158,11 @@ LDFLAGS  -L标记非标准库存放路径
 
 选项说明：
 
+
 - -o:指明生成的目标文件
 - -g：添加调试信息
 - -E: 查看中间文件
+
 应用：查询宏展开的中间文件：
 
 在g++的编译选项中，添加 -E选项，然后去掉-o选项 ，重定向到一个文件中即可:
@@ -216,7 +224,9 @@ LDFLAGS  -L标记非标准库存放路径
 configure make install g++
 
 
+
 <table rules="none"><colgroup><col class="label"/><col/></colgroup><tbody valign="top"><tr><td>[[1]](#id6)</td><td>陈皓 跟我一起写Makefile [http://scc.qibebt.cas.cn/docs/linux/base/%B8%FA%CE%D2%D2%BB%C6%F0%D0%B4Makefile-%B3%C2%F0%A9.pdf](http://scc.qibebt.cas.cn/docs/linux/base/%B8%FA%CE%D2%D2%BB%C6%F0%D0%B4Makefile-%B3%C2%F0%A9.pdf)</td></tr></tbody></table>
+
 
 
 

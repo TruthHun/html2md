@@ -6,6 +6,7 @@
 
 
 
+
 - [Getting started](../intro/)
   - [Django at a glance](../intro/overview/)
     - [Design your model](../intro/overview/#design-your-model)
@@ -690,15 +691,18 @@
     - [Making the release(s) available to the public](../internals/howto-release-django/#making-the-release-s-available-to-the-public)
     - [Post-release](../internals/howto-release-django/#post-release)
     - [New stable branch tasks](../internals/howto-release-django/#new-stable-branch-tasks)
-    - [Notes on setting the VERSION tuple](../internals/howto-release-django/#notes-on-setting-the-version-tuple)</feature></framework>
+    - [Notes on setting the VERSION tuple](../internals/howto-release-django/#notes-on-setting-the-version-tuple)
+</feature></framework>
 
 
 
 ## Indices, glossary and tables[¶](#indices-glossary-and-tables)
 
 
+
 - [Index](../genindex/)
 - [Module Index](../py-modindex/)
 - [Glossary](../glossary/)
+
 
 
