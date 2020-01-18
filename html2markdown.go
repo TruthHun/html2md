@@ -79,6 +79,10 @@ func depress(md string, maps map[string]string) string {
 
 	if doc, err := goquery.NewDocumentFromReader(strings.NewReader(md)); err == nil {
 		doc = trimAttr(doc)
+		doc.Find("textarea").Each(func(i int, selection *goquery.Selection) {
+			selection.Prepend(fmt.Sprintf("\n\n<pre><code>%v</code></pre>\n\n",selection.Text()))
+			selection.Remove()
+		})
 		md, _ = doc.Find("body").Html()
 		md = strings.Replace(md, "<span>", "", -1)
 		md = strings.Replace(md, "</span>", "", -1)
